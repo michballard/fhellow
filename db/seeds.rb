@@ -14,9 +14,9 @@ barnany = User.new(email: "barnany@barnany.com",
 						name_last: "Shute", 
 						job_title: "Freelance film maker", 
 						location: "London", 
-						bio: "Hi I'm Barney",
- 					  latitude: 51.525803,
- 					  longitude: -0.088277)
+						bio: "Hi I'm Barney")
+ 					  # latitude: 51.525803,
+ 					  # longitude: -0.088277)
 barnany.avatar = File.open('spec/fixtures/images/avatar.jpg')
 barnany.save!
 
@@ -27,8 +27,8 @@ juan = User.new(email: "Juan@juan.com",
 						job_title: "Freelance Journalist, author and entrepreneur", 
 						location: "London", 
 						bio: "",
-					    latitude: "" ,
-					    longitude: "" )
+					    latitude: 51.526804,
+					    longitude: -0.088277)
 juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
 juan.save!
 
