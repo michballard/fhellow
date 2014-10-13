@@ -45,10 +45,11 @@ describe "maps" do
             latitude: 51.525804,
             longitude: -0.088277)
     end
-
-    it "should be able to place many markers to indicate fhellow locations" do 
-      visit '/' 
-
+    
+    it "should be able to place many markers to indicate fhellow locations", js: true do 
+      visit '/'
+      marker_count = page.evaluate_script('map.markers.filter(function(marker) { return marker.class === "user-marker"; }).length;')
+      expect(marker_count).to eq(2)      
     end
   end
 

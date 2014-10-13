@@ -31,6 +31,7 @@ group :test do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'jasmine-rails'
+	gem 'poltergeist'
 end
 
 # Add gem for user

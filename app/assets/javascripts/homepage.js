@@ -14,6 +14,7 @@ $(document).ready(function() {
     lat: $('.lat').text(),
     lng: $('.lng').text(),
     title: 'Fhellow',
+    class: "user-marker",
     infoWindow: {
     content: '<p>HTML Content</p>'
     }
