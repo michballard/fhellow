@@ -38,13 +38,13 @@ describe 'user summaries' do
                           job_title: "Freelance film maker", 
                           location: "London", 
                           bio: "Hi I'm Barney")
-      user.avatar = File.open('spec/fixtures/images/avatar.jpeg')
+      user.avatar = File.open('spec/fixtures/images/avatar.jpg')
       user.save!
     end 
 
-    it "should allow user to have an avatar for their sumamry" do 
+    it "should allow user to have an avatar for their summary" do 
       visit '/'
-      expect(user.)
-
-
+      expect(page).to have_css('.avatar-image')
+    end
+  end
 end 
