@@ -15,6 +15,12 @@ end
 
 describe "navigation" do
   context "displaying a nav bar" do
+
+    it "should have the fhellow logo" do
+      visit '/'
+      expect(page).to have_css '#logo'
+    end
+
     it "should have a link for the 'About' page" do
       visit '/'
       expect(page).to have_link 'About'
