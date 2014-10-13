@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
 
 barnany = User.new(email: "barnany@barnany.com", 
 						password: "123456789", 
@@ -26,8 +27,8 @@ juan = User.new(email: "Juan@juan.com",
 						job_title: "Freelance Journalist, author and entrepreneur", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					    latitude: "" ,
+					    longitude: "" )
 juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
 juan.save!
 
@@ -38,8 +39,8 @@ jake = User.new(email: "Jake@Jake.com",
 						job_title: "Freelance Journalist", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "",
+					  longitude: "" )
 jake.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jake.save!
 
@@ -50,8 +51,8 @@ paul = User.new(email: "Paul@paul.com",
 						job_title: "Tech Entrepreneur", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 paul.avatar = File.open('spec/fixtures/images/avatar.jpg')
 paul.save!
 
@@ -62,8 +63,8 @@ emanuel = User.new(email: "Emanuel@emanuel.com",
 						job_title: "Freelance Broadcaster", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 emanuel.avatar = File.open('spec/fixtures/images/avatar.jpg')
 emanuel.save!
 
@@ -74,8 +75,8 @@ samantha = User.new(email: "Samantha@sam.com",
 						job_title: "Freelance Designer", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 samantha.avatar = File.open('spec/fixtures/images/avatar.jpg')
 samantha.save!
 
@@ -86,8 +87,8 @@ ant = User.new(email: "ant@ant.com",
 						job_title: "Serial Entrepreneur and freelance designer", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 ant.avatar = File.open('spec/fixtures/images/avatar.jpg')
 ant.save!
 
@@ -98,8 +99,8 @@ jon = User.new(email: "jon@jon.com",
 						job_title: "Freelance Designer", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 jon.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jon.save!
 
@@ -110,8 +111,8 @@ john = User.new(email: "jonathe@jonathe.com",
 						job_title: "Freelance Designer", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 john.avatar = File.open('spec/fixtures/images/avatar.jpg')
 john.save!
 
@@ -122,8 +123,8 @@ gemma = User.new(email: "Gemma@gemma.com",
 						job_title: "Freelance PR", 
 						location: "London", 
 						bio: "",
-					  latitude: ,
-					  longitude: )
+					  latitude: "" ,
+					  longitude: "" )
 gemma.avatar = File.open('spec/fixtures/images/avatar.jpg')
 gemma.save!
 
