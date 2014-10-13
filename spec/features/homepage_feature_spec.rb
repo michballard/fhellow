@@ -24,5 +24,10 @@ describe "navigation" do
       visit '/'
       expect(page).to have_link 'Activity'
     end
+
+    it "should have a link for 'Post' page" do
+      visit '/'
+      expect(page).to have_link 'Post'
+    end
   end
 end
