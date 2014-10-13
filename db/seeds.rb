@@ -15,18 +15,74 @@ User.create(email: "barnany@barnany.com",
 						location: "London", 
 						bio: "Hi I'm Barney")
 
-User.create(email: "", 
-						password: "", 
-						name_first: "", 
-						name_last: "", 
-						job_title: "", 
-						location: "", 
+User.create(email: "Juan@juan.com", 
+						password: "123456789", 
+						name_first: "Juan", 
+						name_last: "Manuel", 
+						job_title: "Freelance Journalist, author and entrepreneur", 
+						location: "London", 
 						bio: "")
 
-User.create(email: "", 
-						password: "", 
-						name_first: "", 
-						name_last: "", 
-						job_title: "", 
-						location: "", 
+User.create(email: "Jake@Jake.com", 
+						password: "123456789", 
+						name_first: "Jake", 
+						name_last: "Sanderson", 
+						job_title: "Freelance Journalist", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "Paul@paul.com", 
+						password: "123456789", 
+						name_first: "Paul", 
+						name_last: "Spencer", 
+						job_title: "Tech Entrepreneur", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "Emanuel@emanuel.com", 
+						password: "123456789", 
+						name_first: "Emanuel", 
+						name_last: "Van De Hamiltonson", 
+						job_title: "Freelance Broadcaster", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "Samantha@sam.com", 
+						password: "123456789", 
+						name_first: "Samantha", 
+						name_last: "Hilby", 
+						job_title: "Freelance Designer", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "ant@ant.com", 
+						password: "123456789", 
+						name_first: "Anthony", 
+						name_last: "Ward Katavonichairna", 
+						job_title: "Serial Entrepreneur and freelance designer", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "jon@jon.com", 
+						password: "123456789", 
+						name_first: "Jon", 
+						name_last: "Jackson", 
+						job_title: "Freelance Designer", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "jonathe@jonathe.com", 
+						password: "123456789", 
+						name_first: "Jon", 
+						name_last: "Jackson", 
+						job_title: "Freelance Designer", 
+						location: "London", 
+						bio: "")
+
+User.create(email: "Gemma@gemma.com", 
+						password: "123456789", 
+						name_first: "Gemma", 
+						name_last: "Gaven", 
+						job_title: "Freelance PR", 
+						location: "London", 
 						bio: "")
