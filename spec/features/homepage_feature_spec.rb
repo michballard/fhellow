@@ -11,6 +11,13 @@ describe "maps" do
 
   end
 
+end
 
-
+describe "navigation" do
+  context "displaying a nav bar" do
+    it "should have a link for the 'About' page" do
+      visit homepage_path
+      expect(page).to have_link 'About'
+    end
+  end
 end
