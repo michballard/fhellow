@@ -31,18 +31,20 @@ describe 'user summaries' do
 
   context 'with a picture' do
     before do 
-      User.create(email: "barnany@barnany.com", 
-                  password: "123456789", 
-                  name_first: "Barnany", 
-                  name_last: "Shute", 
-                  job_title: "Freelance film maker", 
-                  location: "London", 
-                  bio: "Hi I'm Barney")    
+      user = User.new( email: "barnany@barnany.com", 
+                          password: "123456789", 
+                          name_first: "Barnany", 
+                          name_last: "Shute", 
+                          job_title: "Freelance film maker", 
+                          location: "London", 
+                          bio: "Hi I'm Barney")
+      user.avatar = File.open('spec/fixtures/images/avatar.jpeg')
+      user.save!
     end 
 
     it "should allow user to have an avatar for their sumamry" do 
       visit '/'
-      expect
+      expect(user.)
 
 
 end 
