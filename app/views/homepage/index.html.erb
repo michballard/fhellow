@@ -11,8 +11,14 @@
 </nav>
 
 <div id='map'></div>
-<div class='lat'>51.524013</div>
-<div class='lng'>-0.087467</div>
+<% if @users.any? %>
+	<% @users.each do |user| %>
+		<% if user.longitude & user.latitude %>
+			<div class='lat'><%= user.latitude %></div>
+			<div class='lng'><%= user.longitude %></div>
+		<% end %>
+	<% end %>
+<% end %>
 
 <% if @users.any? %>
 	<% @users.each do |user| %>
