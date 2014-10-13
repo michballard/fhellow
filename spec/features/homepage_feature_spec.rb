@@ -11,6 +11,28 @@ describe "maps" do
 
   end
 
+  context "placing fhellows on the map" do
+
+  it 'should not have markers before users are created' do
+     expect(page).to_not have_css '.lat'
+     expect(page).to_not have_css '.lng'
+  end
+
+    before do
+      User.create(email: "barnany@barnany.com", 
+            password: "123456789", 
+            latitude: 51.525803,
+            longitude: -0.088277)
+    end
+
+    it "should be able to place a marker for a fhellow's location" do
+      visit '/'      
+      expect(page).to have_css '.lat'
+      expect(page).to have_css '.lng'
+    end
+
+  end
+
 end
 
 describe "navigation" do
