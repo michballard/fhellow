@@ -31,20 +31,22 @@ describe 'user summaries' do
 
   context 'with a picture' do
     before do 
-      user = User.new( email: "barnany@barnany.com", 
+      @user = User.new( email: "barnany@barnany.com", 
                           password: "123456789", 
                           name_first: "Barnany", 
                           name_last: "Shute", 
                           job_title: "Freelance film maker", 
                           location: "London", 
                           bio: "Hi I'm Barney")
-      user.avatar = File.open('spec/fixtures/images/avatar.jpg')
-      user.save!
+      @user.avatar = File.open('spec/fixtures/images/avatar.jpg')
+      @user.save!
     end 
 
     it "should allow user to have an avatar for their summary" do 
       visit '/'
       expect(page).to have_css('.avatar-image')
+      expect(@user.avatar_file_name).to eq "avatar.jpg"
+      # expect(page).to have_content('avatar.jpg')
     end
   end
 end 
