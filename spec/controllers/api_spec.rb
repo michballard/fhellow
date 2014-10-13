@@ -1,7 +1,6 @@
 require 'rails_helper'
     
 describe ApiController do
-    render_views
 
     context 'JSON' do 
       before do 
@@ -16,11 +15,17 @@ describe ApiController do
         @user.save!
       end
 
-      describe "creating "
+      describe "GET 'index" do 
+        it "returns a successful 200 reponse" do 
+          get :getuser, format: :json 
+          expect(response).to be_success
+        end
+      end
 
 
 
 
 
 
-    end
+  end
+end
