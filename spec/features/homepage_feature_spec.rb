@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-describe "homepage" do
+describe "maps" do
 
-    context "viewing the homepage" do
+  context "viewing on hompage" do
 
-        it 'should display a map' do
-            visit '/'
-            expect(page).to have_css('.map')
-        end
-
+    it 'should display a map' do
+      visit '/'
+      expect(page).to have_css('.map')
     end
+
+  end
 
 
 end
