@@ -1,4 +1,6 @@
 <nav>
+
+  <h1 id='logo'>Fhellow</h1>
   <ul>
   <li><a href="#">About</a></li>
   <li><a href="#">Activity</a></li>
@@ -13,7 +15,6 @@
 <div class='lng'>-0.087467</div>
 
 <% if @users.any? %>
-
 	<% @users.each do |user| %>
 
 	  <%= image_tag user.avatar.url(:medium), class: "avatar-image" %>
