@@ -75,11 +75,10 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+  production:
 #
 production:
   <<: *default
-  database: fhellow_production
-  username: fhellow
-  password: <%= ENV['FHELLOW_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+
