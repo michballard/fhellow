@@ -29,5 +29,10 @@ describe "navigation" do
       visit '/'
       expect(page).to have_link 'Post'
     end
+
+    it "should have a link to join as a user" do
+      visit '/'
+      expect(page).to have_link 'Join'
+    end
   end
 end
