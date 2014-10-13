@@ -34,5 +34,10 @@ describe "navigation" do
       visit '/'
       expect(page).to have_link 'Join'
     end
+
+    it "should have a link for 'Log in' page" do
+      visit '/'
+      expect(page).to have_link 'Log in'
+    end
   end
 end
