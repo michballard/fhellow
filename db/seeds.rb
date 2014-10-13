@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(email: "barnany@barnany.com", 
+barnany = User.create(email: "barnany@barnany.com", 
 						password: "123456789", 
 						name_first: "Barnany", 
 						name_last: "Shute", 
@@ -15,7 +15,7 @@ User.create(email: "barnany@barnany.com",
 						location: "London", 
 						bio: "Hi I'm Barney")
 
-User.create(email: "Juan@juan.com", 
+juan = User.create(email: "Juan@juan.com", 
 						password: "123456789", 
 						name_first: "Juan", 
 						name_last: "Manuel", 
@@ -23,7 +23,7 @@ User.create(email: "Juan@juan.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "Jake@Jake.com", 
+jake = User.create(email: "Jake@Jake.com", 
 						password: "123456789", 
 						name_first: "Jake", 
 						name_last: "Sanderson", 
@@ -31,7 +31,7 @@ User.create(email: "Jake@Jake.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "Paul@paul.com", 
+paul = User.create(email: "Paul@paul.com", 
 						password: "123456789", 
 						name_first: "Paul", 
 						name_last: "Spencer", 
@@ -39,7 +39,7 @@ User.create(email: "Paul@paul.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "Emanuel@emanuel.com", 
+emanuel = User.create(email: "Emanuel@emanuel.com", 
 						password: "123456789", 
 						name_first: "Emanuel", 
 						name_last: "Van De Hamiltonson", 
@@ -47,7 +47,7 @@ User.create(email: "Emanuel@emanuel.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "Samantha@sam.com", 
+samantha = User.create(email: "Samantha@sam.com", 
 						password: "123456789", 
 						name_first: "Samantha", 
 						name_last: "Hilby", 
@@ -55,7 +55,7 @@ User.create(email: "Samantha@sam.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "ant@ant.com", 
+ant = User.create(email: "ant@ant.com", 
 						password: "123456789", 
 						name_first: "Anthony", 
 						name_last: "Ward Katavonichairna", 
@@ -63,7 +63,7 @@ User.create(email: "ant@ant.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "jon@jon.com", 
+jon = User.create(email: "jon@jon.com", 
 						password: "123456789", 
 						name_first: "Jon", 
 						name_last: "Jackson", 
@@ -71,7 +71,7 @@ User.create(email: "jon@jon.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "jonathe@jonathe.com", 
+john = User.create(email: "jonathe@jonathe.com", 
 						password: "123456789", 
 						name_first: "Jon", 
 						name_last: "Jackson", 
@@ -79,7 +79,7 @@ User.create(email: "jonathe@jonathe.com",
 						location: "London", 
 						bio: "")
 
-User.create(email: "Gemma@gemma.com", 
+gemma = User.create(email: "Gemma@gemma.com", 
 						password: "123456789", 
 						name_first: "Gemma", 
 						name_last: "Gaven", 

@@ -29,5 +29,20 @@ describe 'user summaries' do
     end 
   end
 
+  context 'with a picture' do
+    before do 
+      User.create(email: "barnany@barnany.com", 
+                  password: "123456789", 
+                  name_first: "Barnany", 
+                  name_last: "Shute", 
+                  job_title: "Freelance film maker", 
+                  location: "London", 
+                  bio: "Hi I'm Barney")    
+    end 
+
+    it "should allow user to have an avatar for their sumamry" do 
+      visit '/'
+      expect
+
 
 end 
