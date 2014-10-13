@@ -35,6 +35,9 @@ end
 # Add gem for user
 gem 'devise'
 
+# gem for adding images
+gem 'paperclip'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
