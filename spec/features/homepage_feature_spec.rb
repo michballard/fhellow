@@ -19,5 +19,10 @@ describe "navigation" do
       visit '/'
       expect(page).to have_link 'About'
     end
+
+    it "should have an activity nav link" do
+      visit '/'
+      expect(page).to have_link 'Activity'
+    end
   end
 end
