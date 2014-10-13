@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 group :test do 
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'database_cleaner'
 end
 
 # Add gem for user

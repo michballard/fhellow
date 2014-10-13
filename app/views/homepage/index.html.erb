@@ -1,3 +1,16 @@
 <div id='map'></div>
 <div class='lat'>51.524013</div>
 <div class='lng'>-0.087467</div>
+
+<% if @users.any? %>
+
+	<% @users.each do |user| %>
+	  <h3><%= user.name_first %> <%= user.name_last %></h3>
+	  <h4><%= user.job_title %></h4>
+	  <p><%= user.location %></p>
+	  <p><%= user.bio %></p>
+	<% end %>
+
+<% else %>
+	<p>This is where users will show</p>
+<% end %>
