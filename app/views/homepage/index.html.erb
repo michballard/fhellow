@@ -5,6 +5,8 @@
 <% if @users.any? %>
 
 	<% @users.each do |user| %>
+
+	  <%= image_tag user.avatar.url(:medium), class: "avatar-image" %>
 	  <h3><%= user.name_first %> <%= user.name_last %></h3>
 	  <h4><%= user.job_title %></h4>
 	  <p><%= user.location %></p>
