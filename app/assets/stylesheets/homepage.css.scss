@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.map {
-  width: 700px;
+#map {
+  width: 100%;
   height: 500px;
+}
+
+.lat, .lng {
+  display: none;
 }
