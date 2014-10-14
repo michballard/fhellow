@@ -9,4 +9,11 @@ class ProfileController < Devise::RegistrationsController
     # render :edit_profile
   end 
 
-end 
+  def update_profile
+  	redirect_to user_profile_path(params[:id])
+  end
+
+  def show
+  end
+
+end

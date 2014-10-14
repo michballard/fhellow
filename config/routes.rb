@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get 'api/users' => "api#getuser", as: "api_users"
   
   devise_scope :user do 
-    post '/users/:id' => "profile#update_profile", as: "user"
+    patch '/users/:id' => "profile#update_profile", as: "user"
     get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
+    get 'users/:id/show' => "profile#show", as: "user_profile"
   end
 
 

@@ -1,8 +1,8 @@
-<%= form_for @user  do |f| %>
+<%= form_for @user do |f| %>
 <div><%=f.label :"first name" %>
 	<%= f.text_field :name_first, autofocus: true %>
 	<%=f.label :"last name" %>
-	<%=f.text_field :"name_last" %>
+	<%=f.text_field :name_last %>
 	</div>
 <div>	
 	<%= f.label :email %>
@@ -15,7 +15,11 @@
 
 <div>
 	<%=f.label :bio %>
-	<%= f.text_field :bio, id: 'bio' %>
+	<%= f.text_field :bio%>
+</div>
+
+<div>
+<%= f.submit :"Create my profile"%>
 </div>
 
 <%end%>
