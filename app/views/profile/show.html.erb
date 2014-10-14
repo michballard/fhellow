@@ -4,3 +4,5 @@
 <p><%= @user.bio %></p>
 <p><%= @user.website %></p>
 <p><%= @user.linkedin %></p>
+
+<%= image_tag @user.avatar.url(:medium), class: "avatar" %>
