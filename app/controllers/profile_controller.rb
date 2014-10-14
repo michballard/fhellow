@@ -9,4 +9,14 @@ class ProfileController < Devise::RegistrationsController
     # render :edit_profile
   end 
 
-end 
+  def update_profile
+  	@user = User.find(params[:id])
+  	@user.update(params[:user].permit(:name_first, :name_last, :email, :"job_title", :bio, :town, :country, :website, :linkedin))
+  	redirect_to user_profile_path(params[:id])
+  end
+
+  def show
+  	@user = User.find(params[:id])
+  end
+
+end

@@ -8,4 +8,12 @@ module SessionHelpers
 		click_button('Sign up') 
 	end
 
+	def add_basic_details
+    fill_in('user[name_first]', with: 'Barnany')
+    fill_in('user[name_last]', with: 'Shute')
+    fill_in('Email', with: 'barnany@barnany.com')
+    fill_in('user[job_title]', with: 'Freelance film maker')
+    fill_in('user[bio]', with: "Hi I'm Barney")
+	end
+
 end 

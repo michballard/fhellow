@@ -1,21 +1,46 @@
-<%= form_for @user  do |f| %>
-<div><%=f.label :"first name" %>
-	<%= f.text_field :name_first, autofocus: true %>
-	<%=f.label :"last name" %>
-	<%=f.text_field :"name_last" %>
-	</div>
-<div>	
-	<%= f.label :email %>
-	<%=f.email_field :email %>
-</div>
-<div>
-	<%=f.label :"job title" %>
-	<%=f.text_field :"job_title" %>
-</div>
+<%= form_for @user do |f| %>
 
-<div>
-	<%=f.label :bio %>
-	<%= f.text_field :bio, id: 'bio' %>
-</div>
+	<div><%=f.label :"first name" %>
+		<%= f.text_field :name_first, autofocus: true %>
+		<%=f.label :"last name" %>
+		<%=f.text_field :name_last %>
+	</div>
+
+	<div>	
+		<%= f.label :email %>
+		<%=f.email_field :email %>
+	</div>
+
+	<div>
+		<%=f.label :"job title" %>
+		<%=f.text_field :"job_title" %>
+	</div>
+
+  <div>
+  	<%= f.label :location %>
+  	<%= f.text_field :country %>
+  	<%= f.text_field :town %>
+  </div>
+
+  <div>
+  	<%= f.label :website %>
+  	<%= f.text_field :website %>
+  	<%= f.label :linkedin %>  	
+  	<%= f.text_field :linkedin %>
+  </div>
+
+	<div>
+		<%=f.label :bio %>
+		<%= f.text_field :bio%>
+	</div>
+
+	<div>
+		<%= f.label :"profile picture" %>
+		<%= f.file_field :avatar %>
+	</div>
+
+	<div>
+	<%= f.submit :"Create my profile"%>
+	</div>
 
 <%end%>
