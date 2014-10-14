@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   resources :homepage
 
   get 'api/users' => "api#getuser", as: "api_users"
-  
-  devise_scope :user do 
+
+  devise_scope :user do
     get 'users/edit_profile' => "profile#editprofile", as: "edit_profile"
+    get 'users/post' => "post#newpost", as: "new_post"
   end
+
 
   # You can have the root of your site routed with "root"
    root 'homepage#index'
