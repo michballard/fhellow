@@ -28,9 +28,20 @@ describe 'user profiles' do
     it 'can add a location' do 
       user_sign_up
       add_basic_details
-      fill_in('#country', with: 'United Kingdom')
-      fill_in('#town', with: 'London')
-      expect(page).to have_content('London, United Kingdom')    
+      fill_in('user[country]', with: 'United Kingdom')
+      fill_in('user[town]', with: 'London')
+      click_button('Create my profile')
+      expect(page).to have_content('London, United Kingdom') 
+    end
+
+    it 'can add website and LinkedIn details' do 
+      user_sign_up
+      add_basic_details
+      fill_in('user[website]', with: "www.barnany.com")
+      fill_in('user[linkedin]', with: "linkedin.com/in/barnany")
+      click_button('Create my profile')
+      expect(page).to have_content('www.barnany.com') 
+      expect(page).to have_content('linkedin.com/in/barnany') 
     end 
   end 
 end
