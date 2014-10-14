@@ -1,0 +1,21 @@
+<%= form_for @user  do |f| %>
+<div><%=f.label :"first name" %>
+	<%= f.text_field :name_first, autofocus: true %>
+	<%=f.label :"last name" %>
+	<%=f.text_field :"name_last" %>
+	</div>
+<div>	
+	<%= f.label :email %>
+	<%=f.email_field :email %>
+</div>
+<div>
+	<%=f.label :"job title" %>
+	<%=f.text_field :"job_title" %>
+</div>
+
+<div>
+	<%=f.label :bio %>
+	<%= f.text_field :bio, id: 'bio' %>
+</div>
+
+<%end%>

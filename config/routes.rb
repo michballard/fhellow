@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'api/users' => "api#getuser", as: "api_users"
   
   devise_scope :user do 
-    get 'users/edit_profile' => "profile#editprofile", as: "edit_profile"
+    post '/users/:id' => "profile#update_profile", as: "user"
+    get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
   end
 
   # You can have the root of your site routed with "root"
