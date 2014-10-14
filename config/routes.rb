@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "profile"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :homepage
 
   get 'api/users' => "api#getuser", as: "api_users"
+  
+  devise_scope :user do 
+    get 'users/edit_profile' => "profile#editprofile", as: "edit_profile"
+  end
 
   # You can have the root of your site routed with "root"
    root 'homepage#index'
