@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
   end
 
+
   # You can have the root of your site routed with "root"
    root 'homepage#index'
 

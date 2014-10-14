@@ -12,15 +12,16 @@ $(document).ready(function() {
 
 
   $.get("/api/users", function(users){
-    
+  
+    console.log(users);
     users.forEach(function(user){
         map.addMarker({
         lat: user.latitude,
         lng: user.longitude,
-        title: user.name_first,
-        class: "user-marker",
+        title: user.full_name,
+        class: "all-user-marker",
         infoWindow: {
-            content: '<p>HTML Content</p>'
+            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p></p>'+ user.bio_truncated + '</p>'
         }
          });
     });
@@ -31,7 +32,7 @@ $(document).ready(function() {
     lat: $('.lat').text(),
     lng: $('.lng').text(),
     title: 'Fhellow',
-    class: "user-marker",
+    class: "current-user-marker",
     infoWindow: {
     content: '<p>HTML Content</p>'
     }

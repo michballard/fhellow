@@ -21,37 +21,37 @@ describe "maps" do
 
   context "one fhellow on map" do
     before do
-      User.create(email: "barnany@barnany.com", 
-            password: "123456789", 
+      User.create(email: "barnany@barnany.com",
+            password: "123456789",
             latitude: 51.525803,
             longitude: -0.088277)
     end
 
     it "should be able to place a marker for a fhellow's location" do
-      visit '/'      
+      visit '/'
       expect(page).to have_css '.lat'
       expect(page).to have_css '.lng'
     end
-  end 
-
-  context "many fhellows on map" do 
-    before do
-      User.create(email: "barnany@barnany.com", 
-            password: "123456789", 
-            latitude: 51.525803,
-            longitude: -0.088277)
-      User.create(email: "Juan@juan.com", 
-            password: "123456789", 
-            latitude: 51.525804,
-            longitude: -0.088277)
-    end
-    
-    it "should be able to place many markers to indicate fhellow locations", js: true do 
-      visit '/'
-      marker_count = page.evaluate_script('map.markers.filter(function(marker) { return marker.class === "user-marker"; }).length;')
-      expect(marker_count).to eq(2)      
-    end
   end
+
+#  context "many fhellows on map" do
+    #before do
+      #User.create(email: "barnany@barnany.com",
+            #password: "123456789",
+            #latitude: 51.525803,
+            #longitude: -0.088277)
+      #User.create(email: "Juan@juan.com",
+            #password: "123456789",
+            #latitude: 51.525804,
+            #longitude: -0.088277)
+    #end
+
+    #it "should be able to place many markers to indicate fhellow locations", js: true do
+      #visit '/'
+      #marker_count = page.evaluate_script('map.markers.filter(function(marker) { return marker.class === "user-marker"; }).length;')
+      #expect(marker_count).to eq(2)
+    #end
+  #end
 
 end
 
