@@ -4,7 +4,10 @@
   <ul>
   <li><a href="#">About</a></li>
   <li><a href="#">Activity</a></li>
-  <li><a href="#">Post</a></li>
+  <% if current_user %>
+
+  <li><%= link_to "Post", new_user_post_path(current_user) %></li>
+    <% end %>
   <li><%= link_to "Join", new_user_registration_path %></li>
   <li><%= link_to "Log in", new_user_session_path %></li>
   </ul>

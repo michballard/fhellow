@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   resources :homepage
 
   get 'api/users' => "api#getuser", as: "api_users"
+  get 'activity/:user_id' => "activity#show", as: "activity_user"
   
   devise_scope :user do 
     post '/users/:id' => "profile#update_profile", as: "user"
     get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
+    resources :user do
+        resources :posts
+      end
   end
 
 
