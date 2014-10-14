@@ -10,6 +10,23 @@ $(document).ready(function() {
     lng: -0.087467
   });
 
+
+  $.get("/api/users", function(users){
+    
+    users.forEach(function(user){
+        map.addMarker({
+        lat: user.latitude,
+        lng: user.longitude,
+        title: user.name_first,
+        class: "user-marker",
+        infoWindow: {
+            content: '<p>HTML Content</p>'
+        }
+         });
+    });
+  });
+
+
   map.addMarker({
     lat: $('.lat').text(),
     lng: $('.lng').text(),

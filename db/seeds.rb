@@ -16,8 +16,8 @@ barnany = User.new(email: "barnany@barnany.com",
 						job_title: "Freelance film maker",
 						location: "London",
 						bio: "Hi I'm Barney",
- 					  latitude: 51.525803,
- 					  longitude: -0.088277)
+ 					  latitude: 51.521803,
+ 					  longitude: -0.081277)
 barnany.avatar = File.open('spec/fixtures/images/avatar.jpg')
 barnany.save!
 
@@ -28,8 +28,8 @@ juan = User.new(email: "Juan@juan.com",
 						job_title: "Freelance Journalist, author and entrepreneur",
 						location: "London",
 						bio: "",
-					    latitude: "",
-					    longitude: "")
+					    latitude: 51.512803,
+ 					  longitude: -0.082287)
 juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
 juan.save!
 
@@ -40,8 +40,8 @@ jake = User.new(email: "Jake@Jake.com",
 						job_title: "Freelance Journalist",
 						location: "London",
 						bio: "",
-					  latitude: "",
-					  longitude: "" )
+					  latitude: 51.533803,
+ 					  longitude: -0.083297)
 jake.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jake.save!
 
@@ -52,8 +52,8 @@ paul = User.new(email: "Paul@paul.com",
 						job_title: "Tech Entrepreneur",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.515303,
+ 					  longitude: -0.084827)
 paul.avatar = File.open('spec/fixtures/images/avatar.jpg')
 paul.save!
 
@@ -64,8 +64,8 @@ emanuel = User.new(email: "Emanuel@emanuel.com",
 						job_title: "Freelance Broadcaster",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.512003,
+ 					  longitude: -0.083857)
 emanuel.avatar = File.open('spec/fixtures/images/avatar.jpg')
 emanuel.save!
 
@@ -76,8 +76,8 @@ samantha = User.new(email: "Samantha@sam.com",
 						job_title: "Freelance Designer",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.579303,
+ 					  longitude: -0.083677)
 samantha.avatar = File.open('spec/fixtures/images/avatar.jpg')
 samantha.save!
 
@@ -88,8 +88,8 @@ ant = User.new(email: "ant@ant.com",
 						job_title: "Serial Entrepreneur and freelance designer",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.523563,
+ 					  longitude: -0.087277)
 ant.avatar = File.open('spec/fixtures/images/avatar.jpg')
 ant.save!
 
@@ -100,8 +100,8 @@ jon = User.new(email: "jon@jon.com",
 						job_title: "Freelance Designer",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.523783,
+ 					  longitude: -0.088277)
 jon.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jon.save!
 
@@ -112,8 +112,8 @@ john = User.new(email: "jonathe@jonathe.com",
 						job_title: "Freelance Designer",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.522783,
+ 					  longitude: -0.082867)
 john.avatar = File.open('spec/fixtures/images/avatar.jpg')
 john.save!
 
@@ -124,8 +124,8 @@ gemma = User.new(email: "Gemma@gemma.com",
 						job_title: "Freelance PR",
 						location: "London",
 						bio: "",
-					  latitude: "" ,
-					  longitude: "" )
+					  latitude: 51.529363,
+ 					  longitude: -0.085927)
 gemma.avatar = File.open('spec/fixtures/images/avatar.jpg')
 gemma.save!
 
