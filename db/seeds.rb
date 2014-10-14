@@ -28,8 +28,8 @@ juan = User.new(email: "Juan@juan.com",
 						job_title: "Freelance Journalist, author and entrepreneur",
 						location: "London",
 						bio: "",
-					    latitude: 51.526804,
-					    longitude: -0.088277)
+					    latitude: "",
+					    longitude: "")
 juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
 juan.save!
 
