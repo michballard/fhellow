@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative 'helper/user_helpers'
+require_relative 'helpers/user_helpers'
 
 include SessionHelpers
 
@@ -26,15 +26,16 @@ describe 'posts' do
       expect(page).to have_content "I'm so happy"
     end
 
-    it 'has the persons name showing on the post'
-    user_sign_up
-    add_basic_details
-    click_button 'Create my profile'
-    visit '/'
-    click_link 'Post'
-    fill_in 'Content', with: "I'm so happy!"
-    click_button 'Post'
-    expect(current_path).to match /activity\/\d/
-    expect(page).to have_content 'Barnany Shute'
+    it 'has the persons name showing on the post' do
+      user_sign_up
+      add_basic_details
+      click_button 'Create my profile'
+      visit '/'
+      click_link 'Post'
+      fill_in 'Content', with: "I'm so happy!"
+      click_button 'Post'
+      expect(current_path).to match /activity\/\d/
+      expect(page).to have_content 'Barnany Shute'
+    end
   end
 end
