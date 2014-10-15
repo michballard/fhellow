@@ -1,7 +1,7 @@
 var lat = document.getElementById("lat");
 var lng = document.getElementById("lng");
 
-$("#latlng").on('click', function(){
+$(".lat", "#lng").on('click', function(){
 
  if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);

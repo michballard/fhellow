@@ -51,9 +51,9 @@ describe 'posts' do
       visit '/'
       click_link 'Post'
       fill_in 'Content', with: "I'm so happy!"
-      click_element 'Add current location'
+      find('#latlng', :text => 'Add current location').click
       click_button 'Post'
-      expect(page).to have_css('.latlng')
+      expect(page).to have_css('#latlngresult')
     end
   end
 end

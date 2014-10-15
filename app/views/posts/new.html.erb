@@ -4,9 +4,9 @@
 	<p><%= f.text_area :content %></p>
 
   <h4><%= f.label :location %></h4>
-	<div id="latlng">Add current location</div>
-  <p id="lat" type="hidden"></p>
-  <p id="lng" type="hidden"></p>
+	<div id="lng">Add current location</div>
+  <%= f.hidden_field :latitude, value: "#lat" %>
+  <%= f.hidden_field :longitude, value: "#lng"%>
 
 	<h4><%= f.label :image %></h4>
 	<p><%= f.file_field :image%></p>
