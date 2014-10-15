@@ -6,3 +6,36 @@
 <p><%= @user.linkedin %></p>
 
 <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+
+<ul>
+  <% if @user.discussing_ideas == true %>
+  <li>Discussing ideas</li>
+  <% end %>
+  <% if @user.afterwork_drinks == true %>
+  <li>Afterwork drinks</li>
+  <% end %>
+  <% if @user.collaborating == true %>
+  <li>Collaborating</li>
+  <% end %>
+  <% if @user.chat_over_a_coffee == true %>
+  <li>Chat over a coffee</li>
+  <% end %>
+  <% if @user.lunch_buddy == true %>
+  <li>Lunch buddy</li>
+  <% end %>
+  <% if @user.advising == true %>
+  <li>Advising</li>
+  <% end %>
+</ul>
+
+
+<section>
+ <h2> Congratulations - you are now Fhellow! </h2>
+ <h2> Where would you like to go now? </h2>
+<ul>
+ <li><%= link_to "See what's going on in the community", activity_user_path(@user.id) %></li>
+ <li><%= link_to "Find other Fhellows", homepage_index_path %></li>
+ <li><%= link_to "Create a post or status", new_user_post_path(@user.id) %></li>
+ <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
+</ul>
+</section>

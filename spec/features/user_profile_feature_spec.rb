@@ -78,5 +78,35 @@ describe 'user profiles' do
       expect(page).to have_content("Lunch buddy")
       expect(page).to have_content("Advising")
       end
+
+    context 'links on the show page' do
+
+      before do 
+        user_sign_up
+        add_basic_details
+        click_button('Create my profile')
+      end
+
+
+      it 'should have a link available to see community activity' do 
+        click_link("See what's going on in the community")
+        expect(current_path).to match /activity\/\d+/
+      end
+
+      it 'should have a link available to find other fhellows' do
+        click_link("Find other Fhellows")
+        expect(current_path).to eq ('/homepage')
+      end
+
+      it 'should have a link available to create a post' do 
+        click_link("Create a post or status")
+        expect(current_path).to match /user\/\d+\/posts\/new/
+      end
+
+      it 'should have a link available to edit your profile' do 
+        click_link("Edit your profile")
+        expect(current_path).to match /users\/\d+\/edit_profile/
+      end
+    end
   end
 end
