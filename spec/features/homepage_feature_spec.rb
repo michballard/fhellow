@@ -1,4 +1,7 @@
 require 'rails_helper'
+require_relative 'helpers/user_helpers'
+
+include SessionHelpers
 
 describe "maps" do
 
@@ -74,6 +77,9 @@ describe "navigation" do
     end
 
     it "should have a link for 'Post' page" do
+      visit '/'
+      expect(page).not_to have_link 'Post'
+      user_sign_up
       visit '/'
       expect(page).to have_link 'Post'
     end
