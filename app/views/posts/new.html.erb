@@ -1,7 +1,17 @@
 <%= form_for [@user, @post] do |f| %>
-<%= f.label :content %>
-<%= f.text_field :content %>
-<%= f.label :image %>
-<%= f.file_field :image%>
-<%= f.submit "Post" %>
+
+	<h4><%= f.label :content %></h4>
+	<p><%= f.text_area :content %></p>
+
+  <h4><%= f.label :location %></h4>
+	<div id="latlng">Add current location</div>
+  <p id="lat" type="hidden"></p>
+  <p id="lng" type="hidden"></p>
+
+	<h4><%= f.label :image %></h4>
+	<p><%= f.file_field :image%></p>
+
+	<p><%= f.submit "Post" %></p>
+
 <% end %> 
+
