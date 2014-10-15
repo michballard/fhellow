@@ -6,3 +6,24 @@
 <p><%= @user.linkedin %></p>
 
 <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+
+<ul>
+  <% if @user.discussing_ideas == true %>
+  <li>Discussing ideas</li>
+  <% end %>
+  <% if @user.afterwork_drinks == true %>
+  <li>Afterwork drinks</li>
+  <% end %>
+  <% if @user.collaborating == true %>
+  <li>Collaborating</li>
+  <% end %>
+  <% if @user.chat_over_a_coffee == true %>
+  <li>Chat over a coffee</li>
+  <% end %>
+  <% if @user.lunch_buddy == true %>
+  <li>Lunch buddy</li>
+  <% end %>
+  <% if @user.advising == true %>
+  <li>Advising</li>
+  <% end %>
+</ul>
