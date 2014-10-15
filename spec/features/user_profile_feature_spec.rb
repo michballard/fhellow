@@ -56,8 +56,9 @@ describe 'user profiles' do
 
     it 'is able to sign out' do
       user_sign_up
+      visit '/'
       click_link "Sign out"
-      expect(page).to have_content "Goodbye!"
+      expect(page).to have_content "Signed out successfully"
     end
   end
 end
