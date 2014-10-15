@@ -139,6 +139,7 @@ message_1 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      aliquyam erat, sed diam voluptua.",
                      user_id: 1)
 
+message_1.image = File.open('spec/fixtures/images/post_pics/post_1.jpg')
 message_1.save!
 
 message_2 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
@@ -147,6 +148,7 @@ message_2 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 2)
+message_2.image = File.open('spec/fixtures/images/post_pics/post_2.jpg')
 message_2.save!
 
 message_3 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
@@ -155,6 +157,7 @@ message_3 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 3)
+message_3.image = File.open('spec/fixtures/images/post_pics/post_3.jpg')
 message_3.save!
 
 
@@ -164,6 +167,7 @@ message_4 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 4)
+message_4.image = File.open('spec/fixtures/images/post_pics/post_4.jpg')
 message_4.save!
 
 
@@ -173,6 +177,7 @@ message_5 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 5)
+message_5.image = File.open('spec/fixtures/images/post_pics/post_5.jpg')
 message_5.save!
 
 message_6 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
@@ -181,38 +186,8 @@ message_6 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 6)
+message_6.image = File.open('spec/fixtures/images/post_pics/post_6.jpg')
 message_6.save!
 
 
-message_7 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                     aliquyam erat, sed diam voluptua.",
-                     user_id: 7)
-message_7.save!
-
-message_8 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                     aliquyam erat, sed diam voluptua.",
-                     user_id: 8)
-message_8.save!
-
-message_9 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                     aliquyam erat, sed diam voluptua.",
-                     user_id: 9)
-message_9.save!
-
-message_10 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                     aliquyam erat, sed diam voluptua.",
-                     user_id: 10)
-message_10.save!
 
