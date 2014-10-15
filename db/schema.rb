@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(version: 20141015154316) do
     t.string   "linkedin"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "discussing_ideas"
+    t.boolean  "afterwork_drinks"
+    t.boolean  "collaborating"
+    t.boolean  "chat_over_a_coffee"
+    t.boolean  "lunch_buddy"
+    t.boolean  "advising"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

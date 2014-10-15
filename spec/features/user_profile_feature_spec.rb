@@ -60,5 +60,23 @@ describe 'user profiles' do
       click_link "Sign out"
       expect(page).to have_content "Signed out successfully"
     end
+
+    it 'should have a show page' do
+      user_sign_up
+      add_basic_details
+      check("Discussing ideas")
+      check("Afterwork drinks")
+      check("Collaborating")
+      check("Chat over a coffee")
+      check("Lunch buddy")
+      check("Advising")
+      click_button('Create my profile')
+      expect(page).to have_content("Discussing ideas")
+      expect(page).to have_content("Afterwork drinks")
+      expect(page).to have_content("Collaborating")
+      expect(page).to have_content("Chat over a coffee")
+      expect(page).to have_content("Lunch buddy")
+      expect(page).to have_content("Advising")
+      end
   end
 end
