@@ -9,7 +9,7 @@ describe 'user profiles' do
 
   	it 'gets taken to the edit page after signing up' do
       user_sign_up
-      expect(current_path).to match /users\/\d\/edit_profile/
+      expect(current_path).to match /users\/\d+\/edit_profile/
 	  end
 
     it 'can edit basic profile details' do
@@ -17,7 +17,7 @@ describe 'user profiles' do
       expect(page).to have_content('First name')
       add_basic_details
       click_button('Create my profile')
-      expect(current_path).to match /users\/\d\/show/
+      expect(current_path).to match /users\/\d+\/show/
       expect(page).to have_content('Barnany Shute')
       expect(page).to have_content('Freelance film maker')
       expect(page).to have_content('Hi I\'m Barney')
