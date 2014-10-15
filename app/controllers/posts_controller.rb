@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
     def create
         @user = User.find(params[:user_id])
-        @post = @user.posts.create(params[:post].permit(:content))
+        @post = @user.posts.create(params[:post].permit(:content, :image))
         redirect_to activity_user_path(@user)
     end
 

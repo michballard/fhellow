@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
+Post.destroy_all
 
 
 barnany = User.new(id: 1, email: "barnany@barnany.com",
@@ -130,7 +131,6 @@ gemma.avatar = File.open('spec/fixtures/images/profile_pics/User_10.jpg')
 gemma.save!
 
 
-Post.destroy_all
 
 message_1 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
                      magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
