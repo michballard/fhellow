@@ -18,7 +18,7 @@ barnany = User.new(id: 1, email: "barnany@barnany.com",
 						bio: "Hi I'm Barney",
  					  latitude: 51.521803,
  					  longitude: -0.081277)
-barnany.avatar = File.open('spec/fixtures/images/avatar.jpg')
+barnany.avatar = File.open('spec/fixtures/images/profile_pics/User_1.jpg')
 barnany.save!
 
 juan = User.new(id: 2, email: "Juan@juan.com",
@@ -30,7 +30,7 @@ juan = User.new(id: 2, email: "Juan@juan.com",
 						bio: "",
 					    latitude: 51.512803,
  					  longitude: -0.082287)
-juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
+juan.avatar = File.open('spec/fixtures/images/profile_pics/User_2.jpg')
 juan.save!
 
 jake = User.new(id: 3, email: "Jake@Jake.com",
@@ -42,7 +42,7 @@ jake = User.new(id: 3, email: "Jake@Jake.com",
 						bio: "",
 					  latitude: 51.533803,
  					  longitude: -0.083297)
-jake.avatar = File.open('spec/fixtures/images/avatar.jpg')
+jake.avatar = File.open('spec/fixtures/images/profile_pics/User_3.jpg')
 jake.save!
 
 paul = User.new(id: 4, email: "Paul@paul.com",
@@ -54,7 +54,7 @@ paul = User.new(id: 4, email: "Paul@paul.com",
 						bio: "",
 					  latitude: 51.515303,
  					  longitude: -0.084827)
-paul.avatar = File.open('spec/fixtures/images/avatar.jpg')
+paul.avatar = File.open('spec/fixtures/images/profile_pics/User_4.jpg')
 paul.save!
 
 emanuel = User.new(id: 5, email: "Emanuel@emanuel.com",
@@ -66,7 +66,7 @@ emanuel = User.new(id: 5, email: "Emanuel@emanuel.com",
 						bio: "",
 					  latitude: 51.512003,
  					  longitude: -0.083857)
-emanuel.avatar = File.open('spec/fixtures/images/avatar.jpg')
+emanuel.avatar = File.open('spec/fixtures/images/profile_pics/User_5.jpg')
 emanuel.save!
 
 samantha = User.new(id: 6, email: "Samantha@sam.com",
@@ -78,7 +78,7 @@ samantha = User.new(id: 6, email: "Samantha@sam.com",
 						bio: "",
 					  latitude: 51.579303,
  					  longitude: -0.083677)
-samantha.avatar = File.open('spec/fixtures/images/avatar.jpg')
+samantha.avatar = File.open('spec/fixtures/images/profile_pics/User_6.jpg')
 samantha.save!
 
 ant = User.new(id: 7, email: "ant@ant.com",
@@ -90,7 +90,7 @@ ant = User.new(id: 7, email: "ant@ant.com",
 						bio: "",
 					  latitude: 51.523563,
  					  longitude: -0.087277)
-ant.avatar = File.open('spec/fixtures/images/avatar.jpg')
+ant.avatar = File.open('spec/fixtures/images/profile_pics/User_7.jpg')
 ant.save!
 
 jon = User.new(id: 8, email: "jon@jon.com",
@@ -102,19 +102,19 @@ jon = User.new(id: 8, email: "jon@jon.com",
 						bio: "",
 					  latitude: 51.523783,
  					  longitude: -0.088277)
-jon.avatar = File.open('spec/fixtures/images/avatar.jpg')
+jon.avatar = File.open('spec/fixtures/images/profile_pics/User_8.jpg')
 jon.save!
 
 john = User.new(id: 9, email: "jonathe@jonathe.com",
 						password: "123456789",
-						name_first: "Jon",
+						name_first: "Jonathon",
 						name_last: "Jackson",
 						job_title: "Freelance Designer",
 						location: "London",
 						bio: "",
 					  latitude: 51.522783,
  					  longitude: -0.082867)
-john.avatar = File.open('spec/fixtures/images/avatar.jpg')
+john.avatar = File.open('spec/fixtures/images/profile_pics/User_9.jpg')
 john.save!
 
 gemma = User.new(id: 10, email: "Gemma@gemma.com",
@@ -126,7 +126,7 @@ gemma = User.new(id: 10, email: "Gemma@gemma.com",
 						bio: "",
 					  latitude: 51.529363,
  					  longitude: -0.085927)
-gemma.avatar = File.open('spec/fixtures/images/avatar.jpg')
+gemma.avatar = File.open('spec/fixtures/images/profile_pics/User_10.jpg')
 gemma.save!
 
 
@@ -138,6 +138,7 @@ message_1 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirm
                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
                      aliquyam erat, sed diam voluptua.",
                      user_id: 1)
+
 message_1.save!
 
 message_2 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
