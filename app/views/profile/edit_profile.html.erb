@@ -34,6 +34,21 @@
 		<%= f.text_field :bio%>
 	</div>
 
+    <div>
+        <%= f.check_box(:discussing_ideas) %>
+        <%= f.label(:discussing_ideas, "Discussing ideas") %>
+        <%= f.check_box(:afterwork_drinks) %>
+        <%= f.label(:afterwork_drinks, "Afterwork drinks") %>
+        <%= f.check_box(:collaborating) %>
+        <%= f.label(:collaborating, "Collaborating") %>
+        <%= f.check_box(:chat_over_a_coffee) %>
+        <%= f.label(:chat_over_a_coffee, "Chat over a coffee") %>
+        <%= f.check_box(:lunch_buddy) %>
+        <%= f.label(:lunch_buddy, "Lunch buddy") %>
+        <%= f.check_box(:advising) %>
+        <%= f.label(:advising, "Advising") %>
+    </div>
+
 	<div>
 		<%= f.label :"profile picture" %>
 		<%= f.file_field :avatar %>
