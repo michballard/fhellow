@@ -9,7 +9,7 @@
 User.destroy_all
 
 
-barnany = User.new(email: "barnany@barnany.com",
+barnany = User.new(id: 1, email: "barnany@barnany.com",
 						password: "123456789",
 						name_first: "Barnany",
 						name_last: "Shute",
@@ -21,7 +21,7 @@ barnany = User.new(email: "barnany@barnany.com",
 barnany.avatar = File.open('spec/fixtures/images/avatar.jpg')
 barnany.save!
 
-juan = User.new(email: "Juan@juan.com",
+juan = User.new(id: 2, email: "Juan@juan.com",
 						password: "123456789",
 						name_first: "Juan",
 						name_last: "Manuel",
@@ -33,7 +33,7 @@ juan = User.new(email: "Juan@juan.com",
 juan.avatar = File.open('spec/fixtures/images/avatar.jpg')
 juan.save!
 
-jake = User.new(email: "Jake@Jake.com",
+jake = User.new(id: 3, email: "Jake@Jake.com",
 						password: "123456789",
 						name_first: "Jake",
 						name_last: "Sanderson",
@@ -45,7 +45,7 @@ jake = User.new(email: "Jake@Jake.com",
 jake.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jake.save!
 
-paul = User.new(email: "Paul@paul.com",
+paul = User.new(id: 4, email: "Paul@paul.com",
 						password: "123456789",
 						name_first: "Paul",
 						name_last: "Spencer",
@@ -57,7 +57,7 @@ paul = User.new(email: "Paul@paul.com",
 paul.avatar = File.open('spec/fixtures/images/avatar.jpg')
 paul.save!
 
-emanuel = User.new(email: "Emanuel@emanuel.com",
+emanuel = User.new(id: 5, email: "Emanuel@emanuel.com",
 						password: "123456789",
 						name_first: "Emanuel",
 						name_last: "Van De Hamiltonson",
@@ -69,7 +69,7 @@ emanuel = User.new(email: "Emanuel@emanuel.com",
 emanuel.avatar = File.open('spec/fixtures/images/avatar.jpg')
 emanuel.save!
 
-samantha = User.new(email: "Samantha@sam.com",
+samantha = User.new(id: 6, email: "Samantha@sam.com",
 						password: "123456789",
 						name_first: "Samantha",
 						name_last: "Hilby",
@@ -81,7 +81,7 @@ samantha = User.new(email: "Samantha@sam.com",
 samantha.avatar = File.open('spec/fixtures/images/avatar.jpg')
 samantha.save!
 
-ant = User.new(email: "ant@ant.com",
+ant = User.new(id: 7, email: "ant@ant.com",
 						password: "123456789",
 						name_first: "Anthony",
 						name_last: "Ward Katavonichairna",
@@ -93,7 +93,7 @@ ant = User.new(email: "ant@ant.com",
 ant.avatar = File.open('spec/fixtures/images/avatar.jpg')
 ant.save!
 
-jon = User.new(email: "jon@jon.com",
+jon = User.new(id: 8, email: "jon@jon.com",
 						password: "123456789",
 						name_first: "Jon",
 						name_last: "Jackson",
@@ -105,7 +105,7 @@ jon = User.new(email: "jon@jon.com",
 jon.avatar = File.open('spec/fixtures/images/avatar.jpg')
 jon.save!
 
-john = User.new(email: "jonathe@jonathe.com",
+john = User.new(id: 9, email: "jonathe@jonathe.com",
 						password: "123456789",
 						name_first: "Jon",
 						name_last: "Jackson",
@@ -117,7 +117,7 @@ john = User.new(email: "jonathe@jonathe.com",
 john.avatar = File.open('spec/fixtures/images/avatar.jpg')
 john.save!
 
-gemma = User.new(email: "Gemma@gemma.com",
+gemma = User.new(id: 10, email: "Gemma@gemma.com",
 						password: "123456789",
 						name_first: "Gemma",
 						name_last: "Gaven",
@@ -128,4 +128,90 @@ gemma = User.new(email: "Gemma@gemma.com",
  					  longitude: -0.085927)
 gemma.avatar = File.open('spec/fixtures/images/avatar.jpg')
 gemma.save!
+
+
+Post.destroy_all
+
+message_1 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 1)
+message_1.save!
+
+message_2 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 2)
+message_2.save!
+
+message_3 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 3)
+message_3.save!
+
+
+message_4 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 4)
+message_4.save!
+
+
+message_5 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 5)
+message_5.save!
+
+message_6 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 6)
+message_6.save!
+
+
+message_7 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 7)
+message_7.save!
+
+message_8 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 8)
+message_8.save!
+
+message_9 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 9)
+message_9.save!
+
+message_10 = Post.new(content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                     magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                     sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                     aliquyam erat, sed diam voluptua.",
+                     user_id: 10)
+message_10.save!
 
