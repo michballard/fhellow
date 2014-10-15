@@ -44,5 +44,15 @@ describe 'posts' do
       expect(page).to have_css('.post_image')
     end 
 
+    it 'a person can add their current location to a post by clicking  button'
+      user_sign_up
+      add_basic_details
+      click_button 'Create my profile'
+      visit '/'
+      click_link 'Post'
+      fill_in 'Content', with: "I'm so happy!"
+      click_button 'Add current location'
+      click_button 'Post'
+      expect(page).to have_css('.latlng')
   end
 end
