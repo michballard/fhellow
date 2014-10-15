@@ -39,8 +39,9 @@ describe 'posts' do
       visit '/'
       click_link 'Post'
       fill_in 'Content', with: "I'm so happy!"
+      attach_file 'post[image]', ('spec/fixtures/images/post_pics/outdoors.jpg')
       click_button 'Post'
-
+      expect(page).to have_css('.post_image')
     end 
 
   end
