@@ -1,1 +1,7 @@
-"I'm so happy"
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <div>
+      <%= post.content %>
+    </div>
+  <% end %>
+<% end %>
