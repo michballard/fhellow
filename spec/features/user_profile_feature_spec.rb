@@ -53,4 +53,13 @@ describe 'user profiles' do
       # expect(@user.avatar_file_name).to eq "avatar.jpg"
     end 
   end 
+
+  context 'a user is signed in' do
+
+    it 'is able to sign out' do
+      user_sign_up
+      click_link "Sign out"
+      expect(page).to have_content "Goodbye!"
+    end
+  end
 end
