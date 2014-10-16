@@ -3,7 +3,7 @@
 	<h4><%= f.label :content %></h4>
 	<p><%= f.text_area :content %></p>
 
-  <div id='latlng'><%= f.label :add_current_location %></div>
+  <button><%= f.label :add_current_location, id: 'latlng' %></button>
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
 
