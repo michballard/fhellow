@@ -1,7 +1,8 @@
 class HomepageController < ApplicationController
 
   def index
-    @users = User.all
+    @users = []
+    # @users = User.all
   end
 
 end
