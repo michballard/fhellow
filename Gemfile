@@ -34,7 +34,8 @@ group :test do
 	gem 'database_cleaner'
 	gem 'jasmine-rails'
 	gem 'poltergeist'
-    gem 'launchy'
+  gem 'launchy'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 # Add gem for user

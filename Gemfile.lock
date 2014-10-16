@@ -206,6 +206,7 @@ DEPENDENCIES
   omniauth-facebook
   paperclip
   pg
+  phantomjs
   poltergeist
   rails (= 4.1.6)
   rspec-rails
