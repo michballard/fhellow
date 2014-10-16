@@ -1,19 +1,22 @@
-var lat = document.getElementById("lat");
-var lng = document.getElementById("lng");
+/*var lat = document.getElementById("#post_lat");*/
+/*var lng = document.getElementById("#post_lng");*/
 
-$(".lat", "#lng").on('click', function(){
+  $("#latlng").on('click', function(){
 
- if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else
-    {
-      lat.innerHTML = ("Geolocation is not supported by this browser.");
-    }
-});
+   if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $('#post_latitude').val(position.coords.latitude);
+        $('#post_longitude').val(position.coords.longitude);
+   })
+  /* else {*/
+      //alert("Geolocation is not supported by this browser.");
+      /*})*/
+    };
+  });
 
-function showPosition(position) {
-    lat.innerHTML = position.coords.latitude;
-    lng.innerHTML = position.coords.longitude;
-}
+
+/*function showPosition(position) {*/
+    //lat.val(position.coords.latitude);
+    //lng.val( position.coords.longitude);
+//}
 

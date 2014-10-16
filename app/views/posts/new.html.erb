@@ -3,15 +3,13 @@
 	<h4><%= f.label :content %></h4>
 	<p><%= f.text_area :content %></p>
 
-  <h4><%= f.label :location %></h4>
-	<div id="lng">Add current location</div>
-  <%= f.hidden_field :latitude, value: "#lat" %>
-  <%= f.hidden_field :longitude, value: "#lng"%>
+  <div id='latlng'><%= f.label :add_current_location %></div>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
 
 	<h4><%= f.label :image %></h4>
 	<p><%= f.file_field :image%></p>
 
 	<p><%= f.submit "Post" %></p>
 
-<% end %> 
-
+<% end %>
