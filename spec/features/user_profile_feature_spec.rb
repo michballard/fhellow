@@ -52,7 +52,7 @@ describe 'user profiles' do
     end
 
     it 'can add a user type' do
-      bob = User.create(email: 'bob@test.com', password: '1234567890', name_first: 'Bob')
+      User.create(email: 'bob@test.com', password: '1234567890', name_first: 'Bob')
       visit '/'
       click_link "Log in"
       fill_in('Email', with: 'bob@test.com')
@@ -63,7 +63,7 @@ describe 'user profiles' do
       add_bob_details
       select('Freelancer', :from => 'user[user_type]')
       click_button('Create my profile')
-      p bob
+      bob = User.first
       expect(bob.user_type).to eq 'Freelancer'
     end
   end
