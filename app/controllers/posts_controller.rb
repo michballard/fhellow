@@ -11,4 +11,8 @@ class PostsController < ApplicationController
         redirect_to activity_user_path(@user)
     end
 
+    def edit 
+    	@post = Post.find(params[:id])
+    end 
+
 end

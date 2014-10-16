@@ -8,6 +8,7 @@
 	      <div id="latlngresult"><p><%= post.latitude %></p><p><%= post.longitude %></p></div>
 	    <% end %>
       <p><%= time_ago_in_words(post.created_at) %> ago</p>
+      <%= link_to "Edit post", edit_user_post_path(post) %>
     </div>
   <% end %>
 <% end %>
