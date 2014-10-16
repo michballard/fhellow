@@ -53,7 +53,7 @@ describe 'posts' do
       fill_in 'Content', with: "I'm so happy!"
       find('#latlng', :text => 'Add current location').click
       click_button 'Post'
-      page.has_css?('#latlngresult')
+      expect(page).to have_css('#latlngresult')
     end
   end
 end
