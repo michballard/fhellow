@@ -32,7 +32,7 @@ describe 'posts' do
       expect(page).to have_content 'less than a minute ago'
     end
 
-    it 'allows an image to be added to a post' do 
+    it 'allows an image to be added to a post' do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
@@ -42,9 +42,9 @@ describe 'posts' do
       attach_file 'post[image]', ('spec/fixtures/images/post_pics/post_1.jpg')
       click_button 'Post'
       expect(page).to have_css('.post_image')
-    end 
+    end
 
-    it 'a person can add their current location to a post by clicking  button' do 
+    it 'a person can add their current location to a post by clicking  button' do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
@@ -53,7 +53,7 @@ describe 'posts' do
       fill_in 'Content', with: "I'm so happy!"
       find('#latlng', :text => 'Add current location').click
       click_button 'Post'
-      expect(page).to have_css('#latlngresult')
+      page.has_css?('#latlngresult')
     end
   end
 end
