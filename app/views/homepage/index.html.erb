@@ -16,20 +16,21 @@
         <span>Enter your post code  </span>
         <span>Proximity  </span>
         <span>Type of Fhellow  </span>
-        <div id = "interests-form">
+        <div id="interests-form">
             <form> Interested in
-                <input type="checkbox" name="discussing ideas">Discussing Ideas</input >
+                <input type="checkbox" name="discussing_ideas">Discussing Ideas</input >
                 <input type="checkbox" name="collaborating">Collaborating</input >
-                <input type="checkbox" name="afterwork-drinks">Afterwork drinks</input >
-                <input type="checkbox" name="chat-over-a-coffee">Chat over a coffee</input >
-                <input type="checkbox" name="lunch buddy">Lunch buddy</input >
+                <input type="checkbox" name="afterwork_drinks">Afterwork drinks</input >
+                <input type="checkbox" name="chat_over_a_coffee">Chat over a coffee</input >
+                <input type="checkbox" name="lunch_buddy">Lunch buddy</input >
                 <input type="checkbox" name="advising">Advising</input >
             </form>
         </div>
     </div>
     <div id="results">
+    <ul class="list">
         <% @users.each do |user| %>
-            <% if user.longitude && user.latitude %>
+            <li><% if user.longitude && user.latitude %>
                 <div class='lat'><%= user.latitude %></div>
                 <div class='lng'><%= user.longitude %></div>
             <% end %>
@@ -39,7 +40,8 @@
           <p><%= user.location %></p>
           <p><%= user.bio %></p>
           <span class="interests"><% user.interests %></span>
-        <% end %>
+        <% end %></li>
+        </ul>
     </div>
     </section>
 <% else %>

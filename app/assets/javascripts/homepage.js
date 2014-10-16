@@ -12,8 +12,6 @@ $(document).ready(function() {
 
 
   $.get("/api/users", function(users){
-  
-    console.log(users);
     users.forEach(function(user){
         map.addMarker({
         lat: user.latitude,
@@ -50,12 +48,31 @@ $(document).ready(function() {
   },
 });
 
-  var options = {
-  valueNames: [ 'interests' ]
-};
 
-  var userList = new List('search-container', options);
+  $('#interests-form').on("change", function(){ 
 
+    var checkedValues = $('input:checkbox:checked').map(function() {
+    return this.name;
+}).get();
+
+    $.get("/api/users?interests=" + checkedValues.join(","), function(users){
+      console.log(users);
+
+    });
+
+  });
+
+// $('input[type="checkbox"][name="advising"]').change(function() {
+//      if(this.checked) {
+//         $.get("/api/users", function(users){
+//           users.forEach(function(user){
+//             return(user if (user.this.name == true))
+//          var options = {
+//           valueNames: [ 'interests' ]
+//          };
+//          var userList = new List('search-container', options);
+//          };
+//       })
 });
 
 
