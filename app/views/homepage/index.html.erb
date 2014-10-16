@@ -10,6 +10,22 @@
 <div id='map'></div>
 <% link_to %>
 <% if @users.any? %>
+<section><h2>Find fellow freelancers and entrepreneurs working around you</h2>
+<h4> Discuss project, share advice, collaborate, meet up and start creating your own work community</h4>
+<span>Enter your post code  </span>
+<span>Proximity  </span>
+<span>Type of Fhellow  </span>
+<div id = "interests-form">
+	<form> Interested in
+		<input type="checkbox" name="discussing ideas">Discussing Ideas</input >
+		<input type="checkbox" name="collaborating">Collaborating</input >
+		<input type="checkbox" name="afterwork-drinks">Afterwork drinks</input >
+		<input type="checkbox" name="chat-over-a-coffee">Chat over a coffee</input >
+		<input type="checkbox" name="lunch buddy">Lunch buddy</input >
+		<input type="checkbox" name="advising">Advising</input >
+	</form>
+</div>
+ </section>
 	<% @users.each do |user| %>
 		<% if user.longitude && user.latitude %>
 			<div class='lat'><%= user.latitude %></div>
