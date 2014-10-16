@@ -49,6 +49,13 @@ $(document).ready(function() {
     alert("Your browser does not support geolocation");
   },
 });
+
+  var options = {
+  valueNames: [ 'interests' ]
+};
+
+  var userList = new List('search-container', options);
+
 });
 
 

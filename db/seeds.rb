@@ -18,7 +18,13 @@ barnany = User.new(id: 1, email: "barnany@barnany.com",
 						location: "London",
 						bio: "Hi I'm Barney",
  					  latitude: 51.521803,
- 					  longitude: -0.081277)
+ 					  longitude: -0.081277,
+                      discussing_ideas: true, 
+                      afterwork_drinks: false, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: false)
 barnany.avatar = File.open('spec/fixtures/images/profile_pics/User_1.jpg')
 barnany.save!
 
@@ -30,7 +36,13 @@ juan = User.new(id: 2, email: "Juan@juan.com",
 						location: "London",
 						bio: "",
 					    latitude: 51.512803,
- 					  longitude: -0.082287)
+ 					  longitude: -0.082287,
+                      discussing_ideas: false, 
+                      afterwork_drinks: true, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: false)
 juan.avatar = File.open('spec/fixtures/images/profile_pics/User_2.jpg')
 juan.save!
 
@@ -42,7 +54,13 @@ jake = User.new(id: 3, email: "Jake@Jake.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.533803,
- 					  longitude: -0.083297)
+ 					  longitude: -0.083297,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: true, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: false)
 jake.avatar = File.open('spec/fixtures/images/profile_pics/User_3.jpg')
 jake.save!
 
@@ -54,7 +72,13 @@ paul = User.new(id: 4, email: "Paul@paul.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.515303,
- 					  longitude: -0.084827)
+ 					  longitude: -0.084827,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: false, 
+                      chat_over_a_coffee: true, 
+                      lunch_buddy: false, 
+                      advising: false)
 paul.avatar = File.open('spec/fixtures/images/profile_pics/User_4.jpg')
 paul.save!
 
@@ -66,7 +90,13 @@ emanuel = User.new(id: 5, email: "Emanuel@emanuel.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.512003,
- 					  longitude: -0.083857)
+ 					  longitude: -0.083857,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: true, 
+                      advising: false)
 emanuel.avatar = File.open('spec/fixtures/images/profile_pics/User_5.jpg')
 emanuel.save!
 
@@ -78,7 +108,13 @@ samantha = User.new(id: 6, email: "Samantha@sam.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.579303,
- 					  longitude: -0.083677)
+ 					  longitude: -0.083677,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: true)
 samantha.avatar = File.open('spec/fixtures/images/profile_pics/User_6.jpg')
 samantha.save!
 
@@ -90,7 +126,13 @@ ant = User.new(id: 7, email: "ant@ant.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.523563,
- 					  longitude: -0.087277)
+ 					  longitude: -0.087277,
+                      discussing_ideas: true, 
+                      afterwork_drinks: true, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: false)
 ant.avatar = File.open('spec/fixtures/images/profile_pics/User_7.jpg')
 ant.save!
 
@@ -102,7 +144,13 @@ jon = User.new(id: 8, email: "jon@jon.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.523783,
- 					  longitude: -0.088277)
+ 					  longitude: -0.088277,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: true, 
+                      chat_over_a_coffee: true, 
+                      lunch_buddy: false, 
+                      advising: false)
 jon.avatar = File.open('spec/fixtures/images/profile_pics/User_8.jpg')
 jon.save!
 
@@ -114,7 +162,13 @@ john = User.new(id: 9, email: "jonathe@jonathe.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.522783,
- 					  longitude: -0.082867)
+ 					  longitude: -0.082867,
+                      discussing_ideas: true, 
+                      afterwork_drinks: true, 
+                      collaborating: true, 
+                      chat_over_a_coffee: true, 
+                      lunch_buddy: true, 
+                      advising: true)
 john.avatar = File.open('spec/fixtures/images/profile_pics/User_9.jpg')
 john.save!
 
@@ -126,7 +180,13 @@ gemma = User.new(id: 10, email: "Gemma@gemma.com",
 						location: "London",
 						bio: "",
 					  latitude: 51.529363,
- 					  longitude: -0.085927)
+ 					  longitude: -0.085927,
+                      discussing_ideas: false, 
+                      afterwork_drinks: false, 
+                      collaborating: false, 
+                      chat_over_a_coffee: false, 
+                      lunch_buddy: false, 
+                      advising: false)
 gemma.avatar = File.open('spec/fixtures/images/profile_pics/User_10.jpg')
 gemma.save!
 
