@@ -16,4 +16,9 @@ module SessionHelpers
     fill_in('user[bio]', with: "Hi I'm Barney")
 	end
 
+    def add_bob_details
+        fill_in('user[name_last]', with: 'Shute')
+        fill_in('user[job_title]', with: 'Freelance film maker')
+    end
+
 end 

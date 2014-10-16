@@ -60,8 +60,10 @@ describe 'user profiles' do
       click_button "Log in"
       click_link("Bob")
       click_link("Edit your profile")
+      add_bob_details
       select('Freelancer', :from => 'user[user_type]')
       click_button('Create my profile')
+      p bob
       expect(bob.user_type).to eq 'Freelancer'
     end
   end
