@@ -37,6 +37,17 @@ describe "maps" do
     end
   end
 
+describe 'links' do
+  context 'activity page' do
+    it 'when clicked the activity page link goes to the activity page' do
+      user_sign_up
+      add_basic_details
+      visit '/'
+      click_link 'Activity'
+      expect(current_path).to match /activity\/\d+/
+    end
+  end
+end
 #  context "many fhellows on map" do
     #before do
       #User.create(email: "barnany@barnany.com",
