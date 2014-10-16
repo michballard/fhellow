@@ -11,7 +11,7 @@ class ProfileController < Devise::RegistrationsController
 
   def update_profile
   	@user = User.find(params[:id])
-  	@user.update(params[:user].permit(:name_first, :name_last, :email, :"job_title", :bio, :town, :country, :website, :linkedin, :discussing_ideas, :afterwork_drinks, :collaborating, :chat_over_a_coffee, :lunch_buddy, :advising, :user_type ))
+  	@user.update(params[:user].permit(:name_first, :name_last, :email, :"job_title", :bio, :town, :country, :website, :linkedin, :discussing_ideas, :afterwork_drinks, :collaborating, :chat_over_a_coffee, :lunch_buddy, :advising, :user_type, :avatar ))
   	redirect_to user_profile_path(@user)
   end
 

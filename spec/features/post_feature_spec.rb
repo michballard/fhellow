@@ -5,7 +5,7 @@ require_relative 'helpers/post_helpers'
 include SessionHelpers
 
 describe 'posts' do
-  context 'from homepage' do
+  context 'adding a post' do
 
     it 'a person can post a note when logged in' do
       user_sign_up
@@ -44,21 +44,34 @@ describe 'posts' do
       expect(page).to have_css('.post_image')
     end
   end
-end
 
-describe 'posts with location', js: true do
-  context 'from homepage' do
-
-    it 'a person can add their current location to a post by clicking button' do
+  context 'editing a post' do
+  	it 'allows a user to edit a post from the activity page' do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
-      visit '/'
-      click_link 'Post'
-      fill_in 'Content', with: "I'm so happy!"
-      find('#latlng', :text => 'Add current location').click
-      click_button 'Post'     
-      expect(page).to have_css('#latlngresult')
-    end
+      add_post
+      click_link 'Edit post'
+      fill_in 'Content', with: "I'm not happy!"
+      click_on 'Update Post'
+      expect(current_path).to match /activity\/\d+/
+      expect(page).to have_content "I'm not happy!"
+  	end
   end
 end
+
+# describe 'posts with location' do
+#   context 'from homepage' do
+#     it 'a person can add their current location to a post by clicking button', js: true do
+#       user_sign_up
+#       add_basic_details
+#       click_button 'Create my profile'
+#       visit '/'
+#       click_link 'Post'
+#       fill_in 'Content', with: "I'm so happy!"
+#       click_button('Add current location')
+#       click_button 'Post'
+#       expect(page).to have_css('#latlngresult')
+#     end
+#   end
+# end

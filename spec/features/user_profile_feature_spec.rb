@@ -1,5 +1,6 @@
 require 'rails_helper'
 require_relative 'helpers/user_helpers'
+require_relative 'helpers/post_helpers'
 
 include SessionHelpers
 
@@ -122,6 +123,20 @@ describe 'user profiles' do
       it 'should have a link available to edit your profile' do 
         click_link("Edit your profile")
         expect(current_path).to match /users\/\d+\/edit_profile/
+      end
+    end
+
+    context 'user posts' do
+       before do 
+        user_sign_up
+        add_basic_details
+        click_button('Create my profile')
+        add_post
+      end
+
+      it 'should show on their profile page' do
+        click_link 'Barnany'
+        expect(page).to have_content "I'm so happy!"
       end
     end
   end
