@@ -135,7 +135,8 @@ describe 'user profiles' do
       end
 
       it 'should show on their profile page' do
-        
+        click_link 'Barnany'
+        expect(page).to have_content "I'm so happy!"
       end
     end
   end

@@ -28,6 +28,11 @@
   <% end %>
 </ul>
 
+<% if @user.posts.any? %>
+  <%= render @user.posts.reverse %>
+<% else %>
+   <p>No posts yet</p>
+<% end %>
 
 <section>
  <h2> Congratulations - you are now Fhellow! </h2>
