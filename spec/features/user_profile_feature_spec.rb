@@ -50,6 +50,20 @@ describe 'user profiles' do
       expect(page).to have_css('.avatar')
       # expect(@user.avatar_file_name).to eq "avatar.jpg"
     end
+
+    it 'can add a user type' do
+      bob = User.create(email: 'bob@test.com', password: '1234567890', name_first: 'Bob')
+      visit '/'
+      click_link "Log in"
+      fill_in('Email', with: 'bob@test.com')
+      fill_in('Password', with: '1234567890')
+      click_button "Log in"
+      click_link("Bob")
+      click_link("Edit your profile")
+      select('Freelancer', :from => 'user[user_type]')
+      click_button('Create my profile')
+      expect(bob.user_type).to eq 'Freelancer'
+    end
   end
 
   context 'a user is signed in' do
