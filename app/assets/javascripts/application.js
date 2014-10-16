@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require gmaps_api
 //= require gmaps
+//= require list
 //= require_tree .

@@ -10,19 +10,40 @@
 <div id='map'></div>
 <% link_to %>
 <% if @users.any? %>
-	<% @users.each do |user| %>
-		<% if user.longitude && user.latitude %>
-			<div class='lat'><%= user.latitude %></div>
-			<div class='lng'><%= user.longitude %></div>
-		<% end %>
-	  <%= image_tag user.avatar.url(:thumb), class: "avatar-image" %>
-	  <h3><%= user.name_first %> <%= user.name_last %></h3>
-	  <h4><%= user.job_title %></h4>
-	  <p><%= user.location %></p>
-	  <p><%= user.bio %></p>
-	<% end %>
+<section id="search-container">
+    <div id="search"><h2>Find fellow freelancers and entrepreneurs working around you</h2>
+        <h4> Discuss project, share advice, collaborate, meet up and start creating your own work community</h4>
+        <span>Enter your post code  </span>
+        <span>Proximity  </span>
+        <span>Type of Fhellow  </span>
+        <div id = "interests-form">
+            <form> Interested in
+                <input type="checkbox" name="discussing ideas">Discussing Ideas</input >
+                <input type="checkbox" name="collaborating">Collaborating</input >
+                <input type="checkbox" name="afterwork-drinks">Afterwork drinks</input >
+                <input type="checkbox" name="chat-over-a-coffee">Chat over a coffee</input >
+                <input type="checkbox" name="lunch buddy">Lunch buddy</input >
+                <input type="checkbox" name="advising">Advising</input >
+            </form>
+        </div>
+    </div>
+    <div id="results">
+        <% @users.each do |user| %>
+            <% if user.longitude && user.latitude %>
+                <div class='lat'><%= user.latitude %></div>
+                <div class='lng'><%= user.longitude %></div>
+            <% end %>
+          <%= image_tag user.avatar.url(:thumb), class: "avatar-image" %>
+          <h3><%= user.name_first %> <%= user.name_last %></h3>
+          <h4><%= user.job_title %></h4>
+          <p><%= user.location %></p>
+          <p><%= user.bio %></p>
+          <span class="interests"><% user.interests %></span>
+        <% end %>
+    </div>
+    </section>
 <% else %>
-	<p>This is where users will show</p>
+    <p>This is where users will show</p>
 <% end %>
 
 
