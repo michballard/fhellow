@@ -37,17 +37,6 @@ describe "maps" do
     end
   end
 
-describe 'links' do
-  context 'activity page' do
-    it 'when clicked the activity page link goes to the activity page' do
-      user_sign_up
-      add_basic_details
-      visit '/'
-      click_link 'Activity'
-      expect(current_path).to match /activity\/\d+/
-    end
-  end
-end
 #  context "many fhellows on map" do
     #before do
       #User.create(email: "barnany@barnany.com",
@@ -103,6 +92,24 @@ describe "navigation" do
     it "should have a link for 'Log in' page" do
       visit '/'
       expect(page).to have_link 'Log in'
+    end
+  end
+end
+
+describe 'links' do
+  context 'activity page' do
+  	# it 'when clicked and user has not signed in, user is directed to Sign In page' do 
+   #    visit '/'
+   #    click_link 'Activity'
+   #    expect(current_path).to eq '/users/sign_in'
+  	# end 
+
+    it 'when clicked and user has signed up, the activity page link goes to the activity page' do
+      user_sign_up
+      add_basic_details
+      visit '/'
+      click_link 'Activity'
+      expect(current_path).to match /activity/
     end
   end
 end
