@@ -45,19 +45,19 @@ describe 'posts' do
     end
   end
 
-  context 'editing a post' do 
-  	it 'allows a user to edit a post from the activity page' do 
+  context 'editing a post' do
+  	it 'allows a user to edit a post from the activity page' do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
-      
       add_post
-
       click_link 'Edit post'
-      # expect(current_path).to match 'posts#edit'
-      expect(page).to have_content 'Edit page'
-  	end 
-  end 
+      fill_in 'Content', with: "I'm not happy!"
+      click_on 'Update Post'
+      expect(current_path).to match /activity\/\d+/
+      expect(page).to have_content "I'm not happy!"
+  	end
+  end
 end
 
 # describe 'posts with location' do
