@@ -74,6 +74,10 @@ describe 'posts' do
     it 'posts on the activity index page should show the users name' do
       expect(page).to have_content 'Barnany Shute'
     end
+
+    it 'posts timestamp should be displayed in words' do
+      expect(page).to have_content 'less than a minute ago'
+    end
   end
 end
 
