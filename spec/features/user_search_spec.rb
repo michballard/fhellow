@@ -5,22 +5,20 @@ include SessionHelpers
 
 describe 'Searching for fhellows on the homepage' do 
 
-	context 'Filtering by interests', js: true do 
+	context 'JSON response by interests' do 
 		before do
 			create_barnany
 			create_gemma
 		end
 
-		it 'displays all users when no filters are selected' do 
-			visit '/'
+		it 'json returns all users when no interest params are given' do 
+			visit '/api/users'
 			expect(page).to have_content 'Barnany'
 			expect(page).to have_content 'Gemma'
 		end
 
-		it "displays only those interested in having lunch buddies when it's selected" do 
-			visit '/'
-			check('lunch-buddy')
-			save_and_open_page
+		it "json returns only those with lunch-buddy param is true" do 
+			visit '/api/users?interests=lunch-buddy'
 			expect(page).to have_content 'Barnany'
 			expect(page).not_to have_content 'Gemma'
 		end

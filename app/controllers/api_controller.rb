@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
 
   def getuser
-    if params["interests"]
+    if params["interests"] && params["interests"] != ""
         interests = params["interests"].split(",") 
         users = []
 
