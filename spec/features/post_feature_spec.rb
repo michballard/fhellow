@@ -58,6 +58,18 @@ describe 'posts' do
       expect(page).to have_content "I'm not happy!"
   	end
   end
+
+  context 'displaying posts' do
+    it 'should show the posts on the activity index page' do
+      user_sign_up
+      add_basic_details
+      click_button 'Create my profile'
+      add_post
+      click_link 'Sign out'
+      click_link 'Activity'
+      expect(current_path).to eq activity_path
+    end
+  end
 end
 
 # describe 'posts with location' do

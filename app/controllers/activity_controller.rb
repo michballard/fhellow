@@ -8,4 +8,8 @@ class ActivityController < ApplicationController
            redirect_to '/users/sign_in'
          end
     end
+
+    def index
+
+    end
 end
