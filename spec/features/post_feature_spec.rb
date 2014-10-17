@@ -70,6 +70,10 @@ describe 'posts' do
     it 'the index page shows all submitted posts' do
       expect(page).to have_content "I'm so happy!"
     end
+
+    it 'posts on the activity index page should show the users name' do
+      expect(page).to have_content 'Barnany Shute'
+    end
   end
 end
 
