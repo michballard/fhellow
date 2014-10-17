@@ -10,6 +10,18 @@ $(document).ready(function() {
     lng: -0.087467
   });
 
+  url = "/api/users"
+    // ?interests=" + checkedValues.join(",")
+
+    var userData = $.get(url, function(users){
+      var template = $ ('.profile-template').html();
+      console.log(template);
+      users.forEach(function(user){
+        console.log(user);
+        $('.profile-container').append(Mustache.render(template, user));
+      })
+    });
+
 
   $.get("/api/users", function(users){
     users.forEach(function(user){
@@ -52,15 +64,25 @@ $(document).ready(function() {
   $('#interests-form').on("change", function(){ 
 
     var checkedValues = $('input:checkbox:checked').map(function() {
-    return this.name;
-}).get();
+      return this.name;
+    }).get();
 
-    $.get("/api/users?interests=" + checkedValues.join(","), function(users){
-      console.log(users);
+    url = "/api/users"
+    // ?interests=" + checkedValues.join(",")
 
+    var userData = $.get(url, function(users){
+      var template = $ ('.profile-template').html();
+      console.log(template);
+      users.forEach(function(user){
+        console.log(user);
+        $('.profile-container').append(Mustache.render(template, user));
+      })
     });
-
   });
+
+   
+
+
 
 // $('input[type="checkbox"][name="advising"]').change(function() {
 //      if(this.checked) {
@@ -73,6 +95,9 @@ $(document).ready(function() {
 //          var userList = new List('search-container', options);
 //          };
 //       })
+// $("#txtAge").toggle(this.checked);
+
+
 });
 
 

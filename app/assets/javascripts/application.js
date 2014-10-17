@@ -16,4 +16,5 @@
 //= require gmaps_api
 //= require gmaps
 //= require list
+//= require mustache
 //= require_tree .

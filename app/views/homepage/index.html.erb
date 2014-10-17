@@ -4,12 +4,13 @@
   <ul>
   <li><a href="#">About</a></li>
   <li><a href="#">Activity</a></li>
+  
+
   </ul>
 </nav>
 
 <div id='map'></div>
 <% link_to %>
-<% if @users.any? %>
 <section id="search-container">
     <div id="search"><h2>Find fellow freelancers and entrepreneurs working around you</h2>
         <h4> Discuss project, share advice, collaborate, meet up and start creating your own work community</h4>
@@ -27,25 +28,24 @@
             </form>
         </div>
     </div>
-    <div id="results">
-    <ul class="list">
-        <% @users.each do |user| %>
-            <li><% if user.longitude && user.latitude %>
-                <div class='lat'><%= user.latitude %></div>
-                <div class='lng'><%= user.longitude %></div>
-            <% end %>
-          <%= image_tag user.avatar.url(:thumb), class: "avatar-image" %>
-          <h3><%= user.name_first %> <%= user.name_last %></h3>
-          <h4><%= user.job_title %></h4>
-          <p><%= user.location %></p>
-          <p><%= user.bio %></p>
-          <span class="interests"><% user.interests %></span>
-        <% end %></li>
-        </ul>
-    </div>
+    <main class="profile-container">
+   <template class="profile-template">
+		<article class="profile" id="{{full_name}}">
+			<section class="image">
+				<li><img src=
+				"{{image_url}}">
+			</section>
+				<h3> {{full_name}}</h3>
+				<p> {{job_title}} </p>
+				<p> {{bio}} </p>
+				</li>
+				
+		</article> 
+	</template>
+	</main>
+
     </section>
 <% else %>
     <p>This is where users will show</p>
-<% end %>
 
 

@@ -95,3 +95,21 @@ describe "navigation" do
     end
   end
 end
+
+describe 'links' do
+  context 'activity page' do
+  	# it 'when clicked and user has not signed in, user is directed to Sign In page' do 
+   #    visit '/'
+   #    click_link 'Activity'
+   #    expect(current_path).to eq '/users/sign_in'
+  	# end 
+
+    it 'when clicked and user has signed up, the activity page link goes to the activity page' do
+      user_sign_up
+      add_basic_details
+      visit '/'
+      click_link 'Activity'
+      expect(current_path).to match /activity/
+    end
+  end
+end
