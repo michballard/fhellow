@@ -61,6 +61,7 @@ $(document).ready(function() {
     $.get(url, function(users){
       if($.isEmptyObject(users)) {
         //$('.profile-container').html('');
+        map.removeMarkers()
         $('.profile').first().append("No current users in your region with those interests :(")
       }
       else {
