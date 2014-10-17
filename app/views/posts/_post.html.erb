@@ -6,8 +6,6 @@
     <p><%= post.town %></p>
   <% end %>
   <p><%= time_ago_in_words(post.created_at) %> ago</p>
-  <% if current_user == post.user_id %>
     <%= link_to "Edit post", controller: "posts", action: "edit", user_id: post.user_id, id: post.id %>
-  <% end %>
 </div>
 
