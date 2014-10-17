@@ -76,7 +76,7 @@ paul = User.new(id: 4, email: "Paul@paul.com",
                       discussing_ideas: false, 
                       afterwork_drinks: false, 
                       collaborating: false, 
-                      chat_over_a_coffee: true, 
+                      chat_over_a_coffee: false, 
                       lunch_buddy: false, 
                       advising: false)
 paul.avatar = File.open('spec/fixtures/images/profile_pics/User_4.jpg')
@@ -148,7 +148,7 @@ jon = User.new(id: 8, email: "jon@jon.com",
                       discussing_ideas: false, 
                       afterwork_drinks: false, 
                       collaborating: true, 
-                      chat_over_a_coffee: true, 
+                      chat_over_a_coffee: false, 
                       lunch_buddy: false, 
                       advising: false)
 jon.avatar = File.open('spec/fixtures/images/profile_pics/User_8.jpg')
@@ -166,7 +166,7 @@ john = User.new(id: 9, email: "jonathe@jonathe.com",
                       discussing_ideas: true, 
                       afterwork_drinks: true, 
                       collaborating: true, 
-                      chat_over_a_coffee: true, 
+                      chat_over_a_coffee: false, 
                       lunch_buddy: true, 
                       advising: true)
 john.avatar = File.open('spec/fixtures/images/profile_pics/User_9.jpg')

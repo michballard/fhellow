@@ -4,6 +4,8 @@
 
 
 $(document).ready(function() {
+
+// Setting maps center coordinates
   var map = new GMaps({
     div: '#map',
     lat: 51.524013,
@@ -11,18 +13,16 @@ $(document).ready(function() {
   });
 
   url = "/api/users"
-    // ?interests=" + checkedValues.join(",")
 
+//Putting out the initial list of users
     var userData = $.get(url, function(users){
       var template = $ ('.profile-template').html();
-      console.log(template);
       users.forEach(function(user){
-        console.log(user);
         $('.profile-container').append(Mustache.render(template, user));
       })
     });
 
-
+// Adding a marker on the map for each user
   $.get("/api/users", function(users){
     users.forEach(function(user){
         map.addMarker({
@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
   });
 
-
+// Adding a marker for the current user (not sure if works)
   map.addMarker({
     lat: $('.lat').text(),
     lng: $('.lng').text(),
@@ -48,6 +48,7 @@ $(document).ready(function() {
     }
   });
 
+//Gmap Set-up 
   GMaps.geolocate({
   success: function(position) {
     map.setCenter(position.coords.latitude, position.coords.longitude);
@@ -60,27 +61,34 @@ $(document).ready(function() {
   },
 });
 
-
+//Filtering users by interest
   $('#interests-form').on("change", function(){ 
 
     var checkedValues = $('input:checkbox:checked').map(function() {
       return this.name;
     }).get();
+    $('.profile').html('');
 
-    url = "/api/users"
-    // ?interests=" + checkedValues.join(",")
+    url = "/api/users?interests=" + checkedValues.join(",")
 
     var userData = $.get(url, function(users){
       var template = $ ('.profile-template').html();
       console.log(template);
-      users.forEach(function(user){
-        console.log(user);
-        $('.profile-container').append(Mustache.render(template, user));
-      })
+      
+      if($.isEmptyObject(users)) {
+        //$('.profile-container').html('');
+        $('.profile').first().append("No current users in your region with those interests :(")
+
+      }
+
+      else {
+        users.forEach(function(user){
+          console.log(user);
+          $('.profile-container').append(Mustache.render(template, user));
+        })
+      }
     });
   });
-
-   
 
 
 
