@@ -28,22 +28,21 @@
             </form>
         </div>
     </div>
-    <main class="profile-container">
-   <template class="profile-template">
-		<article class="profile" id="{{full_name}}">
-			<section class="image">
-        <li><img src=
-        "{{image_url}}">
-			</section>
-				<h3> {{full_name}}</h3>
-				<p> {{job_title}} </p>
-				<p> {{bio}} </p>
+   <main class="profile-container">
+	   <template class="profile-template">
+			<article class="profile" id="{{full_name}}">
+				<li>
+					<section class="image">
+		        <img src="{{image_url}}" class="avatar-image">
+					</section>
+					<h3> {{full_name}}</h3>
+					<p> {{job_title}} </p>
+					<p> {{town}}</p>
+					<p> {{bio_truncated}} </p>
 				</li>
-
-		</article>
-	</template>
+			</article>
+		</template>
 	</main>
-
-    </section>
+</section>
 
 
