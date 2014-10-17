@@ -1,0 +1,8 @@
+#chatbox{
+
+  width:70%;
+  overflow-x:hidden;
+    overflow-y:visible;
+    height:500px;
+  background-color: gray;
+}

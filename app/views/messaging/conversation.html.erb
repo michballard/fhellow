@@ -1,0 +1,26 @@
+<h1>
+  Conversation
+</h1>
+<div id="chatbox">
+  <% @message.each do |m| %>
+    <div class="from">
+      <% if current_user.id == m.from_id %>
+        <h2>
+          You
+        </h2>
+      <% else %>
+        <h2>
+          Them
+        </h2>
+      <% end %>
+    </div>
+    <div class="message">
+      <%= m.message  %>
+      <%= m.seen ? "seen" : "sent"  %>
+    </div>
+  <% end %>
+</div>
+<%= form_tag("/message/#{@to}") do  %>
+  <%= text_field_tag(:message)  %>
+  <%= submit_tag("Send")  %>
+<% end %>
