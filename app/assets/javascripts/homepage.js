@@ -3,13 +3,15 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+
 $(document).ready(function() {
 
 // Setting maps center coordinates
-  var map = new GMaps({
+  var map = new GMaps( {
     div: '#map',
     lat: 51.524013,
-    lng: -0.087467
+    lng: -0.087467,
+    scrollwheel: false
   });
 
   url = "/api/users"
@@ -48,7 +50,7 @@ $(document).ready(function() {
     }
   });
 
-//Gmap Set-up 
+//Gmap Set-up
   GMaps.geolocate({
   success: function(position) {
     map.setCenter(position.coords.latitude, position.coords.longitude);
@@ -62,7 +64,7 @@ $(document).ready(function() {
 });
 
 //Filtering users by interest
-  $('#interests-form').on("change", function(){ 
+  $('#interests-form').on("change", function(){
 
     var checkedValues = $('input:checkbox:checked').map(function() {
       return this.name;
@@ -74,7 +76,7 @@ $(document).ready(function() {
     var userData = $.get(url, function(users){
       var template = $ ('.profile-template').html();
       console.log(template);
-      
+
       if($.isEmptyObject(users)) {
         //$('.profile-container').html('');
         $('.profile').first().append("No current users in your region with those interests :(")

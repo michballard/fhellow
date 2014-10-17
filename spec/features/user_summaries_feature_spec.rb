@@ -4,6 +4,7 @@ describe 'user summaries' do
   context 'when no user has been added' do
     xit 'should display no users added' do
       visit '/'
+      save_and_open_page
       expect(page).to have_content 'This is where users will show'
     end
   end
@@ -30,6 +31,7 @@ describe 'user summaries' do
   end
 
   context 'with a picture' do
+
     before do 
       @user = User.new(   email: "barnany@barnany.com", 
                           password: "123456789", 
@@ -40,7 +42,7 @@ describe 'user summaries' do
                           bio: "Hi I'm Barney")
       @user.avatar = File.open('spec/fixtures/images/avatar.jpg')
       @user.save!
-    end 
+    end
 
     it "should allow user to have an avatar for their summary" do
       visit '/'

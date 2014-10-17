@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016085201) do
+ActiveRecord::Schema.define(version: 20141017143851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: true do |t|
+    t.integer  "to_id"
+    t.integer  "from_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "message"
+    t.string   "conversation_code"
+    t.boolean  "seen"
+  end
 
   create_table "posts", force: true do |t|
     t.text     "content"
@@ -27,6 +37,8 @@ ActiveRecord::Schema.define(version: 20141016085201) do
     t.datetime "image_updated_at"
     t.decimal  "latitude"
     t.decimal  "longitude"
+    t.string   "town"
+    t.string   "country"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

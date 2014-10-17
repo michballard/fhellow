@@ -1,3 +1,10 @@
+PATH
+  remote: ../../simple-messaging
+  specs:
+    simple-messaging (0.0.1)
+      jbuilder
+      rails_12factor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,6 +68,7 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    geocoder (1.2.5)
     hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -132,6 +140,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.6)
       sprockets-rails (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.6)
       actionpack (= 4.1.6)
       activesupport (= 4.1.6)
@@ -199,6 +212,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  geocoder
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -212,6 +226,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simple-messaging!
   spring
   turbolinks
   uglifier (>= 1.3.0)

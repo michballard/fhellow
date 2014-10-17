@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/message/:from_id' => 'messaging#conversation', as: 'conversation'
+get '/messages' => 'messaging#index', as: 'messages'
+post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users, :controllers => { :registrations => "profile", :omniauth_callbacks => "users/omniauth_callbacks"}
   # The priority is based upon order of creation: first created -> highest priority.
