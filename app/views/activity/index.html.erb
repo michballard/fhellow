@@ -1,12 +1,4 @@
 <% if @posts.any? %>
-  <% @posts.each do |post| %>
-  <ul>
-    <li><%= post.image %>
-        <%= post.content %>
-        <%= post.created_at %>
-        <%= "#{post.user.name_first}" + " " + "#{post.user.name_last}" %>
-    </li>
-  </ul>
-  <% end %>
+<%= render @posts.reverse %>
 <% end %>
 
