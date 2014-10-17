@@ -1,11 +1,11 @@
 <div>
-      <%= image_tag post.image.url(:medium), class: "post_image" %>
-      <p><%= post.content %></p>
-      <p><%= User.find_by(id: post.user_id).name_first %> <%= User.find_by(id: post.user_id).name_last %></p>
-      <% if post.latitude && post.longitude%>
-	      <div id="latlngresult"><p><%= post.latitude %></p><p><%= post.longitude %></p></div>
-	    <% end %>
-      <p><%= time_ago_in_words(post.created_at) %> ago</p>
-      <%= link_to "Edit post", controller: "posts", action: "edit", user_id: post.user_id, id: post.id %>
-    </div>
+  <%= image_tag post.image.url(:medium), class: "post_image" %>
+  <p><%= post.content %></p>
+  <p><%= User.find_by(id: post.user_id).name_first %> <%= User.find_by(id: post.user_id).name_last %></p>
+  <% if post.latitude && post.longitude%>
+    <div id="latlngresult"><p><%= post.latitude %></p><p><%= post.longitude %></p></div>
+  <% end %>
+  <p><%= time_ago_in_words(post.created_at) %> ago</p>
+  <%= link_to "Edit post", controller: "posts", action: "edit", user_id: post.user_id, id: post.id %>
+</div>
 

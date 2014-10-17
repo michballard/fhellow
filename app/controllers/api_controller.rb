@@ -10,12 +10,12 @@ class ApiController < ApplicationController
         end
 
          @users = users.flatten.uniq.map do |user|
-            {full_name: "#{user.name_first} #{user.name_last}", longitude: user.longitude, latitude: user.latitude, image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: (user.bio.slice(0, 50) + "...") }
+            {full_name: "#{user.name_first} #{user.name_last}", longitude: user.longitude, latitude: user.latitude, image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: (user.bio.slice(0, 50) + "..."), town: user.town }
          end
     else
 
         @users = User.all.map do |user|
-            {full_name: "#{user.name_first} #{user.name_last}", longitude: user.longitude, latitude: user.latitude, image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: (user.bio.slice(0, 50) + "...") }
+            {full_name: "#{user.name_first} #{user.name_last}", longitude: user.longitude, latitude: user.latitude, image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: (user.bio.slice(0, 50) + "..."), town: user.town }
         end
     end
 
