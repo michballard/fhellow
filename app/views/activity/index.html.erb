@@ -1,6 +1,11 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <%= post.content %>
+  <ul>
+    <li><%= post.image %>
+        <%= post.content %>
+        <%= post.created_at %>
+    </li>
+  </ul>
   <% end %>
 <% end %>
 
