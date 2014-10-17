@@ -4,7 +4,6 @@ describe 'user summaries' do
   context 'when no user has been added' do
     xit 'should display no users added' do
       visit '/'
-      save_and_open_page
       expect(page).to have_content 'This is where users will show'
     end
   end

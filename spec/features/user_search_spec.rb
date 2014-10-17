@@ -20,7 +20,6 @@ describe 'Searching for fhellows on the homepage' do
 		it "displays only those interested in having lunch buddies when it's selected" do 
 			visit '/'
 			check('lunch-buddy')
-			save_and_open_page
 			expect(page).to have_content 'Barnany'
 			expect(page).not_to have_content 'Gemma'
 		end
