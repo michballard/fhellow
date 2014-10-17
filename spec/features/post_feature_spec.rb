@@ -6,36 +6,13 @@ include SessionHelpers
 
 describe 'posts' do
   context 'adding a post' do
-
-    it 'a person can post a note when logged in' do
+      before(:each) do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
-      add_post
-      expect(current_path).to match /activity\/\d+/
-      expect(page).to have_content "I'm so happy"
-    end
-
-    it 'has the persons name showing on the post' do
-      user_sign_up
-      add_basic_details
-      click_button 'Create my profile'
-      add_post
-      expect(page).to have_content 'Barnany Shute'
-    end
-
-    it 'has the time created on the post' do
-      user_sign_up
-      add_basic_details
-      click_button 'Create my profile'
-      add_post
-      expect(page).to have_content 'less than a minute ago'
     end
 
     it 'allows an image to be added to a post' do
-      user_sign_up
-      add_basic_details
-      click_button 'Create my profile'
       visit '/'
       click_link 'Post'
       fill_in 'Content', with: "I'm so happy!"
@@ -43,6 +20,23 @@ describe 'posts' do
       click_button 'Post'
       expect(page).to have_css('.post_image')
     end
+
+      it 'a person can post a note when logged in' do
+      add_post
+      expect(current_path).to match /activity\/\d+/
+      expect(page).to have_content "I'm so happy"
+    end
+
+    it 'has the persons name showing on the post' do
+      add_post
+      expect(page).to have_content 'Barnany Shute'
+    end
+
+    it 'has the time created on the post' do
+      add_post
+      expect(page).to have_content 'less than a minute ago'
+    end
+
   end
 
   context 'editing a post' do
@@ -60,14 +54,21 @@ describe 'posts' do
   end
 
   context 'displaying posts' do
-    it 'should show the posts on the activity index page' do
+    before(:each) do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
       add_post
       click_link 'Sign out'
       click_link 'Activity'
-      expect(current_path).to eq activity_path
+    end
+
+    it 'should show the posts on the activity index page' do
+       expect(current_path).to eq activity_path
+    end
+
+    it 'the index page shows all submitted posts' do
+      expect(page).to have_content "I'm so happy!"
     end
   end
 end
