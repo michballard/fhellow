@@ -40,17 +40,30 @@ describe 'posts' do
   end
 
   context 'editing a post' do
-  	it 'allows a user to edit a post from the activity page' do
+
+    before do
       user_sign_up
       add_basic_details
       click_button 'Create my profile'
       add_post
+    end
+
+  	it 'allows a user to edit a post from the activity page' do
       click_link 'Edit post'
       fill_in 'Content', with: "I'm not happy!"
       click_on 'Update Post'
       expect(current_path).to match /activity\/\d+/
       expect(page).to have_content "I'm not happy!"
   	end
+
+    it 'only the person that created the post can edit the post' do
+      click_link 'Sign out'
+      second_user_sign_up
+      second_user_add_basic_details
+      click_button 'Create my profile'
+      visit '/activity'
+      expect(page).not_to have_content 'Edit post'
+    end
   end
 
   context 'displaying posts' do
