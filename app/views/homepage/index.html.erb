@@ -3,8 +3,8 @@
   <h1 id='logo'>Fhellow</h1>
   <ul>
   <li><a href="#">About</a></li>
-  <li><a href="#">Activity</a></li>
-  
+  <li><%= link_to "Activity", activity_path %></li>
+
 
   </ul>
 </nav>
@@ -32,15 +32,15 @@
    <template class="profile-template">
 		<article class="profile" id="{{full_name}}">
 			<section class="image">
-				<li><img src=
-				"{{image_url}}">
+        <li><img src=
+        "{{image_url}}">
 			</section>
 				<h3> {{full_name}}</h3>
 				<p> {{job_title}} </p>
 				<p> {{bio}} </p>
 				</li>
-				
-		</article> 
+
+		</article>
 	</template>
 	</main>
 

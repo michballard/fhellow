@@ -22,16 +22,19 @@ describe "maps" do
 	  end
 	end
 
-  context "one fhellow on map" do
+  context "one fhellow on map", js: true do
     before do
       User.create(email: "barnany@barnany.com",
             password: "123456789",
             latitude: 51.525803,
-            longitude: -0.088277)
+            longitude: -0.088277,
+            bio: 'Whatevs')
     end
 
-    it "should be able to place a marker for a fhellow's location" do
+    xit "should be able to place a marker for a fhellow's location" do
+
       visit '/'
+      save_and_open_page
       expect(page).to have_css '.lat'
       expect(page).to have_css '.lng'
     end
