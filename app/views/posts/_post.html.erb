@@ -6,6 +6,6 @@
     <p><%= post.town %></p>
   <% end %>
   <p><%= time_ago_in_words(post.created_at) %> ago</p>
-  <%= link_to "Edit post", controller: "posts", action: "edit", user_id: post.user_id, id: post.id %>
+    <%= link_to "Edit post", controller: "posts", action: "edit", user_id: post.user_id, id: post.id %>
 </div>
 
