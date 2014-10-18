@@ -26,18 +26,30 @@ describe 'sending messages' do
       expect(page).to have_content('Hello')
   	end 
 
-  	xit 'can receive a message' do 
+  	it 'can receive a message' do 
       sign_in_user_one
       visit '/message/2'
       fill_in('message', :with => 'Hello 2')
       find_button('Send').click
+      click_link 'Sign out'
       sign_in_user_two
       visit '/message/1'
       expect(page).to have_content('Hello 2')
   	end 
 
   	xit 'can view history of messages' do 
-
+      sign_in_user_one
+      visit '/message/2'
+      fill_in('message', :with => 'Hello 2')
+      find_button('Send').click
+      click_link 'Sign out'
+      sign_in_user_two
+      visit '/message/1'
+      fill_in('message', :with => 'Hello 1!')
+      find_button('Send').click
+      visit '/messages'
+      expect(page).to have_content('Hello 2')
+      expect(page).to have_content('Hello 1!')    
   	end 
 
   end 

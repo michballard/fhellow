@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   #
   # Use the following line if Ajax calls are interfered with by guest user
-  # skip_before_filter :verify_authenticity_token, :only => [:name_of_your_action] 
+  skip_before_filter :verify_authenticity_token, :only => [:index] 
   
   protect_from_forgery with: :exception
 
