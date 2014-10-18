@@ -2,7 +2,7 @@ class HomepageController < ApplicationController
 
   def index
     @users = []
-    # @users = User.all
+    @user = current_or_guest_user
   end
 
 end

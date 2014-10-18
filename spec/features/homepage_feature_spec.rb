@@ -34,7 +34,6 @@ describe "maps" do
     xit "should be able to place a marker for a fhellow's location" do
 
       visit '/'
-      save_and_open_page
       expect(page).to have_css '.lat'
       expect(page).to have_css '.lng'
     end

@@ -77,10 +77,11 @@ describe 'posts' do
     end
 
     it 'should show the posts on the activity index page' do
-       expect(current_path).to eq activity_path
+       expect(current_path).to match /activity\/\d+/
     end
 
     it 'the index page shows all submitted posts' do
+      save_and_open_page
       expect(page).to have_content "I'm so happy!"
     end
 

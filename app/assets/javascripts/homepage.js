@@ -18,25 +18,12 @@ $(document).ready(function() {
 
 //Putting out the initial list of users
     var userData = $.get(url, function(users){
-      var template = $ ('.profile-template').html();
-      users.forEach(function(user){
-        $('.profile-container').append(Mustache.render(template, user));
-      })
+      populateUsers(users);
     });
 
 // Adding a marker on the map for each user
   $.get("/api/users", function(users){
-    users.forEach(function(user){
-        map.addMarker({
-        lat: user.latitude,
-        lng: user.longitude,
-        title: user.full_name,
-        class: "all-user-marker",
-        infoWindow: {
-            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
-        }
-         });
-    });
+    populateMap(users)
   });
 
 // Adding a marker for the current user (not sure if works)
@@ -65,47 +52,48 @@ $(document).ready(function() {
 
 //Filtering users by interest
   $('#interests-form').on("change", function(){
-
     var checkedValues = $('input:checkbox:checked').map(function() {
       return this.name;
     }).get();
+
     $('.profile').html('');
-
     url = "/api/users?interests=" + checkedValues.join(",")
-
-    var userData = $.get(url, function(users){
-      var template = $ ('.profile-template').html();
-      console.log(template);
-
+    $.get(url, function(users){
       if($.isEmptyObject(users)) {
         //$('.profile-container').html('');
+        map.removeMarkers()
         $('.profile').first().append("No current users in your region with those interests :(")
-
       }
-
       else {
-        users.forEach(function(user){
-          console.log(user);
-          $('.profile-container').append(Mustache.render(template, user));
-        })
+        populateUsers(users);
+        map.removeMarkers()
+        populateMap(users)
       }
     });
   });
 
+function populateMap(users){
+      users.forEach(function(user){
+        map.addMarker({
+        lat: user.latitude,
+        lng: user.longitude,
+        title: user.full_name,
+        class: "all-user-marker",
+        infoWindow: {
+            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+                    }
+         });
+      });
+     
+}
 
+function populateUsers(users){
+      users.forEach(function(user){
+        var template = $ ('.profile-template').html();
+        $('.profile-container').append(Mustache.render(template, user));
 
-// $('input[type="checkbox"][name="advising"]').change(function() {
-//      if(this.checked) {
-//         $.get("/api/users", function(users){
-//           users.forEach(function(user){
-//             return(user if (user.this.name == true))
-//          var options = {
-//           valueNames: [ 'interests' ]
-//          };
-//          var userList = new List('search-container', options);
-//          };
-//       })
-// $("#txtAge").toggle(this.checked);
+      })
+}
 
 
 });

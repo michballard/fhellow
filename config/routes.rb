@@ -12,7 +12,7 @@ post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
 
   get 'api/users' => "api#getuser", as: "api_users"
   get 'activity/:user_id' => "activity#show", as: "activity_user"
-  get 'activity' => "activity#index", as: "activity"
+  get 'activity/:user_id' => "activity#index", as: "activity"
   
   devise_scope :user do 
     patch '/users/:id' => "profile#update_profile", as: "user"
