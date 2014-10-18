@@ -1,11 +1,8 @@
-<nav>
-
+<nav> 
   <h1 id='logo'>Fhellow</h1>
   <ul>
   <li><a href="#">About</a></li>
-  <li><%= link_to "Activity", activity_path %></li>
-
-
+  <li><%= link_to "Activity", activity_path(@user) %></li> 
   </ul>
 </nav>
 
@@ -40,9 +37,7 @@
 					<p> {{town}}</p>
 					<p> {{bio_truncated}} </p>
 				</li>
-			</article>
-		</template>
-	</main>
+			</article> </template> </main>
 </section>
 
 
