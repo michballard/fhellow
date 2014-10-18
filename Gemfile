@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 
 gem 'omniauth-facebook'
 gem 'geocoder'
+gem 'socialization'
 
 group :test do 
 	gem 'rspec-rails'
