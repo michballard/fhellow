@@ -26,7 +26,7 @@ describe 'sending messages' do
       expect(page).to have_content('Hello')
   	end 
 
-  	it 'can receive a message' do 
+  	xit 'can receive a message' do 
       sign_in_user_one
       visit '/message/2'
       fill_in('message', :with => 'Hello 2')

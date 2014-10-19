@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # Use the following line if Ajax calls are interfered with by guest user
   skip_before_filter :verify_authenticity_token, :only => [:index] 
   
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
 
   helper_method :current_or_guest_user
 
