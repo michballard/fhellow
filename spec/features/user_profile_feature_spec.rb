@@ -126,6 +126,13 @@ describe 'user profiles' do
         click_link("Edit your profile")
         expect(current_path).to match /users\/\d+\/edit_profile/
       end
+
+      it 'should have a link to post a message to that user' do
+        bob = User.create(email: 'bob@b.com', password: '1234567890', password_confirmation: '1234567890')
+        visit "/activity/#{bob.id}"
+        click_link("Send message")
+        expect(current_path).to eq "/message/#{bob.id}"
+      end
     end
 
     context 'user posts' do

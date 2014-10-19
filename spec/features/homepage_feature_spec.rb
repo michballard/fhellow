@@ -122,6 +122,8 @@ describe 'links' do
     end
 
     it 'can be accessed once a person is logged in' do
+      user_sign_up
+      add_basic_details
       visit '/'
       expect(page).to have_content 'Messages'
     end
