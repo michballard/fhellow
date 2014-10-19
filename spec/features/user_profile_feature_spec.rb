@@ -17,7 +17,6 @@ describe 'user profiles' do
       user_sign_up
       expect(page).to have_content('First name')
       add_basic_details
-      click_button('Create my profile')
       expect(current_path).to match /users\/\d+\/show/
       expect(page).to have_content('Barnany Shute')
       expect(page).to have_content('Freelance film maker')
@@ -27,6 +26,7 @@ describe 'user profiles' do
     it 'can add a location' do
       user_sign_up
       add_basic_details
+      click_link('Edit your profile')
       fill_in('user[country]', with: 'United Kingdom')
       fill_in('user[town]', with: 'London')
       click_button('Create my profile')
@@ -36,6 +36,7 @@ describe 'user profiles' do
     it 'can add website and LinkedIn details' do
       user_sign_up
       add_basic_details
+      click_link('Edit your profile')
       fill_in('user[website]', with: "www.barnany.com")
       fill_in('user[linkedin]', with: "linkedin.com/in/barnany")
       click_button('Create my profile')
@@ -46,6 +47,7 @@ describe 'user profiles' do
     it 'can add a profile image' do
       user_sign_up
       add_basic_details
+      click_link('Edit your profile')
       attach_file 'user[avatar]', ('spec/fixtures/images/avatar.jpg')
       click_button('Create my profile')
       expect(page).to have_css('.avatar')
@@ -81,6 +83,7 @@ describe 'user profiles' do
     it 'should have a show page' do
       user_sign_up
       add_basic_details
+      click_link('Edit your profile')
       check("Discussing ideas")
       check("Afterwork drinks")
       check("Collaborating")
@@ -101,7 +104,6 @@ describe 'user profiles' do
       before do 
         user_sign_up
         add_basic_details
-        click_button('Create my profile')
       end
 
 
@@ -130,7 +132,6 @@ describe 'user profiles' do
        before do 
         user_sign_up
         add_basic_details
-        click_button('Create my profile')
         add_post
       end
 
