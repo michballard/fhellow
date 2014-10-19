@@ -19,6 +19,7 @@
     <% else %>
       <li><%= link_to "My profile", user_profile_path(current_user) %></li>
     <% end %>
+    <li><%= link_to "Messages", messages_path %></li>
   	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
   <%else%>
 	<li><%= link_to "Join", new_user_registration_path %></li>
