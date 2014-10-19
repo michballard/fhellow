@@ -40,27 +40,28 @@ describe 'sending messages' do
   	it 'can receive a message' do
       bob_sign_in
       visit "/message/#{@john.id}"
-      fill_in('message', :with => 'Hello 2')
+      fill_in('message', :with => 'Hello John')
       find_button('Send').click
       click_link 'Sign out'
       john_sign_in
       visit "/message/#{@bob.id}"
-      expect(page).to have_content('Hello 2')
+      expect(page).to have_content('Hello John')
   	end
 
   	xit 'can view history of messages' do
-      sign_in_user_one
-      visit '/message/2'
-      fill_in('message', :with => 'Hello 2')
+      john_sign_in
+      visit "/message/#{@bob.id}"
+      fill_in('message', :with => 'Hello Bob')
       find_button('Send').click
       click_link 'Sign out'
-      sign_in_user_two
-      visit '/message/1'
-      fill_in('message', :with => 'Hello 1!')
+      bob_sign_in
+      visit "/message/#{@john.id}"
+      fill_in('message', :with => 'Hello John')
       find_button('Send').click
+            save_and_open_page
       visit '/messages'
-      expect(page).to have_content('Hello 2')
-      expect(page).to have_content('Hello 1!')
+      expect(page).to have_content('Hello Bob')
+      expect(page).to have_content('Hello John')
   	end
 
   end
