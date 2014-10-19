@@ -21,6 +21,7 @@ describe 'user summaries' do
     it 'should display the user summary' do
       visit '/'
       expect(page).not_to have_content 'This is where users will show'
+      save_and_open_page
       expect(page).to have_content "Barnany"
       expect(page).to have_content "Shute"
       expect(page).to have_content "Freelance film maker"

@@ -17,7 +17,7 @@ $(document).ready(function() {
   url = "/api/users"
 
 //Putting out the initial list of users
-    var userData = $.get(url, function(users){
+    $.get(url, function(users){
       populateUsers(users);
     });
 
