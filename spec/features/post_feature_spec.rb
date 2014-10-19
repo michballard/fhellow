@@ -56,7 +56,7 @@ describe 'posts' do
 
     it 'only the person that created the post can edit the post' do
       click_link 'Sign out'
-      second_user_sign_up
+      user_sign_up("alisa@barnany.com")
       second_user_add_basic_details
       visit '/activity'
       expect(page).not_to have_content 'Edit post'

@@ -11,7 +11,7 @@ describe 'sending messages' do
   end
 
   def sign_in_user_two
-    second_user_sign_up
+    user_sign_up("alisa@barnany.com")
     second_user_add_basic_details
   end
 

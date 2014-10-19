@@ -36,15 +36,15 @@
 					<p> {{job_title}} </p>
 					<p> {{town}}</p>
 					<p> {{bio_truncated}} </p>
-
-					  <button>Add</button>
+					<p> {{user_id}} </p>
+				  <form action="/user/{{user.user_id}}/follow", method= "post">
+				  	<button class="add-{{first_name}}">Add</button>
+				  </form>
 				</form>
 				</li>
-
-
-
-			</article> </template> </main>
-
+			</article>
+		</template>
+	</main>
 </section>
 
 
