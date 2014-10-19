@@ -9,7 +9,6 @@ describe 'posts' do
       before(:each) do
       user_sign_up
       add_basic_details
-      click_button 'Create my profile'
     end
 
     it 'allows an image to be added to a post' do
@@ -44,7 +43,6 @@ describe 'posts' do
     before do
       user_sign_up
       add_basic_details
-      click_button 'Create my profile'
       add_post
     end
 
@@ -60,7 +58,6 @@ describe 'posts' do
       click_link 'Sign out'
       second_user_sign_up
       second_user_add_basic_details
-      click_button 'Create my profile'
       visit '/activity'
       expect(page).not_to have_content 'Edit post'
     end
@@ -70,7 +67,6 @@ describe 'posts' do
     before(:each) do
       user_sign_up
       add_basic_details
-      click_button 'Create my profile'
       add_post
       click_link 'Sign out'
       click_link 'Activity'

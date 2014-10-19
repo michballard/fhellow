@@ -15,6 +15,8 @@ module SessionHelpers
 	    fill_in('Email', with: 'barnany@barnany.com')
 	    fill_in('user[job_title]', with: 'Freelance film maker')
 	    fill_in('user[bio]', with: "Hi I'm Barney")
+	    click_button('Create my profile')
+	end
 
   def second_user_sign_up
     visit '/users/sign_up'
@@ -76,5 +78,4 @@ module SessionHelpers
 
 end 
 
-end
 
