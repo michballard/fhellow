@@ -14,6 +14,12 @@ describe 'relationships' do
       expect(page).to have_content("Added")
     end
 
+    it 'follows people' do 
+      expect(Follow.count).to eq 0
+      sign_in("barnany@barnany.com")
+      find(".add-#{@gemma.id}").click
+      expect(Follow.count).to eq 1
+    end
   end
 
 end

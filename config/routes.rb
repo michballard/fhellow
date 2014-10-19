@@ -21,7 +21,7 @@ post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
 
     resources :user do
         resources :posts
-          post 'follow', to: 'socializations#follow'
+          post 'follow/:current_user_id', to: 'socializations#follow'
           post 'unfollow', to: 'socializations#unfollow'
     end
   end
