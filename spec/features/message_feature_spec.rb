@@ -48,20 +48,20 @@ describe 'sending messages' do
       expect(page).to have_content('Hello John')
   	end
 
-  	xit 'can view history of messages' do
+    before do
+      @phil = User.create(email: 'phil@b.com', password: '1234567890', password_confirmation: '1234567890')
+    end
+  	it 'can view history of messages' do
       john_sign_in
       visit "/message/#{@bob.id}"
       fill_in('message', :with => 'Hello Bob')
       find_button('Send').click
-      click_link 'Sign out'
-      bob_sign_in
-      visit "/message/#{@john.id}"
-      fill_in('message', :with => 'Hello John')
+      visit "/message/#{@phil.id}"
+      fill_in('message', :with => 'Hello Phil')
       find_button('Send').click
-            save_and_open_page
       visit '/messages'
       expect(page).to have_content('Hello Bob')
-      expect(page).to have_content('Hello John')
+      expect(page).to have_content('Hello Phil')
   	end
 
   end

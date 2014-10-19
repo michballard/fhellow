@@ -1,3 +1,8 @@
-<h1>Messages#index</h1>
+<h1>Messages</h1>
 
-<%= @messages.inspect %>
+<% @messages.each do |message| %>
+  <p><%= "From: #{User.find_by_id(message.from_id).name_first}" %></p>
+  <p><%= "To: #{User.find_by_id(message.to_id).name_first}" %></p>
+  <p><%= "Sent: #{time_ago_in_words(message.created_at)} ago" %></p>
+  <p><%= "Message: #{message.message}" %></p>
+<% end %>
