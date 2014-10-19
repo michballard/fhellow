@@ -114,4 +114,16 @@ describe 'links' do
       expect(current_path).to match /activity/
     end
   end
+
+  context 'message page' do
+    it 'cannot be accessed if the person is not logged in' do
+      visit '/'
+      expect(page).not_to have_content 'Messages'
+    end
+
+    it 'can be accessed once a person is logged in' do
+      visit '/'
+      expect(page).to have_content 'Messages'
+    end
+  end
 end

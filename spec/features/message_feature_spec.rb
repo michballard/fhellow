@@ -51,7 +51,7 @@ describe 'sending messages' do
     before do
       @phil = User.create(email: 'phil@b.com', password: '1234567890', password_confirmation: '1234567890')
     end
-  	it 'can view history of messages' do
+  	it 'can view last message from each message thread' do
       john_sign_in
       visit "/message/#{@bob.id}"
       fill_in('message', :with => 'Hello Bob')
