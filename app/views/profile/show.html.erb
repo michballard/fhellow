@@ -7,6 +7,8 @@
 
 <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
 
+<p><%= link_to "Send message", send_message_path(@user.id) %></p>
+
 <ul>
   <% if @user.discussing_ideas == true %>
   <li>Discussing ideas</li>
