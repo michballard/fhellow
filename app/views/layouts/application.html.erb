@@ -9,31 +9,44 @@
 </head>
 <body>
 
-<header class="col-md-7 col-md-offset-0">
-  <h1 id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
-</header>
-<nav class="col-md-5 col-md-offset-0">
+<header>
+  <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
+
+<nav class="col-sm-8 col-md-7 col-md-offset-0">
   <ul>
     <% unless current_user %>
       <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
     <% end %>
-  <li><i class="fa fa-newspaper-o"></i><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
+  <li><%= link_to activity_path(current_or_guest_user) do %>
+    <i class="fa fa-newspaper-o"></i>
+    Activity
+    <% end %>
+  </li>
     <% if current_user %>
-  	<li><i class="fa fa-pencil"></i><%= link_to "Post", new_user_post_path(current_user) %></li>
-    <li><i class="fa fa-envelope"></i><%= link_to "Messages", messages_path %></li>
+  	<li><%= link_to new_user_post_path(current_user) do %>
+      <i class="fa fa-pencil"></i>
+      Post
+      <% end %>
+    </li>
+    <li><%= link_to messages_path do %>
+      <i class="fa fa-envelope"></i>
+      Messages
+      <% end %>
+    </li>
     <% if current_user.name_first? %>
       <li><%= link_to "#{current_user.name_first}", user_profile_path(current_user) %></li>
     <% else %>
       <li><i class="fa fa-user"></i><%= link_to "My profile", user_profile_path(current_user) %></li>
     <% end %>
-  	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "account-manage" %></li>
+  	<li class="account-manage"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
   <%else%>
-	<li><%= link_to "Join", new_user_registration_path, :class => "account-manage" %></li>
-	<li><%= link_to "Log in", new_user_session_path, :class => "account-manage" %></li>
+	<li class="account-manage"><%= link_to "Join", new_user_registration_path %></li>
+	<li class="account-manage"><%= link_to "Log in", new_user_session_path %></li>
 
 <% end %>
   </ul>
 </nav>
+</header>
 
 
 <% if flash[:notice]%>

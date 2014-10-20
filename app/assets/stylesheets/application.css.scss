@@ -24,7 +24,7 @@ body {
 }
 
 #logo {
-  margin-top: 10px;
+  margin: 10px 0 5px;
 }
 
 h1 a {
@@ -44,6 +44,10 @@ i {
 
 .fa {
   font-size: 22px;
-  display: inline-block;
-  margin: 0 auto;
+  display: block;
+  margin: 15% auto 0;
+}
+
+.main {
+  padding: 1% 5%;
 }
