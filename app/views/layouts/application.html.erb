@@ -6,6 +6,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<nav> 
+<h1 id='logo'><%= link_to 'Fhellow', homepage_index_path %></h1>
+  <ul>
+  <li><a href="#">About</a></li>
+  <li><%= link_to "Activity", activity_path(current_or_guest_user) %></li> 
+  </ul>
+</nav>
 <% if flash[:notice]%>
 	<div id="notice">
 	<%= flash[:notice]%>
