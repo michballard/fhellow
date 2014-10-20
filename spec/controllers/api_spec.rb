@@ -13,6 +13,7 @@ describe ApiController do
                             bio: "Hi I'm Barney")
         @user.avatar = File.open('spec/fixtures/images/avatar.jpg')
         @user.save!
+        
       end
 
       describe "GET 'index'", js: true do

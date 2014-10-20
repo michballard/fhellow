@@ -20,6 +20,5 @@ describe 'relationships' do
       find(".add-#{@gemma.id}").click
       expect(Follow.count).to eq 1
     end
-  end
 
 end

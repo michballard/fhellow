@@ -15,15 +15,5 @@ class SocializationsController < ApplicationController
   	render json: { follow: false}
   end
 
-# private
-
-#   def load_socializable    
-# 	  if id = params[:user_id]
-# 	    @socializable = @community.comments.find(id)
-# 	  else
-# 	    raise ArgumentError, "Unsupported socializable model, params: " + params.keys.inspect
-# 	  end
-# 	  raise ActiveRecord::RecordNotFound unless @socializable
-#   end
 
 end
