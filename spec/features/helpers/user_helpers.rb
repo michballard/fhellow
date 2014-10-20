@@ -8,6 +8,15 @@ module SessionHelpers
 		click_button('Sign up')
 	end
 
+	def sign_in(email, password = "123456789")
+		visit '/'
+		click_link 'Log in'
+		fill_in("Email", with: email)
+		fill_in("Password", with: password)
+		click_button 'Log in'
+	end
+
+
 	def add_basic_details
 	    fill_in('user[name_first]', with: 'Barnany')
 	    fill_in('user[name_last]', with: 'Shute')

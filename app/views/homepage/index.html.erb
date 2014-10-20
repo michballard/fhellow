@@ -31,8 +31,8 @@
 					<p> {{town}}</p>
 					<p> {{bio_truncated}} </p>
 					<p> {{user_id}} </p>
-				  <form action="/user/{{user.user_id}}/follow", method= "post">
-				  	<button class="add-{{first_name}}">Add</button>
+				  <form action="/user/{{user_id}}/follow/{{current_user_id}}", method= "post">
+				  	<button class="add-{{user_id}}">Add</button>
 				  </form>
 				</form>
 				</li>
