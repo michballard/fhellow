@@ -1,26 +1,37 @@
-nav ul {
+header {
+  margin-bottom: -20px;
+}
 
+nav ul {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-top: -18px;
 }
 
 nav li {
     list-style: none;
-    display: inline;
-    padding: 5% 2%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3% 2%;
     border-left: 1px solid #C9C9C9;
-    font-size: larger;
 }
 
 nav li:last-child {
   border-right: 1px solid #C9C9C9;
+  padding: 7% 2% 3%;
+  line-height: 25px;
+  vertical-align: bottom;
 }
 
 nav li a {
   color: #9A9A9A;
   font-size: 14px;
-  display: inline-block;
+  display: block;
   width: 70px;
   text-align: center;
-  padding-top: 50px;
+  // padding-top: 50px;
 }
 
 nav li i {
@@ -29,8 +40,8 @@ nav li i {
   // margin-left: 25px;
 }
 
-.sign-out {
+.account-manage {
   background-color:#43BEA2;
-  padding: 1%;
+  padding: 10% 5%;
   color: #fff;
 }

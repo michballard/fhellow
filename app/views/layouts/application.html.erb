@@ -9,28 +9,28 @@
 </head>
 <body>
 
-<header class="col-md-6 col-md-offset-0">
+<header class="col-md-7 col-md-offset-0">
   <h1 id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
 </header>
-<nav class="col-md-6 col-md-offset-0">
+<nav class="col-md-5 col-md-offset-0">
   <ul>
     <% unless current_user %>
       <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
     <% end %>
-  <li><p class="fa fa-newspaper-o"></p><br><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
+  <li><i class="fa fa-newspaper-o"></i><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
     <% if current_user %>
   	<li><i class="fa fa-pencil"></i><%= link_to "Post", new_user_post_path(current_user) %></li>
     <li><i class="fa fa-envelope"></i><%= link_to "Messages", messages_path %></li>
     <% if current_user.name_first? %>
       <li><%= link_to "#{current_user.name_first}", user_profile_path(current_user) %></li>
     <% else %>
-      <li><%= link_to "My profile", user_profile_path(current_user) %></li>
+      <li><i class="fa fa-user"></i><%= link_to "My profile", user_profile_path(current_user) %></li>
     <% end %>
-  	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "sign-out" %></li>
+  	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "account-manage" %></li>
   <%else%>
-	<li><%= link_to "Join", new_user_registration_path %></li>
-	<li><%= link_to "Log in", new_user_session_path %></li>
-    <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+	<li><%= link_to "Join", new_user_registration_path, :class => "account-manage" %></li>
+	<li><%= link_to "Log in", new_user_session_path, :class => "account-manage" %></li>
+
 <% end %>
   </ul>
 </nav>
