@@ -16,7 +16,6 @@ module SessionHelpers
 		click_button 'Log in'
 	end
 
-
 	def add_basic_details
 	    fill_in('user[name_first]', with: 'Barnany')
 	    fill_in('user[name_last]', with: 'Shute')
@@ -33,7 +32,7 @@ module SessionHelpers
     fill_in('user[job_title]', with: 'Freelance designer')
     fill_in('user[bio]', with: "Hi I'm Alisa")
     click_button "Create my profile"
-	end
+  end
 
   def add_bob_details
 		fill_in('user[name_last]', with: 'Shute')
@@ -41,21 +40,21 @@ module SessionHelpers
   end
 
 	def create_barnany
-	    User.create(email: "barnany@barnany.com",
-	                password: "123456789",
-					name_first: "Barnany",
-					name_last: "Shute",
-					job_title: "Freelance film maker",
-					town: "London",
-					bio: "Hi I'm Barney",
-					latitude: 51.522783,
-					longitude: -0.082867,
-					discussing_ideas: true, 
-					afterwork_drinks: true, 
-					collaborating: true, 
-					chat_over_a_coffee: true, 
-					lunch_buddy: true, 
-					advising: true)
+    User.create(email: "barnany@barnany.com",
+                password: "123456789",
+				name_first: "Barnany",
+				name_last: "Shute",
+				job_title: "Freelance film maker",
+				town: "London",
+				bio: "Hi I'm Barney",
+				latitude: 51.522783,
+				longitude: -0.082867,
+				discussing_ideas: true, 
+				afterwork_drinks: true, 
+				collaborating: true, 
+				chat_over_a_coffee: true, 
+				lunch_buddy: true, 
+				advising: true)
 	end
 
 	def create_gemma
