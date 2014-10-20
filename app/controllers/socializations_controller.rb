@@ -13,12 +13,8 @@ class SocializationsController < ApplicationController
     end
   end
 
-  # def unfollow
-  # 	@other_user = User.find(params[:user_id])
-  #   @current_user = User.find(params[:current_user_id])
-  #   @current_user.toggle_follow!(@other_user)
-  # 	render json: { follow: false}
-  # end
-
+  def toggle
+    togglefollow
+  end
 
 end
