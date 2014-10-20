@@ -9,13 +9,15 @@
 </head>
 <body>
 
-<nav>
-<h1 class="col-md-6 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
-  <ul class="col-md-6 col-md-offset-0">
+<header class="col-md-6 col-md-offset-0">
+  <h1 id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
+</header>
+<nav class="col-md-6 col-md-offset-0">
+  <ul>
     <% unless current_user %>
       <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
     <% end %>
-  <li><i class="fa fa-newspaper-o"></i><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
+  <li><i class="fa fa-newspaper-o"></i><br><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
     <% if current_user %>
   	<li><i class="fa fa-pencil"></i><%= link_to "Post", new_user_post_path(current_user) %></li>
     <li><i class="fa fa-envelope"></i><%= link_to "Messages", messages_path %></li>
