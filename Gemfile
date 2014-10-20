@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 gem 'omniauth-facebook'
 gem 'geocoder'
 gem 'socialization'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'font-awesome-rails'
 
 group :test do 
 	gem 'rspec-rails'

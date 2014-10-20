@@ -1,0 +1,36 @@
+nav ul {
+
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    padding: 5% 2%;
+    border-left: 1px solid #C9C9C9;
+    font-size: larger;
+}
+
+nav li:last-child {
+  border-right: 1px solid #C9C9C9;
+}
+
+nav li a {
+  color: #9A9A9A;
+  font-size: 14px;
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+nav li i {
+  // position: absolute;
+  // top: 20px;
+  // margin-left: 25px;
+}
+
+.sign-out {
+  background-color:#43BEA2;
+  padding: 1%;
+  color: #fff;
+}
