@@ -24,13 +24,16 @@ var promises;
       promises = populateUsers(users);
 
       Q.all(promises).then(function() {
+        var link = $('a.follow-toggle').closest('a')
         $('a.follow-toggle').on('click', function(event){
           event.preventDefault();
-          var link = $(this).closest('a')
           $.post(this.href, function(response){
-            link.text(response.follow)
+             link.text(response.follow)
           });
         });
+        $.post($('a.follow-toggle').attr('href'), function(response){
+            link.text(response.follow)
+        })
       });
     });
 
