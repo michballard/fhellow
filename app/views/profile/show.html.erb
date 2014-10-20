@@ -30,6 +30,10 @@
   <% end %>
 </ul>
 
+<p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+<!-- Update to show status if it exists -->
+<p>No status set</p> 
+
 <% if @user.posts.any? %>
   <%= render @user.posts.reverse %>
 <% else %>

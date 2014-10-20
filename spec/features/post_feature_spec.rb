@@ -6,7 +6,7 @@ include SessionHelpers
 
 describe 'posts' do
   context 'adding a post' do
-      before(:each) do
+    before(:each) do
       user_sign_up
       add_basic_details
     end

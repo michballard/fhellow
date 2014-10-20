@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       post 'follow/:current_user_id', to: 'socializations#togglefollow'
       post 'unfollow', to: 'socializations#unfollow'
       get 'follow/:current_user_id', to: 'socializations#toggle'
+      resources :status
     end
   end
 
