@@ -1,8 +1,8 @@
-<%= form_for [@user, @status], url: new_user_status_path(@user.id) do |f| %>
+<%= form_for [@user, @status], url: "/user/#{@user.id}/status" do |f| %>
 
-  <%= f.label :current_status %>
-  <%= f.text_field :current_status %>
+  <p><%= f.label :current_status %></p>
+  <p><%= f.text_field :current_status %></p>
 
-  <%= f.submit "Update status" %>
+  <p><%= f.submit "Update status" %></p>
 
 <% end %>

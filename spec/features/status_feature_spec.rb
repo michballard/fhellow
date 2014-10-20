@@ -37,10 +37,18 @@ describe 'statuses' do
       fill_in('status[current_status]', with: 'Here is my new status')
       click_button "Update status"
       click_link "Current status"
-      fill_in('Status', with: 'Here is my updated status')
+      fill_in('status[current_status]', with: 'Here is my updated status')
       click_button "Update status"
       expect(page).not_to have_content "Here is my new status"
       expect(page).to have_content 'Here is my updated status'      
+    end
+
+    it 'has a time posted' do 
+      visit "/users/#{@bob.id}/show"
+      click_link "Current status"
+      fill_in('status[current_status]', with: 'Here is my new status')
+      click_button "Update status"
+      expect(page).to have_content 'less than a minute ago'
     end 
 
   end

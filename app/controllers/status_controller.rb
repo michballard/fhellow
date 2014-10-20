@@ -6,8 +6,9 @@ class StatusController < ApplicationController
 	end
 
 	def create
-    @status = Status.create(params[:status].permit{:current_status})
-    redirect_to user_profile
+		@user = User.find(params[:user_id])
+    @status = @user.statuses.create(params[:status].permit(:current_status))
+    redirect_to user_profile_path(@user)
 	end 
 
 end
