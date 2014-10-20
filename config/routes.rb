@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/message/:from_id' => 'messaging#conversation', as: 'conversation'
-get '/messages' => 'messaging#index', as: 'messages'
-post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
+	get '/messages' => 'messaging#index', as: 'messages'
+	post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users, :controllers => { :registrations => "profile", :omniauth_callbacks => "users/omniauth_callbacks"}
@@ -20,9 +20,10 @@ post '/message/:to_id' => 'messaging#send_message', as: 'send_message'
     get 'users/:id/show' => "profile#show", as: "user_profile"
 
     resources :user do
-        resources :posts
-          post 'follow/:current_user_id', to: 'socializations#togglefollow'
-          post 'unfollow', to: 'socializations#unfollow'
+      resources :posts
+      post 'follow/:current_user_id', to: 'socializations#togglefollow'
+      post 'unfollow', to: 'socializations#unfollow'
+      get 'follow/:current_user_id', to: 'socializations#toggle'
     end
   end
 

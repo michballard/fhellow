@@ -3,26 +3,28 @@
 <head>
   <title>Fhellow</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<nav> 
-<h1 id='logo'><%= link_to 'Fhellow', homepage_index_path %></h1>
-  <ul>
+<nav>
+<h1 class="col-md-6" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
+  <ul class="col-md-6">
     <% unless current_user %>
-      <li><a href="#">About</a></li>
+      <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
     <% end %>
-  <li><%= link_to "Activity", activity_path(current_or_guest_user) %></li> 
+  <li><i class="fa fa-newspaper-o"></i><%= link_to "Activity", activity_path(current_or_guest_user) %></li>
     <% if current_user %>
-  	<li><%= link_to "Post", new_user_post_path(current_user) %></li>
-    <li><%= link_to "Messages", messages_path %></li>
-    <% if current_user.name_first? %> 
+  	<li><i class="fa fa-pencil"></i><%= link_to "Post", new_user_post_path(current_user) %></li>
+    <li><i class="fa fa-envelope"></i><%= link_to "Messages", messages_path %></li>
+    <% if current_user.name_first? %>
       <li><%= link_to "#{current_user.name_first}", user_profile_path(current_user) %></li>
     <% else %>
       <li><%= link_to "My profile", user_profile_path(current_user) %></li>
     <% end %>
-  	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+  	<li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "sign-out" %></li>
   <%else%>
 	<li><%= link_to "Join", new_user_registration_path %></li>
 	<li><%= link_to "Log in", new_user_session_path %></li>

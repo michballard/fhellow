@@ -17,4 +17,6 @@
 //= require gmaps
 //= require list
 //= require mustache
+//= require q
 //= require_tree .
+

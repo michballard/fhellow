@@ -6,6 +6,9 @@
 
 $(document).ready(function() {
 
+var promises;
+
+
 // Setting maps center coordinates
   var map = new GMaps( {
     div: '#map',
@@ -22,16 +25,25 @@ $(document).ready(function() {
 
   });
 
-  url = "/api/users"
+  url = "/api/users";
 
 //Putting out the initial list of users
     $.get(url, function(users){
-      populateUsers(users);
+      promises = populateUsers(users);
+
+      Q.all(promises).then(function() {
+        $('.follow-toggle').on('click', function(event){
+          event.preventDefault();
+          $.post(this.href, function(response){
+            $(this).text(response.follow);
+          });
+        });
+      });
     });
 
 // Adding a marker on the map for each user
   $.get("/api/users", function(users){
-    populateMap(users)
+    populateMap(users);
   });
 
 // Adding a marker for the current user (not sure if works)
@@ -73,10 +85,19 @@ $(document).ready(function() {
         $('.profile').first().append("No current users in your region with those interests :(")
       }
       else {
-        populateUsers(users);
+        promises = populateUsers(users);
         map.removeMarkers()
         populateMap(users)
       }
+
+      Q.all(promises).then(function() {
+        $('.follow-toggle').on('click', function(event){
+          event.preventDefault();
+          $.post(this.href, function(response){
+            $(this).text(response.follow);
+          });
+        });
+      });
     });
   });
 
@@ -96,14 +117,21 @@ function populateMap(users){
 }
 
 function populateUsers(users){
-      users.forEach(function(user){
+      return users.map(function(user){
+        var deferred = Q.defer();
         var template = $ ('.profile-template').html();
+        
         $('.profile-container').append(Mustache.render(template, user));
+        deferred.resolve(true);
 
-      })
+        return deferred.promise;
+      });
 }
 
 
+
 });
+
+
 
 
