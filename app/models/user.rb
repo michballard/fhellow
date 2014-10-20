@@ -32,4 +32,12 @@ class User < ActiveRecord::Base
       end
     end
 
+    def follow_status(other_user)
+      if self.follows?(other_user)
+        return "Added"
+      else
+        return "Add"
+      end
+    end
+
 end
