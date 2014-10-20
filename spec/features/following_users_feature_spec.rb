@@ -4,9 +4,9 @@ describe 'relationships' do
 
   context 'a signed in user', js: true do
       before(:each) do
-    @barnany = create_barnany
-    @gemma = create_gemma
-  end
+        @barnany = create_barnany
+        @gemma = create_gemma
+      end
 
     xit 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
@@ -20,5 +20,16 @@ describe 'relationships' do
       find(".add-#{@gemma.id}").click
       expect(Follow.count).to eq 1
     end
+
+    it 'unfollows people' do 
+      expect(Follow.count).to eq 0
+      sign_in("barnany@barnany.com")
+      find(".add-#{@gemma.id}").click
+      expect(Follow.count).to eq 1
+      visit '/'
+      find(".add-#{@gemma.id}").click
+      expect(Follow.count).to eq 0
+    end
+  end
 
 end
