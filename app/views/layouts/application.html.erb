@@ -10,8 +10,8 @@
 <body>
 
 <nav>
-<h1 class="col-md-6" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
-  <ul class="col-md-6">
+<h1 class="col-md-6 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
+  <ul class="col-md-6 col-md-offset-0">
     <% unless current_user %>
       <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
     <% end %>
