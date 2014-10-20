@@ -7,9 +7,9 @@ class SocializationsController < ApplicationController
     @current_user = User.find(params[:current_user_id])
     @current_user.toggle_follow!(@other_user)
     if @current_user.follows?(@other_user) 
-      render json: { follow: true }
+      render json: { follow: "Added" }
     else
-      render json: {follow: false}
+      render json: {follow: "Add"}
     end
   end
 
