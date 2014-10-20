@@ -1,5 +1,7 @@
 require "rails_helper"
+require_relative 'helpers/user_helpers'
 
+include SessionHelpers
 
 describe "navigation" do
 
@@ -17,9 +19,15 @@ describe "navigation" do
       expect(current_path).to eq homepage_index_path
     end
 
-    it "should have a link for the 'About' page" do
+    it "should only have a link for the 'About' page if user is signed out" do
       visit '/'
       expect(page).to have_link 'About'
+    end
+
+    it "should not have a link to the 'About' page if user is signed in" do
+      user_sign_up
+      visit '/'
+      expect(page).not_to have_link 'About'
     end
 
     it "should have an activity nav link" do

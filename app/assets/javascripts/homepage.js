@@ -14,7 +14,15 @@ var promises;
     div: '#map',
     lat: 51.524013,
     lng: -0.087467,
-    scrollwheel: false
+    scrollwheel: false,
+    styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},
+             {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},
+             {"featureType":"landscape.man_made","elementType":"geometry.fill"},
+             {"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},
+             {"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},
+             {"featureType":"water","stylers":[{"color":"#7dcdcd"}]},
+             {"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]}]
+
   });
 
   url = "/api/users";
@@ -99,20 +107,21 @@ function populateMap(users){
         lat: user.latitude,
         lng: user.longitude,
         title: user.full_name,
+        icon: "/assets/marker_other_fhellows.png",
         class: "all-user-marker",
         infoWindow: {
             content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
                     }
          });
       });
-     
+
 }
 
 function populateUsers(users){
       return users.map(function(user){
         var deferred = Q.defer();
         var template = $ ('.profile-template').html();
-        
+
         $('.profile-container').append(Mustache.render(template, user));
         deferred.resolve(true);
 
