@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
     has_many :posts
+    has_many :statuses
     acts_as_followable
     acts_as_follower
 
