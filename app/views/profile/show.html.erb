@@ -1,11 +1,17 @@
+  <section class="cover-image">
+  </section>
+  <article class="main">
+  <div class="hexagon">
+    <div class="hexTop"></div>
+    <div class="hexBottom"></div>
+  </div>
+  <section id="user-info" class="col-md-4">
 <p><%= @user.name_first%> <%= @user.name_last %></p>
 <p><%= @user.job_title %></p>
 <p><%= @user.town %>, <%= @user.country %></p>
 <p><%= @user.bio %></p>
 <p><%= @user.website %></p>
 <p><%= @user.linkedin %></p>
-
-<%= image_tag @user.avatar.url(:medium), class: "avatar" %>
 
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
 
@@ -53,8 +59,9 @@
 <% else %>
    <p>No posts yet</p>
 <% end %>
+</section>
 
-<section>
+<section class="col-md-8">
  <h2> Congratulations - you are now Fhellow! </h2>
  <h2> Where would you like to go now? </h2>
 <ul>
@@ -64,3 +71,4 @@
  <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
 </ul>
 </section>
+</main>
