@@ -31,12 +31,12 @@ describe "maps" do
             bio: 'Whatevs')
     end
 
-    xit "should be able to place a marker for a fhellow's location" do
+    # it "should be able to place a marker for a fhellow's location" do
 
-      visit '/'
-      expect(page).to have_css '.lat'
-      expect(page).to have_css '.lng'
-    end
+    #   visit '/'
+    #   expect(page).to have_css '.lat'
+    #   expect(page).to have_css '.lng'
+    # end
   end
 
 #  context "many fhellows on map" do

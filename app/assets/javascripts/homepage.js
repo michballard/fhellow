@@ -48,15 +48,32 @@ var promises;
   });
 
 // Adding a marker for the current user (not sure if works)
-  map.addMarker({
-    lat: $('.lat').text(),
-    lng: $('.lng').text(),
-    title: 'Fhellow',
-    class: "current-user-marker",
-    infoWindow: {
-    content: '<p>HTML Content</p>'
-    }
-  });
+  $('.locate').on('click', function(event){
+        event.preventDefault();
+        if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        map.addMarker({
+          lat: (position.coords.latitude),
+          lng: (position.coords.longitude),
+          title: 'You!',
+          icon:"/assets/user_marker.png",
+          class: "user-marker"
+        })
+      })
+    };
+  })  
+
+
+
+  // map.addMarker({
+  //   lat: $('.lat').text(),
+  //   lng: $('.lng').text(),
+  //   title: 'Fhellow',
+  //   class: "current-user-marker",
+  //   infoWindow: {
+  //   content: '<p>HTML Content</p>'
+  //   }
+  // });
 
 //Gmap Set-up
   GMaps.geolocate({
@@ -108,7 +125,7 @@ function populateMap(users){
         lat: user.latitude,
         lng: user.longitude,
         title: user.full_name,
-        icon: "/assets/marker_other_fhellows.png",
+        icon: "/assets/fhellow_marker.png",
         class: "all-user-marker",
         infoWindow: {
             content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
