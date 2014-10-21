@@ -25,7 +25,7 @@ var promises;
 
   });
 
-  url = "/api/users";
+ var url = "/api/users";
 
 //Putting out the initial list of users
     $.get(url, function(users){
@@ -43,7 +43,7 @@ var promises;
     });
 
 // Adding a marker on the map for each user
-  $.get("/api/users", function(users){
+  $.get(url, function(users){
     populateMap(users);
   });
 
