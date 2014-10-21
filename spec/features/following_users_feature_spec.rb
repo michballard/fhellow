@@ -20,7 +20,7 @@ describe 'relationships' do
       expect(page).to have_content("Following")
     end
 
-    it 'should be able to unfollow a fhellow who they follow' do 
+    it 'should be able to unfollow a fhellow who they follow' do
       sign_in("barnany@barnany.com")
       find(".add-#{@gemma.id}").click
       expect(page).to have_content("Following")

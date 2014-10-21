@@ -10,12 +10,12 @@
 <body>
 
 <header>
-  <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', homepage_index_path %></h1>
+  <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', '/' %></h1>
 
 <nav class="col-sm-8 col-md-7 col-md-offset-0">
   <ul>
     <% unless current_user %>
-      <li><i class="fa fa-lightbulb-o"></i><a href="#">About</a></li>
+      <li><a href="#"><i class="fa fa-lightbulb-o"></i>About</a></li>
     <% end %>
   <li><%= link_to activity_path(current_or_guest_user) do %>
     <i class="fa fa-newspaper-o"></i>
@@ -50,15 +50,14 @@
 
 
 <% if flash[:notice]%>
-	<div id="notice">
-	<%= flash[:notice]%>
+	<div id="notice"><p>
+	<%= flash[:notice]%></p>
 	</div>
 <% end %>
 
 <%= yield %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
 
 </body>
 </html>

@@ -16,7 +16,7 @@ describe "navigation" do
       bob = User.create(email: 'bob@bob.com', password: 'password', password_confirmation: 'password')
       visit "/activity/#{bob.id}"
       click_link 'FHELLOW'
-      expect(current_path).to eq homepage_index_path
+      expect(current_path).to eq '/'
     end
 
     it "should only have a link for the 'About' page if user is signed out" do
