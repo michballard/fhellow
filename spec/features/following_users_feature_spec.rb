@@ -29,7 +29,7 @@ describe 'relationships' do
     it 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
       find(".profile-#{@gemma.id}").click
-      click_link("Follow")
+      find(".profile-follow-toggle").click
       expect(page).to have_content("Following")
     end
 
@@ -57,16 +57,20 @@ describe 'relationships' do
       expect(page).to have_content("1 Following")
     end
 
-    it 'can see a list of followers' do 
+    xit 'can see a list of followers' do 
       tom_follows_gemma_and_signs_out
       barney_follows_gemma
-      click_link "Followers"
+      find('.followers').click
+      expect(current_path).to match "/users/#{@gemma.id}/follower"
+      expect(page).to have_content("Barnany Shute")
     end 
 
     xit 'can see a list of following' do 
       barney_follows_gemma
       visit "/users/#{@barnany.id}/show"
-      click_link "Following"
+      find('.following').click
+      expect(current_path).to match "/users/#{@barnany.id}/following"
+      expect(page).to have_content("Gemma Gaven")
     end 
 
   end

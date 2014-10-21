@@ -40,11 +40,16 @@
   <% end %>
 </ul>
 
-<div class="followers"><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></div>
+<a href=<%="/users/#{@user.id}/follower"%> class="followers"><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></a>
 <br>
-<div class="following"><span class="following-count"><%= @user.followees(User).count %></span> Following</div>
+<a href=<%="/users/#{@user.id}/following"%> class="following"><span class="following-count"><%= @user.followees(User).count %></span> Following</a>
 
-<p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+<% if current_user && current_user.id == @user.id %>
+  <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+<% else %>
+  <p>Current status</p>
+<% end %>
+
 <% if @user.statuses.any? %>
   <p><%= @user.statuses.last.current_status %></p>
   <p><%= time_ago_in_words(@user.statuses.last.created_at) %> ago</p>
