@@ -35,9 +35,9 @@ class User < ActiveRecord::Base
 
     def follow_status(other_user)
       if self.follows?(other_user)
-        return "Added"
+        return "Following"
       else
-        return "Add"
+        return "Follow"
       end
     end
 

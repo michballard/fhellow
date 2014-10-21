@@ -9,6 +9,16 @@
 
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
 
+<% if current_user && current_user.follows?(@user) %>
+	<div class="follow">
+		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle">Following</a>
+	</div>
+<%elsif current_user %>
+	<div class="follow">
+			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle">Follow</a>
+	</div>
+<% end %>
+
 <ul>
   <% if @user.discussing_ideas == true %>
   <li>Discussing ideas</li>

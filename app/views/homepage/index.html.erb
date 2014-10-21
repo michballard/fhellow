@@ -26,11 +26,10 @@
 					<section class="image">
 		        <img src="{{image_url}}" class="avatar-image">
 					</section>
-					<h3> {{full_name}}</h3>
+					<h3><a href="/users/{{user_id}}/show" class="profile-{{user_id}}">{{full_name}}</a></h3>
 					<p> {{job_title}} </p>
 					<p> {{town}}</p>
 					<p> {{bio_truncated}} </p>
-					<p> {{user_id}} </p>
 			  		<a href="/user/{{user_id}}/follow/{{current_user_id}}" class="follow-toggle add-{{user_id}}">{{follow_status}}</a>
 				</li>
 			</article>
