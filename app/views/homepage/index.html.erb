@@ -1,6 +1,17 @@
 
 
-<div id='map'></div>
+<div id='map'>
+</div>
+<div class= "lat">
+</div>
+<div class = "lng">
+</div>
+<%= form_for [@user] do |f| %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
+  <%= f.submit "Find your location", class: "locate" %>
+<% end %>
+
 <% link_to %>
 <section id="search-container">
     <div id="search"><h2>Find fellow freelancers and entrepreneurs working around you</h2>
