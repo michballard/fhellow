@@ -10,6 +10,6 @@ class ActivityController < ApplicationController
     end
 
     def index
-      @posts = Post.all      
+      @posts = Post.all
     end
 end
