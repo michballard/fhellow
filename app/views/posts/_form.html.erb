@@ -1,4 +1,4 @@
-<%= form_for [@user, @post] do |f| %>
+<article class="main"><%= form_for [@user, @post] do |f| %>
 
 	<h4><%= f.label :content %></h4>
 	<p><%= f.text_area :content %></p>
@@ -13,3 +13,4 @@
 	<p><%= f.submit %></p>
 
 <% end %>
+</article>

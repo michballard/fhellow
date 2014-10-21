@@ -23,13 +23,31 @@ body {
   color: #4C4C4C;
 }
 
+#logo {
+  margin: 10px 0 5px;
+}
+
 h1 a {
 font-family: 'Montserrat', sans-serif;
 color: #000;
-margin-left: 10px;
+margin: -10px 0 0 10px;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 i {
   color: #7A7A7A;
 }
 
+.fa {
+  font-size: 22px;
+  display: block;
+  margin: 15% auto 0;
+}
+
+.main {
+  padding: 1% 5%;
+}
