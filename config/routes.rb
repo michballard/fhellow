@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
     get 'users/:id/show' => "profile#show", as: "user_profile"
 
+		get '/users/:id/follower' => "profile#follower", as: "user_follower"
+		get '/users/:id/following' => "profile#following", as: "user_following"
+
     resources :user do
       resources :posts
       post 'follow/:current_user_id', to: 'socializations#togglefollow'

@@ -6,6 +6,20 @@ include SessionHelpers
 describe 'relationships' do
 
   context 'a signed in user', js: true do
+    
+    def tom_follows_gemma_and_signs_out
+      sign_in("Tom@tom.com")
+      find(".profile-#{@gemma.id}").click
+      find(".profile-follow-toggle").click
+      click_link 'Sign out'
+    end
+
+    def barney_follows_gemma
+      sign_in("barnany@barnany.com")
+      find(".profile-#{@gemma.id}").click
+      find(".profile-follow-toggle").click
+    end
+
     before(:each) do
       @barnany = create_barnany
       @gemma = create_gemma
@@ -15,37 +29,50 @@ describe 'relationships' do
     it 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
       find(".profile-#{@gemma.id}").click
-      click_link("Follow")
+      find(".profile-follow-toggle").click
       expect(page).to have_content("Following")
     end
 
     it 'should be able to unfollow a fhellow who they follow' do
-      sign_in("barnany@barnany.com")
-      find(".add-#{@gemma.id}").click
+      barney_follows_gemma
       expect(page).to have_content("Following")
-      find(".add-#{@gemma.id}").click
+      find(".profile-follow-toggle").click
       expect(page).to have_content("Follow")
     end
+
+    it 'can see a counter with one follower' do 
+      barney_follows_gemma
+      expect(page).to have_content("1 Follower")
+    end
+
+    it 'can see a counter with many followers' do 
+      tom_follows_gemma_and_signs_out
+      barney_follows_gemma
+      expect(page).to have_content("2 Followers")
+    end
+
+    it 'can see a counter with one following' do 
+      barney_follows_gemma
+      visit "/users/#{@barnany.id}/show"          
+      expect(page).to have_content("1 Following")
+    end
+
+    xit 'can see a list of followers' do 
+      tom_follows_gemma_and_signs_out
+      barney_follows_gemma
+      find('.followers').click
+      expect(current_path).to match "/users/#{@gemma.id}/follower"
+      expect(page).to have_content("Barnany Shute")
+    end 
+
+    xit 'can see a list of following' do 
+      barney_follows_gemma
+      visit "/users/#{@barnany.id}/show"
+      find('.following').click
+      expect(current_path).to match "/users/#{@barnany.id}/following"
+      expect(page).to have_content("Gemma Gaven")
+    end 
+
   end
-
-    xit 'should have a counter showing how many people follow them' do 
-      sign_in("barnany@barnany.com")
-      find(".add-#{@gemma.id}").click
-
-    end
-
-    xit 'should have a counter showing how many people they are following' do 
-      sign_in("barnany@barnany.com")
-      find(".add-#{@gemma.id}").click
-
-    end
-
-    xit 'should display list of followers' do 
-
-    end 
-
-    xit 'should display list of people they are following' do 
-
-    end 
 
 end
