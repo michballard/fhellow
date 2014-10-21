@@ -10,13 +10,13 @@
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
 
 <% if current_user && current_user.follows?(@user) %>
-	<div class="follow">
-		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle">Following</a>
-	</div>
+	<button class="profile-following">
+		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Following</a>
+	</button>
 <%elsif current_user %>
-	<div class="follow">
-			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle">Follow</a>
-	</div>
+	<button class="profile-follow">
+			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow"><span class="follow-plus">+ </span>Follow</a>
+	</button>
 <% end %>
 
 <ul>

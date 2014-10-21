@@ -15,7 +15,6 @@ describe 'relationships' do
     it 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
       find(".profile-#{@gemma.id}").click
-      save_and_open_page
       click_link("Follow")
       expect(page).to have_content("Following")
     end

@@ -1,0 +1,30 @@
+
+// To follow a user - button called "Follow"
+
+.profile-follow {
+	border: 1px solid #43BEA2;
+	width: 100px;
+	background-color: white;
+}
+
+#toggle-follow {
+	color: #43BEA2;	
+}
+
+.follow-plus {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+// To unfollow a user - button called "Following"
+
+.profile-following {
+  border: 1px solid #43BEA2;
+	width: 100px;
+	background-color: #43BEA2;
+}
+
+#toggle-following {
+	color: white;	
+}
