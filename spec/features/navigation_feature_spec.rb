@@ -15,7 +15,7 @@ describe "navigation" do
     it "the Fhellow logo links to the home page" do
       bob = User.create(email: 'bob@bob.com', password: 'password', password_confirmation: 'password')
       visit "/activity/#{bob.id}"
-      click_link 'Fhellow'
+      click_link 'FHELLOW'
       expect(current_path).to eq homepage_index_path
     end
 

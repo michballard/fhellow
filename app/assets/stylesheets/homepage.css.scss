@@ -1,6 +1,9 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  border-bottom: none;
+}
 
 #map {
   width: 100%;
@@ -9,8 +12,4 @@
 
 .lat, .lng {
   display: none;
-}
-
-h1 #logo {
-  color: red;
 }

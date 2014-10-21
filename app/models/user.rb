@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
     has_many :posts
+    has_many :statuses
     acts_as_followable
     acts_as_follower
 
@@ -29,6 +30,14 @@ class User < ActiveRecord::Base
         user.name_first = data["first_name"] if user.name_first.blank?
         user.name_last = data["last_name"] if user.name_last.blank?
         end
+      end
+    end
+
+    def follow_status(other_user)
+      if self.follows?(other_user)
+        return "Added"
+      else
+        return "Add"
       end
     end
 

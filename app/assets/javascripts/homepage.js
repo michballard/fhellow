@@ -32,10 +32,11 @@ var promises;
       promises = populateUsers(users);
 
       Q.all(promises).then(function() {
-        $('.follow-toggle').on('click', function(event){
+        $('a.follow-toggle').on('click', function(event){
           event.preventDefault();
+          var link = $(this).closest('a')
           $.post(this.href, function(response){
-            $(this).text(response.follow);
+             link.text(response.follow)
           });
         });
       });
@@ -92,9 +93,9 @@ var promises;
 
       Q.all(promises).then(function() {
         $('.follow-toggle').on('click', function(event){
-          event.preventDefault();
+          // event.preventDefault();
           $.post(this.href, function(response){
-            $(this).text(response.follow);
+            link.text(response.follow)
           });
         });
       });

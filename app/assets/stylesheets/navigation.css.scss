@@ -1,13 +1,23 @@
-nav ul {
+header {
+  margin: 5px 0 0;
+  padding: 0 0 6%;
+  border-bottom: 1px solid #C9C9C9;
+}
 
+nav ul {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-top: -18px;
 }
 
 nav li {
-    list-style: none;
-    display: inline;
-    padding: 5% 2%;
-    border-left: 1px solid #C9C9C9;
-    font-size: larger;
+  list-style: none;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 4% 2% 2.2%;
+  border-left: 1px solid #C9C9C9;
 }
 
 nav li:last-child {
@@ -17,20 +27,30 @@ nav li:last-child {
 nav li a {
   color: #9A9A9A;
   font-size: 14px;
-  display: inline-block;
+  display: block;
   width: 70px;
   text-align: center;
-  padding-top: 50px;
 }
 
-nav li i {
-  // position: absolute;
-  // top: 20px;
-  // margin-left: 25px;
+nav li a:hover {
+  text-decoration: none;
+  color: #9A9A9A;
 }
 
-.sign-out {
-  background-color:#43BEA2;
-  padding: 1%;
+.account-manage {
+  padding: 6% 2% 3%;
+  vertical-align: top;
+}
+
+.account-manage a {
+  background-color: #43BEA2;
+  padding: 10% 1%;
   color: #fff;
 }
+
+.account-manage a:hover {
+  color: #fff;
+}
+
+
+
