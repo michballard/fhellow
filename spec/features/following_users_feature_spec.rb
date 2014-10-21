@@ -13,7 +13,6 @@ describe 'relationships' do
 
     it 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
-      save_and_open_page
       find(".add-#{@gemma.id}").click
       expect(page).to have_content("Added")
     end
