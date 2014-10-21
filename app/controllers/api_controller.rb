@@ -22,7 +22,7 @@ class ApiController < ApplicationController
               town: user.town, 
               user_id: user.id, 
               first_name: user.name_first, 
-              follow_status: current_user.follow_status(user) 
+              follow_status: current_or_guest_user.follow_status(user) 
             }
 
          end
