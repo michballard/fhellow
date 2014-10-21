@@ -40,6 +40,10 @@
   <% end %>
 </ul>
 
+<div class="followers"><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></div>
+<br>
+<div class="following"><span class="following-count"><%= @user.followees(User).count %></span> Following</div>
+
 <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
 <% if @user.statuses.any? %>
   <p><%= @user.statuses.last.current_status %></p>
