@@ -21,6 +21,7 @@
 body {
   font-family: 'Lato', sans-serif;
   color: #4C4C4C;
+  background-color: #EAEDF1;
 }
 
 #logo {
@@ -50,4 +51,22 @@ i {
 
 .main {
   padding: 1% 5%;
+}
+
+#notice {
+  text-align: center;
+  vertical-align: middle;
+  position:absolute;
+  top:250px;
+  left: 43%;
+  z-index: 1;
+  width: 200px;
+  height: 70px;
+  border: 3px solid #43BEA2;
+  border-radius: 15px;
+  background-color: #EAEDF1;
+}
+
+#notice p {
+  padding-top: 25px;
 }
