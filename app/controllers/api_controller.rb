@@ -29,7 +29,10 @@ class ApiController < ApplicationController
          end
     else
         @users = User.all.uniq.map do |user|
-            {full_name: "#{user.name_first} #{user.name_last}", longitude: user.longitude, latitude: user.latitude, image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: user.bio, town: user.town, user_id: user.id, first_name: user.name_first, current_user_id: current_or_guest_user.id, follow_status: current_or_guest_user.follow_status(user) }
+            {full_name: "#{user.name_first} #{user.name_last}", 
+            longitude: user.longitude, 
+            latitude: user.latitude, 
+            image_url: user.avatar.url(:thumb), job_title: user.job_title, bio_truncated: user.bio, town: user.town, user_id: user.id, first_name: user.name_first, current_user_id: current_or_guest_user.id, follow_status: current_or_guest_user.follow_status(user) }
         end
     end
 
