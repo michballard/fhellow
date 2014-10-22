@@ -52,16 +52,19 @@ var promises;
         event.preventDefault();
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-        map.addMarker({
-          lat: (position.coords.latitude),
-          lng: (position.coords.longitude),
-          title: 'You!',
-          icon:"/assets/user_marker.png",
-          class: "user-marker"
+          map.addMarker({
+            lat: (position.coords.latitude),
+            lng: (position.coords.longitude),
+            title: 'You!',
+            icon:"/assets/user_marker.png",
+            class: "user-marker",
+            infoWindow: {
+              content: "This is you!"
+              }
+           });
         })
-      })
-    };
-  })  
+      }
+    })  
 
 
 
