@@ -6,14 +6,6 @@
 </div>
 <div class = "lng">
 </div>
-<%= form_for [@user], url: homepage_update_path(@user) do |f| %>
-  <%= f.hidden_field :latitude %>
-  <%= f.hidden_field :longitude %>
-  <div class="locate">Locate</div>
-  <%if current_user %>
-      <%= f.submit "Set your location" %>
-  <%end%>
-<% end %>
 
 <% link_to %>
 
@@ -34,6 +26,14 @@
               <input type="checkbox" name="advising">Advising</input >
           </form>
       </div>
+      <%= form_for [@user], url: homepage_update_path(@user) do |f| %>
+        <%= f.hidden_field :latitude %>
+        <%= f.hidden_field :longitude %>
+        <div class="locate">Locate</div>
+        <%if current_user %>
+          <%= f.submit "Set your location" %>
+        <%end%>
+    <% end %>
     </div>
     <div class="col-md-1"></div>
   </div>

@@ -3,8 +3,8 @@ $(document).ready(function () {
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-              $('#post_lat').val(position.coords.latitude);
-              $('#post_lng').val(position.coords.longitude);
+              $('#post_latitude').val(position.coords.latitude);
+              $('#post_longitude').val(position.coords.longitude);
             });
         }
     });
