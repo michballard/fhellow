@@ -69,7 +69,10 @@ if($('#map').length > 0) {
       }
     }) 
 
+
+// Ajax request for submitting user location
 $('.edit_user').submit(function(){
+
   var valuesToSubmit = $(this).serialize();
   $.ajax({
     type: "POST",
