@@ -18,6 +18,8 @@
 //= require list
 //= require mustache
 //= require q
+//= require bootstrap-modal
+//= require bootstrap-modalmanager
 //= require transition
 //= require collapse
 //= require dropdown

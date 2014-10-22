@@ -32,7 +32,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
-group :test do 
+group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'database_cleaner'

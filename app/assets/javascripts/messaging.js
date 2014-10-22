@@ -1,2 +1,5 @@
 var objDiv = document.getElementById("chatbox");
-objDiv.scrollTop = objDiv.scrollHeight;
+if(objDiv !== null) {
+  objDiv.scrollTop = objDiv.scrollHeight;
+};
+
