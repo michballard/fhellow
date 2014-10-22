@@ -2,19 +2,29 @@
 <div class="modal-body">
     <h4 ><%= f.label :content %></h4>
       <p><%= f.text_area :content %></p>
+       <button type='button' id='latlng'><%= f.label :add_current_location %></button>
+         <%= f.hidden_field :latitude %>
+         <%= f.hidden_field :longitude %>
      <h4><%= f.label :image %></h4>
       <p><%= f.file_field :image %></p>
 </div>
       <div class="modal-footer">
-         <button type='button'><%= f.label :add_current_location, id: 'latlng' %>
-         <%= f.hidden_field :latitude %>
-         <%= f.hidden_field :longitude %>
-       </button>
-         <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"}%>
+                 <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"}%>
       <p><%= f.submit %></p>
       </div>
     <% end %>
+    <script>
+    $('#latlng').on('click', function() {
+       if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              console.log(position.coords.latitude)
+              $('#post_latitude').val(position.coords.latitude);
+              $('#post_longitude').val(position.coords.longitude);
+            });
+        }
 
+      })
+    </script>
 </article>
 </div>
 </div>
