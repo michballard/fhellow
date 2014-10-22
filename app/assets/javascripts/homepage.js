@@ -49,9 +49,11 @@ var promises;
 
 // Adding a marker for the current user (not sure if works)
   $('.locate').on('click', function(event){
-        event.preventDefault();
+        // event.preventDefault();
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
+          $('#user_latitude').val(position.coords.latitude)
+          $('#user_longitude').val(position.coords.longitude)
           map.addMarker({
             lat: (position.coords.latitude),
             lng: (position.coords.longitude),
