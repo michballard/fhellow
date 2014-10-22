@@ -6,11 +6,12 @@ include SessionHelpers
 describe 'relationships' do
 
   context 'a signed in user', js: true do
-    
+
     def tom_follows_gemma_and_signs_out
       sign_in("Tom@tom.com")
       find(".profile-#{@gemma.id}").click
       find(".profile-follow-toggle").click
+      click_link 'My profile'
       click_link 'Sign out'
     end
 
@@ -40,38 +41,38 @@ describe 'relationships' do
       expect(page).to have_content("Follow")
     end
 
-    it 'can see a counter with one follower' do 
+    it 'can see a counter with one follower' do
       barney_follows_gemma
       expect(page).to have_content("1 Follower")
     end
 
-    it 'can see a counter with many followers' do 
+    it 'can see a counter with many followers' do
       tom_follows_gemma_and_signs_out
       barney_follows_gemma
       expect(page).to have_content("2 Followers")
     end
 
-    it 'can see a counter with one following' do 
+    it 'can see a counter with one following' do
       barney_follows_gemma
-      visit "/users/#{@barnany.id}/show"          
+      visit "/users/#{@barnany.id}/show"
       expect(page).to have_content("1 Following")
     end
 
-    xit 'can see a list of followers' do 
+    xit 'can see a list of followers' do
       tom_follows_gemma_and_signs_out
       barney_follows_gemma
       find('.followers').click
       expect(current_path).to match "/users/#{@gemma.id}/follower"
       expect(page).to have_content("Barnany Shute")
-    end 
+    end
 
-    xit 'can see a list of following' do 
+    xit 'can see a list of following' do
       barney_follows_gemma
       visit "/users/#{@barnany.id}/show"
       find('.following').click
       expect(current_path).to match "/users/#{@barnany.id}/following"
       expect(page).to have_content("Gemma Gaven")
-    end 
+    end
 
   end
 
