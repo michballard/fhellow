@@ -87,6 +87,17 @@ i {
 
 }
 
+ .message-list {
+  background-color: #323a44;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  margin-top: 0px;
+  width: 100%;
+
+ }
+
 #chatbox {
   border: solid 1px #c9c9c9;
   border-top: solid 4px;
@@ -96,4 +107,10 @@ i {
   margin-left: 2%;
   background-color: white;
   padding-left: 2%;
+}
+
+
+#message {
+  width: 98%;
+  resize: none; 
 }

@@ -1,6 +1,6 @@
-<h1 class="chatbox">
+<h2 class="chatbox">
   Conversation
-</h1>
+</h2>
 <div id="chatbox">
   <% @message.each do |m| %>
     <div class="from">
@@ -19,8 +19,12 @@
       <%= m.seen ? "seen" : "sent"  %>
     </div>
   <% end %>
-</div>
+  <p id='line'></p>
+  <section id='message-box'>
 <%= form_tag("/message/#{@to}") do  %>
   <%= text_area_tag(:message)  %>
-  <%= submit_tag("Send")  %>
+  <p><%= submit_tag("Send")  %></p>
 <% end %>
+  </section>
+</div>
+
