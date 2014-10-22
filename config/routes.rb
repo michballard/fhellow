@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :homepage
-
+  patch '/homepage/:user_id' => "homepage#update", as: "homepage_update"
   get 'api/users' => "api#getuser", as: "api_users"
   get 'activity/:user_id' => "activity#show", as: "activity_user"
   get 'activity/:user_id' => "activity#index", as: "activity"

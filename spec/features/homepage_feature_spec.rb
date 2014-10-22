@@ -22,21 +22,30 @@ describe "maps" do
 	  end
 	end
 
-  context "one fhellow on map", js: true do
+  context "current user's location map", js: true do
     before do
-      User.create(email: "barnany@barnany.com",
+    @barnany = User.create(email: "barnany@barnany.com",
             password: "123456789",
-            latitude: 51.525803,
-            longitude: -0.088277,
+            # latitude: 51.525803,
+            # longitude: -0.088277,
             bio: 'Whatevs')
     end
 
-    # it "should be able to place a marker for a fhellow's location" do
-
-    #   visit '/'
-    #   expect(page).to have_css '.lat'
-    #   expect(page).to have_css '.lng'
+    # it "should be able to set a users location" do
+    #   puts @barnany.inspect
+    #   expect(@barnany.latitude).to eq nil
+    #   expect(@barnany.longitude).to eq nil
+    #   sign_in("barnany@barnany.com")
+    #   find('.locate').click
+    #   click_button 'Set your location'
+    #   puts "===================="
+    #   save_and_open_page
+    #   puts @barnany.inspect
+    #   expect(@barnany.latitude).not_to eq nil
+    #   expect(@barnany.longitude).not_to eq nil
     # end
+
+
   end
 
 #  context "many fhellows on map" do
