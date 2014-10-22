@@ -9,8 +9,7 @@ module SessionHelpers
 	end
 
 	def sign_in(email, password = "123456789")
-		visit '/'
-		click_link 'Log in'
+		visit '/users/sign_in'
 		fill_in("Email", with: email)
 		fill_in("Password", with: password)
 		click_button 'Log in'
