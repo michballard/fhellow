@@ -1,3 +1,45 @@
-footer {
-  width: 100%;
+.footer {
+  background-color: #323a44 !important;
+  color: #EAEDF1;
+  border: 1px solid #C9C9C9;
+  height: 60px !important;
 }
+.footer-container {
+  margin-top: 20px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container:before, .container:after {
+content: " ";
+display: table;
+}
+
+.footer p {
+  display: inline;
+  margin-top: 20px;
+}
+
+.footer p:first-child {
+  margin-left: 30px;
+}
+
+.footer ul {
+  margin-left: 70%;
+  display: inline;
+}
+
+.footer li {
+  list-style: none;
+  display: inline;
+  padding: 2% 3%;
+  border-left: 1px solid #EAEDF1;
+}
+
+.footer li:last-child {
+  border-right: 1px solid #EAEDF1;
+}
+
