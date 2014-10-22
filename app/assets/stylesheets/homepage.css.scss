@@ -13,3 +13,55 @@ header {
 .lat, .lng {
   display: none;
 }
+
+#search {
+	text-align: center;
+	background-color: white;
+	padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+#search-heading {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+input[type=checkbox] {
+	margin-left: 15px !important;
+  margin-right: 5px !important;
+}
+
+#search-container {
+  position: relative;
+  top: -90px;
+  z-index: +1;
+}
+
+.profile {
+  border: solid 1px #C9C9C9;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.col-md-4 {
+	margin: 20px;
+}
+
+.bio-summary {
+  border-top: solid 1px #C9C9C9;
+  padding: 15px;
+}
+
+.profile-summary {
+	padding: 15px;
+}
+
+a {
+	color: black !important;
+	font-weight: 700;
+}
+
+.avatar-image {
+  border: solid 1px #C9C9C9;
+}
+

@@ -14,6 +14,7 @@
   <section id="user-info" class="col-md-4">
     <article class="user-name">
       <h3><%= @user.name_first%> <%= @user.name_last %></h3>
+
       <p><%= @user.job_title %></p>
       <% if @user.town && @user.country %>
         <p><%= @user.town%>, <%= @user.country %></p>
@@ -22,7 +23,7 @@
       <%end%>
     </article>
 
-<p><%= link_to "Send message", send_message_path(@user.id) %></p>
+<button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
 
 <% if current_user && current_user.follows?(@user) %>
 	<button class="profile-following">
@@ -30,7 +31,7 @@
 	</button>
 <%elsif current_user %>
 	<button class="profile-follow">
-			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow"><span class="follow-plus">+ </span>Follow</a>
+			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
 	</button>
 <% end %>
 
@@ -84,14 +85,16 @@
 <% end %>
 </section>
 
-<section class="col-md-8">
- <h2> Congratulations - you are now Fhellow! </h2>
- <h2> Where would you like to go now? </h2>
-<ul>
- <li><%= link_to "See what's going on in the community", activity_user_path(@user.id) %></li>
- <li><%= link_to "Find other Fhellows", homepage_index_path %></li>
- <li><%= link_to "Create a post or status", new_user_post_path(@user.id), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile_page_posts'}  %></li>
- <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
-</ul>
+<section class="col-md-8" id="profile-posts">
+  <article class="post" id="intro-post">
+   <h2> Congratulations - you are now Fhellow! </h2>
+   <h3> Where would you like to go now? </h3>
+  <ul>
+   <li><%= link_to "See what's going on in the community", activity_user_path(@user.id) %></li>
+   <li><%= link_to "Find other Fhellows", homepage_index_path %></li>
+   <li><%= link_to "Create a post or status", new_user_post_path(@user.id), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile_page_posts'}  %></li>
+   <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
+  </ul>
+  </article>
 </section>
 </main>

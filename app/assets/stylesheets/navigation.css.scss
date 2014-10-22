@@ -1,61 +1,96 @@
-header {
-  margin: 0;
-  padding: 0 0 6%;
-  border-bottom: 1px solid #C9C9C9;
-  background-color:#fff;
-}
+// header {
+//   margin: 0;
+//   padding: 0 0 6%;
+//   border-bottom: 1px solid #C9C9C9;
+//   background-color:#fff;
+// }
 
-nav{
-  background-color:#fff;
-}
+// nav{
+//   background-color:#fff;
+// }
 
-nav ul {
-  text-align: center;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  margin-top: -18px;
-}
+// nav ul {
+//   text-align: center;
+//   position: relative;
+//   width: 100%;
+//   margin: 0;
+//   margin-top: -18px;
+// }
 
-nav li {
+.nav.navbar-nav.navbar-right li {
   list-style: none;
   display: inline-block;
   margin: 0 auto;
-  padding: 4% 2% 2.2%;
-  border-left: 1px solid #C9C9C9;
-}
-
-nav li:last-child {
   border-right: 1px solid #C9C9C9;
 }
 
-nav li a {
+.nav.navbar-nav.navbar-right li:first-child {
+  border-left: 1px solid #C9C9C9;
+}
+
+.nav.navbar-nav.navbar-right li.account-manage {
+  border: none;
+}
+
+.navbar-collapse.collapse {
+  padding-top: 14px;
+}
+
+.navbar.navbar-default.navbar-static-top{
+  height: 70px;
+  margin-bottom: 0px;
+}
+
+// .nav.navbar-nav.navbar-right li{
+//   border-left: 1px solid #C9C9C9;
+// }
+
+
+
+// nav li:last-child {
+//   border-right: 1px solid #C9C9C9;
+// }
+
+.nav.navbar-nav.navbar-right li a {
   color: #9A9A9A;
   font-size: 14px;
   display: block;
-  width: 70px;
+  width: 100px;
   text-align: center;
 }
 
-nav li a:hover {
+.nav.navbar-nav.navbar-right li a:hover {
   text-decoration: none;
   color: #9A9A9A;
 }
 
-.account-manage {
-  padding: 6% 2% 3%;
-  vertical-align: top;
+.nav.navbar-nav.navbar-right li i {
+  color: #7A7A7A;
+  display: block;
+  font-size: 16px;
 }
 
-.account-manage a {
+.nav.navbar-nav.navbar-right li input {
+   color: #7A7A7A;
+  display: block;
+  font-size: 16px;
   background-color: #43BEA2;
-  padding: 10% 1%;
-  color: #fff;
+  margin: 15px 0 0 10px;
 }
 
-.account-manage a:hover {
-  color: #fff;
+.dropdown-menu.nav.navbar-nav.navbar-right li:first-child {
+  border: none;
 }
+
+// .account-manage a {
+//   background-color: #43BEA2;
+//   padding: 10% 1%;
+//   color: #fff;
+// }
+
+// .account-manage a:hover {
+//   color: #fff;
+// }
 
 
 
