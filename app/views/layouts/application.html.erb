@@ -9,10 +9,6 @@
 </head>
 <body>
 
-
- <div id="homepage_posts" class="modal fade" tabindex="-1" data-container="body" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-
-<header>
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -22,7 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h1><a class="navbar-brand" href="/"><img src="/assets/logo.png"><span>FHELLOW</span></a></h1>
+          <h1 id="logo"><a class="navbar-brand" href="/"><img src="/assets/logo.png"><span>FHELLOW</span></a></h1>
         </div>
         <div class="navbar-collapse collapse">
 
@@ -36,7 +32,7 @@
     <% end %>
   </li>
     <% if current_user %>
-    <li><%= link_to new_user_post_path(current_user), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#posts'} do %>
+    <li><%= link_to new_user_post_path(current_user) do %>
       <i class="fa fa-pencil"></i>
       Post
       <% end %>
@@ -53,25 +49,25 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%= current_user.name_first %></a>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to "My profile", user_profile_path(@user.id) %></li>
-                <li><%= link_to "Edit my profile", edit_profile_path(@user.id) %></li>
+                <li><%= link_to "Edit my profile", edit_profile_2path(@user.id) %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
           </ul>
       </li>
     <% else %>
-      <li><%= link_to user_profile_path(current_user) do %>
-          <ul class="dropdown-menu" role="menu">
-            <li><%= link_to "My profile", user_profile_path %></li>
-            <li><%= link_to "Edit my profile", edit_profile_path(@user.id) %></li>
-            <li><%= link_to "Settings", user_profile_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <li>
+      <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>My profile</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to "My profile", user_profile_path(@user.id) %></li>
+                <li><%= link_to "Edit my profile", edit_profile_path(@user.id) %></li>
+                <li><a href="#">Settings</a></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
           </ul>
-      </li>
-      </ul>
-        <i class="fa fa-user"></i>
-        My profile
-        <% end %>
       </li>
     <% end %>
   <%else%>
@@ -85,7 +81,6 @@
     </div>
 
 
-
 <% if flash[:notice]%>
 	<div id="notice"><p>
 	<%= flash[:notice]%></p>
@@ -96,5 +91,13 @@
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+<footer>
+<p>Fhellow</p>
+<p>&copy;</p>
+<ul>
+  <li>About</li>
+  <li>Team</li>
+</ul>
+</footer>
 </body>
 </html>
