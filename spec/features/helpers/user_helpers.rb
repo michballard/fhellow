@@ -49,11 +49,11 @@ module SessionHelpers
 				bio: "Hi I'm Barney",
 				latitude: 51.522783,
 				longitude: -0.082867,
-				discussing_ideas: true, 
-				afterwork_drinks: true, 
-				collaborating: true, 
-				chat_over_a_coffee: true, 
-				lunch_buddy: true, 
+				discussing_ideas: true,
+				afterwork_drinks: true,
+				collaborating: true,
+				chat_over_a_coffee: true,
+				lunch_buddy: true,
 				advising: true)
 	end
 
@@ -67,11 +67,11 @@ module SessionHelpers
 							bio: "I am in Freelance PR",
 							latitude: 51.529363,
 							longitude: -0.085927,
-							discussing_ideas: false, 
-							afterwork_drinks: false, 
-							collaborating: false, 
-							chat_over_a_coffee: false, 
-							lunch_buddy: false, 
+							discussing_ideas: false,
+							afterwork_drinks: false,
+							collaborating: false,
+							chat_over_a_coffee: false,
+							lunch_buddy: false,
 							advising: false)
 	end
 
@@ -85,14 +85,14 @@ module SessionHelpers
 							bio: "I am an Entrepreneur",
 							latitude: 51.529363,
 							longitude: -0.085927,
-							discussing_ideas: true, 
-							afterwork_drinks: false, 
-							collaborating: false, 
-							chat_over_a_coffee: false, 
-							lunch_buddy: false, 
+							discussing_ideas: true,
+							afterwork_drinks: false,
+							collaborating: false,
+							chat_over_a_coffee: false,
+							lunch_buddy: false,
 							advising: true)
 	end
 
-end 
+end
 
 
