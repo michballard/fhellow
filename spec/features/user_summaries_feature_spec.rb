@@ -1,4 +1,7 @@
 require 'rails_helper'
+require_relative 'helpers/user_helpers'
+
+include SessionHelpers
 
 describe 'user summaries' do
   context 'when no user has been added' do
@@ -27,6 +30,14 @@ describe 'user summaries' do
       expect(page).to have_content "London"
       expect(page).to have_content "Hi I'm Barney"
     end
+    
+    it 'should link to the user profile page' do 
+    	@gemma = create_gemma
+      visit '/'
+      find(".profile-#{@gemma.id}").click
+      expect(current_path).to match "/users/#{@gemma.id}/show"
+    end 
+
   end
 
   context 'with a picture' do
@@ -50,4 +61,5 @@ describe 'user summaries' do
       # expect(page).to have_content('avatar.jpg')
     end
   end
+
 end

@@ -48,16 +48,37 @@ if($('#map').length > 0) {
       populateMap(users);
     });
 
-  // Adding a marker for the current user (not sure if works)
-    map.addMarker({
-      lat: $('.lat').text(),
-      lng: $('.lng').text(),
-      title: 'Fhellow',
-      class: "current-user-marker",
-      infoWindow: {
-      content: '<p>HTML Content</p>'
+// Adding a marker for the current user (not sure if works)
+  $('.locate').on('click', function(event){
+        // event.preventDefault();
+        if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          $('#user_latitude').val(position.coords.latitude)
+          $('#user_longitude').val(position.coords.longitude)
+          map.addMarker({
+            lat: (position.coords.latitude),
+            lng: (position.coords.longitude),
+            title: 'You!',
+            icon:"/assets/user_marker.png",
+            class: "user-marker",
+            infoWindow: {
+              content: "This is you!"
+              }
+           });
+        })
       }
-    });
+    })  
+
+    /*  // Adding a marker for the current user (not sure if works)*/
+    //map.addMarker({
+      //lat: $('.lat').text(),
+      //lng: $('.lng').text(),
+      //title: 'Fhellow',
+      //class: "current-user-marker",
+      //infoWindow: {
+      //content: '<p>HTML Content</p>'
+      //}
+    /*});*/
 
   //Gmap Set-up
     GMaps.geolocate({
@@ -72,6 +93,8 @@ if($('#map').length > 0) {
     },
   });
 
+
+ 
   //Filtering users by interest
     $('#interests-form').on("change", function(){
       var checkedValues = $('input:checkbox:checked').map(function() {
@@ -103,19 +126,19 @@ if($('#map').length > 0) {
       });
     });
 
-  function populateMap(users){
-        users.forEach(function(user){
-          map.addMarker({
-          lat: user.latitude,
-          lng: user.longitude,
-          title: user.full_name,
-          icon: "/assets/marker_other_fhellows.png",
-          class: "all-user-marker",
-          infoWindow: {
-              content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
-                      }
-           });
-        });
+function populateMap(users){
+      users.forEach(function(user){
+        map.addMarker({
+        lat: user.latitude,
+        lng: user.longitude,
+        title: user.full_name,
+        icon: "/assets/fhellow_marker.png",
+        class: "all-user-marker",
+        infoWindow: {
+            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+                    }
+         });
+      });
 
   }
 

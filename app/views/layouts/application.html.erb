@@ -39,7 +39,11 @@
     <% if current_user.name_first? %>
       <li><%= link_to "#{current_user.name_first}", user_profile_path(current_user) %></li>
     <% else %>
-      <li><i class="fa fa-user"></i><%= link_to "My profile", user_profile_path(current_user) %></li>
+      <li><%= link_to user_profile_path(current_user) do %>
+        <i class="fa fa-user"></i>
+        Me
+        <% end %>
+      </li>
     <% end %>
   	<li class="account-manage"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
   <%else%>

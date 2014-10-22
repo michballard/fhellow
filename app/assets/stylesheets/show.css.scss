@@ -1,0 +1,137 @@
+.profile-main {
+  padding: 1% 5%;
+  margin-top: -115px;
+}
+
+.cover-image {
+	background-image: url('/assets/cover-image.jpg');
+	background-size: cover;
+	height: 450px;
+	width: 100%;
+}
+
+.avatar {
+	width:300px;
+	height:300px;
+	margin: -200px 0 0 150px;
+	border: 5px solid #fff;
+	position: relative;
+	z-index: 1;
+}
+
+//   .hexagon {
+//   position: relative;
+//   width: 250px;
+//   height: 144.34px;
+//   margin: -155.17px 0;
+//   background-image: url('/assets/User_2.jpg');
+//   background-size: auto 277.1281px;
+//   background-position: center;
+//   border-left: solid 5px #ffffff;
+//   border-right: solid 5px #ffffff;
+// }
+
+// .hexTop,
+// .hexBottom {
+//   position: absolute;
+//   z-index: 1;
+//   width: 176.78px;
+//   height: 176.78px;
+//   overflow: hidden;
+//   -webkit-transform: scaleY(0.5774) rotate(-45deg);
+//   -ms-transform: scaleY(0.5774) rotate(-45deg);
+//   transform: scaleY(0.5774) rotate(-45deg);
+//   background: inherit;
+//   left: 31.61px;
+// }
+
+// /*counter transform the bg image on the caps*/
+// .hexTop:after,
+// .hexBottom:after {
+//   content: "";
+//   position: absolute;
+//   width: 240.0000px;
+//   height: 138.5640646055102px;
+//   -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-69.2820px);
+//   -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-69.2820px);
+//   transform:          rotate(45deg) scaleY(1.7321) translateY(-69.2820px);
+//   -webkit-transform-origin: 0 0;
+//   -ms-transform-origin: 0 0;
+//   transform-origin: 0 0;
+//   background: inherit;
+// }
+
+// .hexTop {
+//   top: -88.3883px;
+//   border-top: solid 7.0711px #ffffff;
+//   border-right: solid 7.0711px #ffffff;
+// }
+
+// .hexTop:after {
+//   background-position: center top;
+// }
+
+// .hexBottom {
+//   bottom: -88.3883px;
+//   border-bottom: solid 7.0711px #ffffff;
+//   border-left: solid 7.0711px #ffffff;
+// }
+
+// .hexBottom:after {
+//   background-position: center bottom;
+// }
+
+// .hexagon:after {
+//   content: "";
+//   position: absolute;
+//   top: 2.8868px;
+//   left: 0;
+//   width: 240.0000px;
+//   height: 138.5641px;
+//   z-index: 2;
+//   background: inherit;
+// }
+
+#user-info {
+	padding-top: 100px;
+	background-color: #fff;
+}
+
+.user-name {
+	text-align: center;
+}
+
+.user-bio {
+	margin-left: 50px;
+
+}
+
+// To follow a user - button called "Follow"
+
+.profile-follow {
+	border: 1px solid #43BEA2;
+	width: 100px;
+	background-color: white;
+}
+
+#toggle-follow {
+	color: #43BEA2;
+}
+
+.follow-plus {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+// To unfollow a user - button called "Following"
+
+.profile-following {
+  border: 1px solid #43BEA2;
+	width: 100px;
+	background-color: #43BEA2;
+}
+
+#toggle-following {
+	color: white;
+}

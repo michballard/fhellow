@@ -16,7 +16,7 @@ describe ApiController do
         
       end
 
-      describe "GET 'index'", js: true do
+      xdescribe "GET 'index'", js: true do
         it "returns a successful 200 reponse" do
           get :getuser, format: :json
           expect(response).to be_success

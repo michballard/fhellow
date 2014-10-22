@@ -7,8 +7,38 @@
 <p><%= @user.linkedin %></p>
 
 <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+<section class="cover-image">
+</section>
+  <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+<article class="profile-main">
+  <section id="user-info" class="col-md-4">
+    <article class="user-name">
+      <h3><%= @user.name_first%> <%= @user.name_last %></h3>
+      <p><%= @user.job_title %></p>
+      <% if @user.town && @user.country %>
+        <p><%= @user.town%>, <%= @user.country %></p>
+      <% else %>
+        <p><%= @user.town %></p>
+      <%end%>
+    </article>
 
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
+
+<% if current_user && current_user.follows?(@user) %>
+	<button class="profile-following">
+		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Following</a>
+	</button>
+<%elsif current_user %>
+	<button class="profile-follow">
+			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow"><span class="follow-plus">+ </span>Follow</a>
+	</button>
+<% end %>
+
+    <article class="user-bio">
+      <p><%= @user.bio %></p>
+      <p><%= @user.website %></p>
+      <p><%= @user.linkedin %></p>
+      </article>
 
 <ul>
   <% if @user.discussing_ideas == true %>
@@ -31,7 +61,15 @@
   <% end %>
 </ul>
 
-<p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+<p><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></p>
+<p><span class="following-count"><%= @user.followees(User).count %></span> Following</p>
+
+<% if current_user && current_user.id == @user.id %>
+  <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+<% else %>
+  <p>Current status</p>
+<% end %>
+
 <% if @user.statuses.any? %>
   <p><%= @user.statuses.last.current_status %></p>
   <p><%= time_ago_in_words(@user.statuses.last.created_at) %> ago</p>
@@ -44,8 +82,9 @@
 <% else %>
    <p>No posts yet</p>
 <% end %>
+</section>
 
-<section>
+<section class="col-md-8">
  <h2> Congratulations - you are now Fhellow! </h2>
  <h2> Where would you like to go now? </h2>
 <ul>
@@ -55,3 +94,4 @@
  <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
 </ul>
 </section>
+</main>

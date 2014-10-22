@@ -29,7 +29,7 @@ describe 'user profiles' do
       click_link('Edit your profile')
       fill_in('user[country]', with: 'United Kingdom')
       fill_in('user[town]', with: 'London')
-      click_button('Create my profile')
+      click_button('Confirm profile details')
       expect(page).to have_content('London, United Kingdom')
     end
 
@@ -39,7 +39,7 @@ describe 'user profiles' do
       click_link('Edit your profile')
       fill_in('user[website]', with: "www.barnany.com")
       fill_in('user[linkedin]', with: "linkedin.com/in/barnany")
-      click_button('Create my profile')
+      click_button('Confirm profile details')
       expect(page).to have_content('www.barnany.com')
       expect(page).to have_content('linkedin.com/in/barnany')
     end
@@ -49,7 +49,7 @@ describe 'user profiles' do
       add_basic_details
       click_link('Edit your profile')
       attach_file 'user[avatar]', ('spec/fixtures/images/avatar.jpg')
-      click_button('Create my profile')
+      click_button('Confirm profile details')
       expect(page).to have_css('.avatar')
       # expect(@user.avatar_file_name).to eq "avatar.jpg"
     end
@@ -65,7 +65,7 @@ describe 'user profiles' do
       click_link("Edit your profile")
       add_bob_details
       select('Freelancer', :from => 'user[user_type]')
-      click_button('Create my profile')
+      click_button('Confirm profile details')
       bob = User.first
       expect(bob.user_type).to eq 'Freelancer'
     end
@@ -90,7 +90,7 @@ describe 'user profiles' do
       check("Chat over a coffee")
       check("Lunch buddy")
       check("Advising")
-      click_button('Create my profile')
+      click_button('Confirm profile details')
       expect(page).to have_content("Discussing ideas")
       expect(page).to have_content("Afterwork drinks")
       expect(page).to have_content("Collaborating")

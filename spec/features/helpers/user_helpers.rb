@@ -22,7 +22,7 @@ module SessionHelpers
 	    fill_in('Email', with: 'barnany@barnany.com')
 	    fill_in('user[job_title]', with: 'Freelance film maker')
 	    fill_in('user[bio]', with: "Hi I'm Barney")
-	    click_button('Create my profile')
+	    click_button('Confirm profile details')
 	end
 
   def second_user_add_basic_details
@@ -31,7 +31,7 @@ module SessionHelpers
     fill_in('Email', with: 'alisa@barnany.com')
     fill_in('user[job_title]', with: 'Freelance designer')
     fill_in('user[bio]', with: "Hi I'm Alisa")
-    click_button "Create my profile"
+    click_button "Confirm profile details"
   end
 
   def add_bob_details
@@ -64,7 +64,7 @@ module SessionHelpers
 							name_last: "Gaven",
 							job_title: "Freelance PR",
 							location: "London",
-							bio: "",
+							bio: "I am in Freelance PR",
 							latitude: 51.529363,
 							longitude: -0.085927,
 							discussing_ideas: false, 
@@ -73,6 +73,24 @@ module SessionHelpers
 							chat_over_a_coffee: false, 
 							lunch_buddy: false, 
 							advising: false)
+	end
+
+	def create_tom
+		User.create(email: "Tom@tom.com",
+							password: "123456789",
+							name_first: "Thomas",
+							name_last: "Thames",
+							job_title: "Entrepreneur",
+							location: "London",
+							bio: "I am an Entrepreneur",
+							latitude: 51.529363,
+							longitude: -0.085927,
+							discussing_ideas: true, 
+							afterwork_drinks: false, 
+							collaborating: false, 
+							chat_over_a_coffee: false, 
+							lunch_buddy: false, 
+							advising: true)
 	end
 
 end 

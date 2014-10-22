@@ -1,6 +1,18 @@
 
 
-<div id='map'></div>
+<div id='map'>
+</div>
+<div class= "lat">
+</div>
+<div class = "lng">
+</div>
+<%= form_for [@user], url: homepage_update_path(@user) do |f| %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
+  <div class="locate">Locate</div>
+  <%= f.submit "Set your location" %>
+<% end %>
+
 <% link_to %>
 <section id="search-container">
     <div id="search"><h2>Find fellow freelancers and entrepreneurs working around you</h2>
@@ -26,11 +38,10 @@
 					<section class="image">
 		        <img src="{{image_url}}" class="avatar-image">
 					</section>
-					<h3> {{full_name}}</h3>
+					<h3><a href="/users/{{user_id}}/show" class="profile-{{user_id}}">{{full_name}}</a></h3>
 					<p> {{job_title}} </p>
 					<p> {{town}}</p>
 					<p> {{bio_truncated}} </p>
-					<p> {{user_id}} </p>
 			  		<a href="/user/{{user_id}}/follow/{{current_user_id}}" class="follow-toggle add-{{user_id}}">{{follow_status}}</a>
 				</li>
 			</article>
