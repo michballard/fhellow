@@ -16,6 +16,17 @@
 //   margin: 0;
 //   margin-top: -18px;
 // }
+.navbar-brand img {
+  margin-right: 20px;
+}
+
+.navbar-brand span {
+  color: #4C4C4C;
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
 
 .nav.navbar-nav.navbar-right li {
   list-style: none;
