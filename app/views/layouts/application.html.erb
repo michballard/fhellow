@@ -9,8 +9,72 @@
 </head>
 <body>
 
-<header>
-  <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', '/' %></h1>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/assets/logo.png">FHELLOW</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+    <% unless current_user %>
+      <li><a href="#"><i class="fa fa-lightbulb-o"></i>About</a></li>
+    <% end %>
+  <li><%= link_to activity_path(current_or_guest_user) do %>
+    <i class="fa fa-newspaper-o"></i>
+    Activity
+    <% end %>
+  </li>
+    <% if current_user %>
+    <li><%= link_to new_user_post_path(current_user) do %>
+      <i class="fa fa-pencil"></i>
+      Post
+      <% end %>
+    </li>
+    <li><%= link_to messages_path do %>
+      <i class="fa fa-envelope"></i>
+      Messages
+      <% end %>
+    </li>
+    <% if current_user.name_first? %>
+      <li>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%= current_user.name_first %></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to "My profile", user_profile_path %></li>
+                <li><%= link_to "Edit my profile", edit_profile_path(@user.id) %></li>
+                <li><%= link_to "Settings", user_profile_path %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          </ul>
+      </li>
+    <% else %>
+      <li><%= link_to user_profile_path(current_user) do %>
+        <i class="fa fa-user"></i>
+        My profile
+        <% end %>
+      </li>
+    <% end %>
+  <%else%>
+  <li class="account-manage"><%= button_to "Join", new_user_registration_path %></li>
+  <li class="account-manage"><%= button_to "Log in", new_user_session_path %></li>
+
+<% end %>
+  </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<!-- <header>
+  <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><%= link_to 'FHELLOW', '/' %></h1>
 
 <nav class="col-sm-8 col-md-7 col-md-offset-0">
   <ul>
@@ -23,7 +87,7 @@
     <% end %>
   </li>
     <% if current_user %>
-  	<li><%= link_to new_user_post_path(current_user) do %>
+    <li><%= link_to new_user_post_path(current_user) do %>
       <i class="fa fa-pencil"></i>
       Post
       <% end %>
@@ -34,23 +98,27 @@
       <% end %>
     </li>
     <% if current_user.name_first? %>
-      <li><%= link_to "#{current_user.name_first}", user_profile_path(current_user) %></li>
+      <li><%= link_to user_profile_path(current_user) do %>
+        <i class="fa fa-user"></i>
+        <%= current_user.name_first %>
+        <% end %>
+      </li>
     <% else %>
       <li><%= link_to user_profile_path(current_user) do %>
         <i class="fa fa-user"></i>
-        Me
+        My profile
         <% end %>
       </li>
     <% end %>
-  	<li class="account-manage"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+    <li class="account-manage"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
   <%else%>
-	<li class="account-manage"><%= link_to "Join", new_user_registration_path %></li>
-	<li class="account-manage"><%= link_to "Log in", new_user_session_path %></li>
+  <li class="account-manage"><%= link_to "Join", new_user_registration_path %></li>
+  <li class="account-manage"><%= link_to "Log in", new_user_session_path %></li>
 
 <% end %>
   </ul>
 </nav>
-</header>
+</header> -->
 
 
 <% if flash[:notice]%>

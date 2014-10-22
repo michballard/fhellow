@@ -1,6 +1,8 @@
 .profile-main {
   padding: 1% 5%;
-  margin-top: -115px;
+  margin-top: -120px;
+  position: relative;
+	z-index: -1;
 }
 
 .cover-image {
@@ -13,7 +15,7 @@
 .avatar {
 	width:300px;
 	height:300px;
-	margin: -200px 0 0 150px;
+	margin: -200px 0 0 12%;
 	border: 5px solid #fff;
 	position: relative;
 	z-index: 1;
@@ -109,18 +111,24 @@
 // To follow a user - button called "Follow"
 
 .profile-follow {
-	border: 1px solid #43BEA2;
-	width: 100px;
-	background-color: white;
+	border: 2px solid #43BEA2;
+	width: 150px;
+	background-color: #fff;
+	padding: 10px 0;
+	margin-left: 20px;
+}
+
+.profile-follow a {
+	margin-left: 10px;
 }
 
 #toggle-follow {
 	color: #43BEA2;
 }
 
-.follow-plus {
-	font-size: 20px;
-	font-weight: bold;
+.fa.fa-plus {
+	font-size: 16px;
+	color: #43BEA2;
 }
 
 
@@ -133,5 +141,75 @@
 }
 
 #toggle-following {
-	color: white;
+	color: #fff;
+}
+
+.message-user {
+	background-color: #43BEA2;
+	width: 150px;
+	border: 2px solid #43BEA2;
+	padding: 10px 0;
+	margin: 10px 0 0 20%;
+}
+
+.fa.fa-envelope {
+	display: inline;
+	font-size: 16px;
+	color: #fff;
+}
+
+.message-user a {
+	color: #fff;
+	margin-left: 10px;
+}
+
+// user posts
+#intro-post {
+	margin-top: 20px;
+}
+
+#intro-post h2, h3 {
+	text-align: center;
+	margin-bottom: 10px;
+	padding: 10px 0;
+}
+
+#intro-post h2 {
+	border-bottom: 1px solid #C9C9C9;
+	padding-bottom: 20px;
+}
+
+#intro-post ul {
+    width:700px;
+    margin: 0 auto;
+		padding: 40px 0;
+}
+
+#intro-post ul:after {
+    content:".";
+    clear:both;
+    height:0;
+    display:block;
+    visibility:hidden;
+}
+
+#intro-post ul li {
+    margin: 0 0 0 50px;
+		padding: 0 0 20px 0;
+    float:left;
+    display:block;
+    width:300px;
+    list-style: none;
+}
+
+#intro-post li:before {
+	content: "\003E \0020";
+	font-size: 1.25em;
+		color: #43BEA2;
+}
+
+#intro-post a {
+	text-decoration: none;
+	color: #43BEA2;
+	font-size: 1.25em;
 }
