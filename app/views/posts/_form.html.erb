@@ -2,13 +2,14 @@
 <div class="modal-body">
     <h4 ><%= f.label :content %></h4>
       <p><%= f.text_area :content %></p>
-      <p><%= f.label :add_current_location, id: 'latlng' %></p>
-         <%= f.hidden_field :latitude %>
-         <%= f.hidden_field :longitude %>
      <h4><%= f.label :image %></h4>
       <p><%= f.file_field :image %></p>
 </div>
       <div class="modal-footer">
+         <button type='button'><%= f.label :add_current_location, id: 'latlng' %>
+         <%= f.hidden_field :latitude %>
+         <%= f.hidden_field :longitude %>
+       </button>
          <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"}%>
       <p><%= f.submit %></p>
       </div>
