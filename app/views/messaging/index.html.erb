@@ -1,6 +1,6 @@
 
 <h2 class="message-list">Messages</h2>
-
+<section class="message-container">
 <% @messages.each do |message| %>
 <% if current_user.id == message.from_id %>
   <p id=""><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
@@ -11,4 +11,4 @@
   <p id="message"><%= "Message: #{message.message}" %></p>
   <%= link_to "View conversation", conversation_path(message.to_id) %>
 <% end %>
-
+</section>
