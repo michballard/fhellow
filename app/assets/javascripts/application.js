@@ -18,5 +18,8 @@
 //= require list
 //= require mustache
 //= require q
+//= require transition
+//= require collapse
+//= require dropdown
 //= require_tree .
 
