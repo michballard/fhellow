@@ -57,7 +57,7 @@ input[type=checkbox] {
 }
 
 .profile-summary-text {
-  padding: 0 5px 0 20px !important;
+  padding: 0 5px 0 30px !important;
 }
 
 .profile-summary-name {
@@ -72,10 +72,11 @@ input[type=checkbox] {
 .profile-summary-location {
 	color: #C9C9C9;
 	margin-bottom: 0px;
+	font-size: 12px;
 }
 
 .bio-summary {
-  padding: 15px;
+  padding: 5px 15px 5px 15px;
   border-left: solid 1px #C9C9C9;
   border-bottom: solid 1px #C9C9C9;
   border-right: solid 1px #C9C9C9;
@@ -86,4 +87,5 @@ input[type=checkbox] {
 .profile-summary-bio {
 	color: #C9C9C9;
 	margin-bottom: 0px;
+	font-size: 12px;
 }
