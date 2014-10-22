@@ -10,9 +10,9 @@ $('.location-setter').hide()
 
 var promises;
 
-if($('#map').length > 0) {
+  if($('#map').length > 0) {
 
-  // Setting maps center coordinates
+    // Setting maps center coordinates
     var map = new GMaps( {
       div: '#map',
       lat: 51.524013,
@@ -25,27 +25,26 @@ if($('#map').length > 0) {
                {"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},
                {"featureType":"water","stylers":[{"color":"#7dcdcd"}]},
                {"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]}]
-
     });
 
-   var url = "/api/users";
+    //Putting out the initial list of users
+    var url = "/api/users";
 
-  //Putting out the initial list of users
-      $.get(url, function(users){
-        promises = populateUsers(users);
+    $.get(url, function(users){
+      promises = populateUsers(users);
 
-        Q.all(promises).then(function() {
-          $('a.follow-toggle').on('click', function(event){
-            event.preventDefault();
-            var link = $(this).closest('a')
-            $.post(this.href, function(response){
-               link.text(response.follow)
-            });
+      Q.all(promises).then(function() {
+        $('a.follow-toggle').on('click', function(event){
+          event.preventDefault();
+          var link = $(this).closest('a');
+          $.post(this.href, function(response){
+             link.text(response.follow);
           });
         });
       });
+    });
 
-  // Adding a marker on the map for each user
+    // Adding a marker on the map for each user
     $.get(url, function(users){
       populateMap(users);
     });
@@ -56,8 +55,8 @@ if($('#map').length > 0) {
         $('.location-setter').show()
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          $('#user_latitude').val(position.coords.latitude)
-          $('#user_longitude').val(position.coords.longitude)
+          $('#user_latitude').val(position.coords.latitude);
+          $('#user_longitude').val(position.coords.longitude);
           map.addMarker({
             lat: (position.coords.latitude),
             lng: (position.coords.longitude),
@@ -68,8 +67,9 @@ if($('#map').length > 0) {
               content: "This is you!"
               }
            });
-        })
+        });
       }
+
     }) 
 
 
@@ -108,53 +108,53 @@ $('.edit_user').submit(function(){
       //}
     /*});*/
 
-  //Gmap Set-up
+    //Gmap Set-up
     GMaps.geolocate({
-    success: function(position) {
-      map.setCenter(position.coords.latitude, position.coords.longitude);
-    },
-    error: function(error) {
-      alert('Geolocation failed: '+error.message);
-    },
-    not_supported: function() {
-      alert("Your browser does not support geolocation");
-    },
-  });
+      success: function(position) {
+        map.setCenter(position.coords.latitude, position.coords.longitude);
+      },
+      error: function(error) {
+        alert('Geolocation failed: '+error.message);
+      },
+      not_supported: function() {
+        alert("Your browser does not support geolocation");
+      },
+    });
 
 
- 
-  //Filtering users by interest
+   
+    //Filtering users by interest
     $('#interests-form').on("change", function(){
       var checkedValues = $('input:checkbox:checked').map(function() {
         return this.name;
       }).get();
 
       $('.profile').html('');
-      url = "/api/users?interests=" + checkedValues.join(",")
+      url = "/api/users?interests=" + checkedValues.join(",");
       $.get(url, function(users){
         if($.isEmptyObject(users)) {
           //$('.profile-container').html('');
-          map.removeMarkers()
-          $('.profile').first().append("No current users in your region with those interests :(")
+          map.removeMarkers();
+          $('.profile').first().append("No current users in your region with those interests :(");
         }
         else {
           promises = populateUsers(users);
-          map.removeMarkers()
-          populateMap(users)
+          map.removeMarkers();
+          populateMap(users);
         }
 
         Q.all(promises).then(function() {
           $('.follow-toggle').on('click', function(event){
             // event.preventDefault();
             $.post(this.href, function(response){
-              link.text(response.follow)
+              link.text(response.follow);
             });
           });
         });
       });
     });
 
-function populateMap(users){
+    function populateMap(users){
       users.forEach(function(user){
         if (user.current_user_id == user.user_id) {
           map.addMarker({
@@ -177,29 +177,31 @@ function populateMap(users){
         class: "all-user-marker",
         infoWindow: {
             content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
-                    }
+            }
          });
         }
       });
+    }
+
+    function populateUsers(users){
+      return users.map(function(user){
+        var deferred = Q.defer();
+        var template = $ ('.profile-template').html();
+        $('.profile-container').append(Mustache.render(template, user));
+        deferred.resolve(true);
+        return deferred.promise;
+      });
+    }
 
   }
 
-  function populateUsers(users){
-        return users.map(function(user){
-          var deferred = Q.defer();
-          var template = $ ('.profile-template').html();
-
-          $('.profile-container').append(Mustache.render(template, user));
-          deferred.resolve(true);
-
-          return deferred.promise;
-        });
-  }
-
-};
+      // Using Isotope to format user summaries on homepage 
+    // var $container = $('#profile-summaries-display');
+    // // init
+    // $container.isotope({
+    //   // options
+    //   itemSelector: '.profile-container',
+    //   layoutMode: 'fitRows'
+    // });
 
 });
-
-
-
-
