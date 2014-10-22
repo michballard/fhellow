@@ -1,6 +1,5 @@
-<article class="main">
 
-<h2>Messages</h2>
+<h2 class="message-list">Messages</h2>
 
 <% @messages.each do |message| %>
 <% if current_user.id == message.from_id %>
@@ -13,4 +12,3 @@
   <%= link_to "View conversation", conversation_path(message.to_id) %>
 <% end %>
 
-</article>
