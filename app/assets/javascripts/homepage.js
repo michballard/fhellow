@@ -2,8 +2,6 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
-
-
 $(document).ready(function() {
 
 $('.location-setter').hide()
@@ -41,16 +39,18 @@ var promises;
              link.text(response.follow);
           });
         });
+        performLayout();
       });
     });
+
 
     // Adding a marker on the map for each user
     $.get(url, function(users){
       populateMap(users);
     });
 
-// Adding a marker for the current user (not sure if works)
-  $('.locate').on('click', function(event){
+    // Adding a marker for the current user (not sure if works)
+    $('.locate').on('click', function(event){
         // event.preventDefault();
         $('.location-setter').show()
         if(navigator.geolocation) {
@@ -69,13 +69,11 @@ var promises;
            });
         });
       }
-
     }) 
 
 
 // Ajax request for submitting user location
 $('.edit_user').submit(function(){
-
   var valuesToSubmit = $(this).serialize();
   $.ajax({
     type: "POST",
@@ -150,6 +148,7 @@ $('.edit_user').submit(function(){
               link.text(response.follow);
             });
           });
+          performLayout();
         });
       });
     });
@@ -192,16 +191,17 @@ $('.edit_user').submit(function(){
         return deferred.promise;
       });
     }
-
   }
 
-      // Using Isotope to format user summaries on homepage 
-    // var $container = $('#profile-summaries-display');
-    // // init
-    // $container.isotope({
-    //   // options
-    //   itemSelector: '.profile-container',
-    //   layoutMode: 'fitRows'
-    // });
-
+  function performLayout(){
+    // Using Isotope to format user summaries on homepage 
+    var $container = $('#profile-container');
+    // init
+    $container.isotope({
+      // options
+      itemSelector: '.child-container',
+      layoutMode: 'masonry'
+    });
+  }
+  
 });
