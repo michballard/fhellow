@@ -67,7 +67,29 @@ if($('#map').length > 0) {
            });
         })
       }
-    })  
+    }) 
+
+$('.edit_user').submit(function(){
+  var valuesToSubmit = $(this).serialize();
+  $.ajax({
+    type: "POST",
+    url: $(this).attr('action'),
+    data: valuesToSubmit,
+    dataType: "JSON"
+  }).success(function(json){
+    //nada
+  });
+  return false;
+})
+
+  // $('.edit_user').on('submit', function(event){
+  //   var url = $(this).attr('action')
+  //   event.preventDefault()
+  //   $.post(url, function(){
+  //   $('#user_latitude').val()
+  //   $('#user_longitude').val()
+  // })
+  // })
 
     /*  // Adding a marker for the current user (not sure if works)*/
     //map.addMarker({

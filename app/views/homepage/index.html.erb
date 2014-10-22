@@ -31,7 +31,7 @@
         <%= f.hidden_field :longitude %>
         <div class="locate">Locate</div>
         <%if current_user %>
-          <%= f.submit "Set your location" %>
+          <%= f.submit "Set your location", class: "location-setter" %>
         <%end%>
     <% end %>
     </div>
