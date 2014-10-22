@@ -130,7 +130,7 @@ describe 'user profiles' do
       it 'should have a link to post a message to that user' do
         bob = User.create(email: 'bob@b.com', password: '1234567890', password_confirmation: '1234567890')
         visit "/users/#{bob.id}/show"
-        click_link("Send message")
+        click_link("Message")
         expect(current_path).to eq "/message/#{bob.id}"
       end
     end

@@ -163,7 +163,7 @@ $('.edit_user').submit(function(){
           icon: "/assets/user_marker.png",
           class: "user-marker",
           infoWindow: {
-            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+            content: '<img src="' + user.image_url + '"><h2>' + "You!" + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
                     }
           })
         }

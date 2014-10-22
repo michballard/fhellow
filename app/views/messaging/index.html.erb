@@ -1,14 +1,15 @@
 
 <h2 class="message-list">Messages</h2>
-
+<section class="message-container">
 <% @messages.each do |message| %>
-<% if current_user.id == message.from_id %>
-  <p id=""><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
+  <div id='each-message'
+  <% if current_user.id == message.from_id %>
+    <p id="message-who"><%= link_to "#{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}", conversation_path(message.to_id) %></p>
   <% else %>
-  <p><%= "Conversation with: #{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
+    <p id='message-who'><%= link_to "#{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}", conversation_path(message.to_id) %></p>
+  <% end %>
+    <p id="time-sent"><%= "Sent: #{time_ago_in_words(message.created_at)} ago" %></p>
+    <p id="message"><%= "Message: #{message.message}" %></p>
+</div>
 <% end %>
-  <p id="time-sent"><%= "Sent: #{time_ago_in_words(message.created_at)} ago" %></p>
-  <p id="message"><%= "Message: #{message.message}" %></p>
-  <%= link_to "View conversation", conversation_path(message.to_id) %>
-<% end %>
-
+</section>
