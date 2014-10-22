@@ -5,11 +5,11 @@
   <% @message.each do |m| %>
     <div class="from">
       <% if current_user.id == m.from_id %>
-        <h2>
+        <h2 id="you">
           You
         </h2>
       <% else %>
-        <h2>
+        <h2 id="them">
           Them
         </h2>
       <% end %>
@@ -21,6 +21,6 @@
   <% end %>
 </div>
 <%= form_tag("/message/#{@to}") do  %>
-  <%= text_field_tag(:message)  %>
+  <%= text_area_tag(:message)  %>
   <%= submit_tag("Send")  %>
 <% end %>
