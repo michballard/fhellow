@@ -48,9 +48,8 @@
   <% end %>
 </ul>
 
-<a href=<%="/users/#{@user.id}/follower"%> class="followers"><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></a>
-<br>
-<a href=<%="/users/#{@user.id}/following"%> class="following"><span class="following-count"><%= @user.followees(User).count %></span> Following</a>
+<p><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></p>
+<p><span class="following-count"><%= @user.followees(User).count %></span> Following</p>
 
 <% if current_user && current_user.id == @user.id %>
   <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
