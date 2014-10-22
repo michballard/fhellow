@@ -18,19 +18,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.navbar {
-  min-height: 80px;
+html {
+  position: relative;
+  min-height: 100%;
 }
-
-.navbar-brand {
-padding: 0 15px;
-}
-
 
 body {
   font-family: 'Lato', sans-serif;
   color: #4C4C4C;
   background-color: #EAEDF1;
+  margin-bottom: 20px;
 }
 
 h1 a {
@@ -48,11 +45,13 @@ i {
   color: #7A7A7A;
 }
 
-// .fa {
-//   font-size: 22px;
-//   display: block;
-//   margin: 15% auto 0;
-// }
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-brand {
+padding: 0 15px;
+}
 
 .main {
   padding: 1% 5%;
@@ -111,5 +110,17 @@ i {
 
 #message {
   width: 98%;
-  resize: none; 
+  resize: none;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
