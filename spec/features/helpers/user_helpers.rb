@@ -22,7 +22,7 @@ module SessionHelpers
 	    fill_in('Email', with: 'barnany@barnany.com')
 	    fill_in('user[job_title]', with: 'Freelance film maker')
 	    fill_in('user[bio]', with: "Hi I'm Barney")
-	    click_button('Create my profile')
+	    click_button('Confirm profile details')
 	end
 
   def second_user_add_basic_details
@@ -31,7 +31,7 @@ module SessionHelpers
     fill_in('Email', with: 'alisa@barnany.com')
     fill_in('user[job_title]', with: 'Freelance designer')
     fill_in('user[bio]', with: "Hi I'm Alisa")
-    click_button "Create my profile"
+    click_button "Confirm profile details"
   end
 
   def add_bob_details
