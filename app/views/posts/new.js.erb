@@ -1,0 +1,5 @@
+$(document).ready(function() {
+    $("#homepage_posts").html("<%= escape_javascript(render :partial => 'posts/form') %>");
+    $("#homepage_posts").modal("show");
+});
+
