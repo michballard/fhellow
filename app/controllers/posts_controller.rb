@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
 
+
   def new
     @user = User.find(params[:user_id])
     @post = Post.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def create
@@ -14,6 +20,10 @@ class PostsController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update

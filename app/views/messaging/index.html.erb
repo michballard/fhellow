@@ -1,15 +1,15 @@
 <article class="main">
 
-<h1>Messages</h1>
+<h2>Messages</h2>
 
 <% @messages.each do |message| %>
 <% if current_user.id == message.from_id %>
-  <p><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
+  <p id=""><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
   <% else %>
   <p><%= "Conversation with: #{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
-  <% end %>
-  <p><%= "Message: #{message.message}" %></p>
-  <p><%= "Sent: #{time_ago_in_words(message.created_at)} ago" %></p>
+<% end %>
+  <p id="time-sent"><%= "Sent: #{time_ago_in_words(message.created_at)} ago" %></p>
+  <p id="message"><%= "Message: #{message.message}" %></p>
   <%= link_to "View conversation", conversation_path(message.to_id) %>
 <% end %>
 
