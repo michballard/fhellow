@@ -14,39 +14,60 @@
 <% end %>
 
 <% link_to %>
+
 <section id="search-container">
-    <div id="search"><h2>Find fellow freelancers and entrepreneurs working around you</h2>
-        <h4> Discuss project, share advice, collaborate, meet up and start creating your own work community</h4>
-        <span>Enter your post code  </span>
-        <span>Proximity  </span>
-        <span>Type of Fhellow  </span>
-        <div id="interests-form">
-            <form> Interested in
-                <input type="checkbox" name="discussing-ideas">Discussing Ideas</input >
-                <input type="checkbox" name="collaborating">Collaborating</input >
-                <input type="checkbox" name="afterwork-drinks">Afterwork drinks</input >
-                <input type="checkbox" name="chat-over-a-coffee">Chat over a coffee</input >
-                <input type="checkbox" name="lunch-buddy">Lunch buddy</input >
-                <input type="checkbox" name="advising">Advising</input >
-            </form>
-        </div>
+  <div class="row">
+
+    <div class="col-md-1 search-box"></div>
+    <div id="search" class="col-md-10">
+      <h2 id="search-heading">Find fellow freelancers and entrepreneurs working around you</h2>
+      <h4> Discuss projects, share advice, collaborate, meet up and start creating your own work community</h4>
+      <div id="interests-form">
+          <form> Interested in:
+              <input type="checkbox" name="discussing-ideas">Discussing Ideas</input >
+              <input type="checkbox" name="collaborating">Collaborating</input >
+              <input type="checkbox" name="afterwork-drinks">Afterwork drinks</input >
+              <input type="checkbox" name="chat-over-a-coffee">Chat over a coffee</input >
+              <input type="checkbox" name="lunch-buddy">Lunch buddy</input >
+              <input type="checkbox" name="advising">Advising</input >
+          </form>
+      </div>
     </div>
-   <main class="profile-container">
-	   <template class="profile-template">
-			<article class="profile" id="{{full_name}}">
-				<li>
-					<section class="image">
-		        <img src="{{image_url}}" class="avatar-image">
-					</section>
-					<h3><a href="/users/{{user_id}}/show" class="profile-{{user_id}}">{{full_name}}</a></h3>
-					<p> {{job_title}} </p>
-					<p> {{town}}</p>
-					<p> {{bio_truncated}} </p>
-			  		<a href="/user/{{user_id}}/follow/{{current_user_id}}" class="follow-toggle add-{{user_id}}">{{follow_status}}</a>
-				</li>
-			</article>
-		</template>
-	</main>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <main class="profile-container">
+        <template class="profile-template">
+          <article class="profile" id="{{full_name}}">
+
+            <div class="profile-summary">
+              <div class="row">
+                <div class="col-md-5">
+                  <section class="image">
+                    <img src="{{image_url}}" class="avatar-image">
+                  </section>
+                </div>
+
+                <div class="col-md-7">
+                  <h3><a href="/users/{{user_id}}/show" class="profile-name profile-{{user_id}}">{{full_name}}</a></h3>
+                  <p> {{job_title}} </p>
+                  <p> {{town}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bio-summary">
+              {{bio_truncated}}
+            </div>
+          </article>
+        </template>
+      </main>
+    </div>
+
+  </div>
+
 </section>
 
 
