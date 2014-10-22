@@ -9,6 +9,8 @@
 </head>
 <body>
 
+ <div id="homepage_posts" class="modal fade" tabindex="-1" data-container="body" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
 <header>
   <h1 class="col-sm-4 col-md-5 col-md-offset-0" id='logo'><img src="/assets/logo.png"><%= link_to 'FHELLOW', '/' %></h1>
 
@@ -23,12 +25,13 @@
     <% end %>
   </li>
     <% if current_user %>
-  	<li><%= link_to new_user_post_path(current_user) do %>
+      <li><%= link_to new_user_post_path(current_user), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#homepage_posts'} do %>
       <i class="fa fa-pencil"></i>
       Post
-      <% end %>
+
+    <% end %>
     </li>
-    <li><%= link_to messages_path do %>
+      <li><%= link_to messages_path do %>
       <i class="fa fa-envelope"></i>
       Messages
       <% end %>

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'api/users' => "api#getuser", as: "api_users"
   get 'activity/:user_id' => "activity#show", as: "activity_user"
   get 'activity/:user_id' => "activity#index", as: "activity"
-  
-  devise_scope :user do 
+
+  devise_scope :user do
     patch '/users/:id' => "profile#update_profile", as: "user"
     get 'users/:id/edit_profile' => "profile#edit_profile", as: "edit_profile"
     get 'users/:id/show' => "profile#show", as: "user_profile"

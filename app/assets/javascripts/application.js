@@ -18,5 +18,7 @@
 //= require list
 //= require mustache
 //= require q
+//= require bootstrap-modal
+//= require bootstrap-modalmanager
 //= require_tree .
 

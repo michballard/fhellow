@@ -1,3 +1,4 @@
+<div id="profile_page_posts" class="modal fade" tabindex="-101" data-container="body" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ></div>
 <p><%= @user.name_first%> <%= @user.name_last %></p>
 <p><%= @user.job_title %></p>
 <p><%= @user.town %>, <%= @user.country %></p>
@@ -50,7 +51,7 @@
 <ul>
  <li><%= link_to "See what's going on in the community", activity_user_path(@user.id) %></li>
  <li><%= link_to "Find other Fhellows", homepage_index_path %></li>
- <li><%= link_to "Create a post or status", new_user_post_path(@user.id) %></li>
+ <li><%= link_to "Create a post or status", new_user_post_path(@user.id), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile_page_posts'}  %></li>
  <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %> </li>
 </ul>
 </section>
