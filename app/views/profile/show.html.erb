@@ -1,17 +1,15 @@
-  <section class="cover-image">
-  </section>
-  <article class="main">
-  <div class="hexagon">
-    <div class="hexTop"></div>
-    <div class="hexBottom"></div>
-  </div>
+<section class="cover-image">
+</section>
+  <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+<article class="profile-main">
   <section id="user-info" class="col-md-4">
-<p><%= @user.name_first%> <%= @user.name_last %></p>
-<p><%= @user.job_title %></p>
-<p><%= @user.town %>, <%= @user.country %></p>
-<p><%= @user.bio %></p>
-<p><%= @user.website %></p>
-<p><%= @user.linkedin %></p>
+    <article class="user-name">
+      <h3><%= @user.name_first%> <%= @user.name_last %></h3>
+      <p><%= @user.job_title %></p>
+      <% if @user.town && @user.country %>
+        <p><%= @user.town%>, <%= @user.country %></p>
+      <%end%>
+    </article>
 
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
 
@@ -24,6 +22,12 @@
 			<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow"><span class="follow-plus">+ </span>Follow</a>
 	</button>
 <% end %>
+
+    <article class="user-bio">
+      <p><%= @user.bio %></p>
+      <p><%= @user.website %></p>
+      <p><%= @user.linkedin %></p>
+      </article>
 
 <ul>
   <% if @user.discussing_ideas == true %>
