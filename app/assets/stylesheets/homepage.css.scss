@@ -31,37 +31,59 @@ input[type=checkbox] {
   margin-right: 5px !important;
 }
 
-#search-container {
+#search-container-position {
   position: relative;
   top: -90px;
   z-index: +1;
 }
 
-.profile {
-  border: solid 1px #C9C9C9;
-  margin-bottom: 15px;
-  background-color: white;
+.profile-summaries-display {
+	padding: 0 15px 0 15px;
 }
 
-.profile-container-section {
-	margin: 20px;
-}
-
-.bio-summary {
-  border-top: solid 1px #C9C9C9;
-  padding: 15px;
+.profile-container-column {
+	padding: 0 !important;
 }
 
 .profile-summary {
 	padding: 15px;
-}
-
-.profile-name {
-	color: black;
-	font-weight: 700;
+  border: solid 1px #C9C9C9;
+  margin: 15px 15px 0 15px;
+  background-color: white;
 }
 
 .avatar-image {
   border: solid 1px #C9C9C9;
 }
 
+.profile-summary-text {
+  padding: 0 5px 0 20px !important;
+}
+
+.profile-summary-name {
+	color: black;
+	font-weight: 700;
+}
+
+.profile-summary-job-title {
+	margin-bottom: 0px;
+}
+
+.profile-summary-location {
+	color: #C9C9C9;
+	margin-bottom: 0px;
+}
+
+.bio-summary {
+  padding: 15px;
+  border-left: solid 1px #C9C9C9;
+  border-bottom: solid 1px #C9C9C9;
+  border-right: solid 1px #C9C9C9;
+  margin: 0 15px 15px 15px;
+  background-color: white;
+}
+
+.profile-summary-bio {
+	color: #C9C9C9;
+	margin-bottom: 0px;
+}

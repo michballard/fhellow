@@ -88,10 +88,12 @@ i {
 }
 
 #chatbox {
-  border-style: solid 1px;
+  border: solid 1px #c9c9c9;
+  border-top: solid 4px;
   border-top-color: #43bea2;
   width: 96%;
   margin-top: 2%;
   margin-left: 2%;
   background-color: white;
+  padding-left: 2%;
 }

@@ -1,5 +1,3 @@
-
-
 <div id='map'>
 </div>
 <div class= "lat">
@@ -9,9 +7,9 @@
 
 <% link_to %>
 
-<section id="search-container">
-  <div class="row">
+<section id="search-container-position">
 
+  <div class="row">
     <div class="col-md-1 search-box"></div>
     <div id="search" class="col-md-10">
       <h2 id="search-heading">Find fellow freelancers and entrepreneurs working around you</h2>
@@ -38,38 +36,76 @@
     <div class="col-md-1"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4 profile-container-section">
+  <div class="row profile-summaries-display">
+   <div class="col-md-4 profile-container-column">
       <main class="profile-container">
         <template class="profile-template">
           <article class="profile" id="{{full_name}}">
-
             <div class="profile-summary">
               <div class="row">
-                <div class="col-md-5">
-                  <section class="image">
-                    <img src="{{image_url}}" class="avatar-image">
-                  </section>
+                <div class="col-md-4">
+                  <img src="{{image_url}}" class="avatar-image">
                 </div>
-
-                <div class="col-md-7">
-                  <h3><a href="/users/{{user_id}}/show" class="profile-name profile-{{user_id}}">{{full_name}}</a></h3>
-                  <p> {{job_title}} </p>
-                  <p> {{town}}</p>
+                <div class="col-md-8 profile-summary-text">
+                  <a href="/users/{{user_id}}/show" class="profile-summary-name profile-{{user_id}}">{{full_name}}</a>
+                  <p class="profile-summary-job-title"> {{job_title}} </p>
+                  <p class='profile-summary-location'> {{town}}</p>
                 </div>
               </div>
             </div>
-
             <div class="bio-summary">
-              {{bio_truncated}}
+              <p class="profile-summary-bio">{{bio_truncated}}</p>
             </div>
           </article>
         </template>
       </main>
     </div>
-
+    <div class="col-md-4 profile-container-column">
+      <main class="profile-container">
+        <template class="profile-template">
+          <article class="profile" id="{{full_name}}">
+            <div class="profile-summary">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{{image_url}}" class="avatar-image">
+                </div>
+                <div class="col-md-8 profile-summary-text">
+                  <a href="/users/{{user_id}}/show" class="profile-summary-name profile-{{user_id}}">{{full_name}}</a>
+                  <p class="profile-summary-job-title"> {{job_title}} </p>
+                  <p class='profile-summary-location'> {{town}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="bio-summary">
+              <p class="profile-summary-bio">{{bio_truncated}}</p>
+            </div>
+          </article>
+        </template>
+      </main>
+    </div>
+    <div class="col-md-4 profile-container-column">
+      <main class="profile-container">
+        <template class="profile-template">
+          <article class="profile" id="{{full_name}}">
+            <div class="profile-summary">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{{image_url}}" class="avatar-image">
+                </div>
+                <div class="col-md-8 profile-summary-text">
+                  <a href="/users/{{user_id}}/show" class="profile-summary-name profile-{{user_id}}">{{full_name}}</a>
+                  <p class="profile-summary-job-title"> {{job_title}} </p>
+                  <p class='profile-summary-location'> {{town}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="bio-summary">
+              <p class="profile-summary-bio">{{bio_truncated}}</p>
+            </div>
+          </article>
+        </template>
+      </main>
+    </div>
   </div>
 
 </section>
-
-
