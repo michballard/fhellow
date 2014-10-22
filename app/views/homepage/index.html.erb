@@ -27,7 +27,7 @@
       <%= form_for [@user], url: homepage_update_path(@user) do |f| %>
         <%= f.hidden_field :latitude %>
         <%= f.hidden_field :longitude %>
-        <div class="locate">Locate</div>
+        <button class="locate">Locate</button>
         <%if current_user %>
           <%= f.submit "Set your location", class: "location-setter" %>
         <%end%>

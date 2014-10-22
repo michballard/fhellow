@@ -6,6 +6,8 @@
 
 $(document).ready(function() {
 
+$('.location-setter').hide()
+
 var promises;
 
 if($('#map').length > 0) {
@@ -51,6 +53,7 @@ if($('#map').length > 0) {
 // Adding a marker for the current user (not sure if works)
   $('.locate').on('click', function(event){
         // event.preventDefault();
+        $('.location-setter').show()
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           $('#user_latitude').val(position.coords.latitude)
@@ -153,6 +156,19 @@ $('.edit_user').submit(function(){
 
 function populateMap(users){
       users.forEach(function(user){
+        if (user.current_user_id == user.user_id) {
+          map.addMarker({
+          lat: user.latitude,
+          lng: user.longitude,
+          title: user.full_name,
+          icon: "/assets/user_marker.png",
+          class: "user-marker",
+          infoWindow: {
+            content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+                    }
+          })
+        }
+        else {
         map.addMarker({
         lat: user.latitude,
         lng: user.longitude,
@@ -163,6 +179,7 @@ function populateMap(users){
             content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
                     }
          });
+        }
       });
 
   }
