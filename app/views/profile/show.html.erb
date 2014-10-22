@@ -8,6 +8,8 @@
       <p><%= @user.job_title %></p>
       <% if @user.town && @user.country %>
         <p><%= @user.town%>, <%= @user.country %></p>
+      <% else %>
+        <p><%= @user.town %></p>
       <%end%>
     </article>
 
