@@ -37,7 +37,7 @@
     <% end %>
   </li>
     <% if current_user %>
-    <li><%= link_to new_user_post_path(current_user) do %>
+    <li><%= link_to new_user_post_path(current_user), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#posts'} do %>
       <i class="fa fa-pencil"></i>
       Post
       <% end %>
