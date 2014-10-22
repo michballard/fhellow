@@ -56,7 +56,10 @@
 	</div>
 
 	<div>
-	<%= f.submit :"Create my profile"%>
+	<%= f.submit :"Confirm profile details"%>
 	</div>
+  <%if @user.name_first %>
+  <%= link_to "Account settings", edit_user_registration_path %>
+  <%end%>
 
 <%end%>

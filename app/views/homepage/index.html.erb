@@ -6,10 +6,11 @@
 </div>
 <div class = "lng">
 </div>
-<%= form_for [@user] do |f| %>
+<%= form_for [@user], url: homepage_update_path(@user) do |f| %>
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
-  <%= f.submit "Find your location", class: "locate" %>
+  <div class="locate">Locate</div>
+  <%= f.submit "Set your location" %>
 <% end %>
 
 <% link_to %>

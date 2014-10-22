@@ -5,8 +5,13 @@
   <section id="user-info" class="col-md-4">
     <article class="user-name">
       <h3><%= @user.name_first%> <%= @user.name_last %></h3>
-      <h4><%= @user.job_title %></h4>
-      <p><%= @user.town %>, <%= @user.country %></p>
+
+      <p><%= @user.job_title %></p>
+      <% if @user.town && @user.country %>
+        <p><%= @user.town%>, <%= @user.country %></p>
+      <% else %>
+        <p><%= @user.town %></p>
+      <%end%>
     </article>
 
 <button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
