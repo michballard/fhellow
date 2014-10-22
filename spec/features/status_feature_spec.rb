@@ -6,11 +6,22 @@ include SessionHelpers
 
 describe 'statuses' do 
 
-  context 'a signed in user' do 
-
     before(:each) do
       @bob = User.create(email: 'bob@test.com', password: '1234567890', password_confirmation: '1234567890') 
     end
+
+	context 'a guest user' do 
+
+    it 'will not show a link to enter a status' do 
+      visit "/users/#{@bob.id}/show"
+      expect(page).to have_content "No status set"
+      expect(page).to have_content "Current status"
+      expect(page).not_to have_link "Current status"
+    end 
+
+	end
+
+  context 'a signed in user' do 
 
     def sign_in_bob
     	visit '/users/sign_in'
