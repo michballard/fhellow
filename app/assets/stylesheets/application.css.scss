@@ -41,6 +41,10 @@ h1 a:hover {
   color: #000;
 }
 
+h2 {
+  font-size: 18pt;
+}
+
 i {
   color: #7A7A7A;
 }
@@ -107,10 +111,21 @@ padding: 0 15px;
   padding-left: 2%;
 }
 
+input[type='submit'] {
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+  height: 40px;
+  background: none;
+  background-color: #43BEA2;
+  border: none;
+  float: right;
+  margin-right: 2%;
+}
 
 #message {
   width: 98%;
-  resize: none;
+  resize: vertical;
 }
 
 .message-container {
@@ -130,8 +145,16 @@ padding: 0 15px;
   padding-bottom: 2%;
 }
 
-.message-user a:link {
-  decoration: none;
+#message-who {
+  font-size: 14pt;
+  font-style: bold;
+  color: #323A44;
+}
+
+#time-sent {
+  color: #9A9A9A;
+  font-size: 12pt;
+  font-family: 'Lato', 'sans-serif'
 }
 
 /* Sticky footer styles
