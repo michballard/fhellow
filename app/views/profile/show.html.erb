@@ -6,7 +6,9 @@
     <article class="user-name">
       <h3><%= @user.name_first%> <%= @user.name_last %></h3>
       <p><%= @user.job_title %></p>
-      <p><%= @user.town %>, <%= @user.country %></p>
+      <% if @user.town && @user.country %>
+        <p><%= @user.town%>, <%= @user.country %></p>
+      <%end%>
     </article>
 
 <p><%= link_to "Send message", send_message_path(@user.id) %></p>
