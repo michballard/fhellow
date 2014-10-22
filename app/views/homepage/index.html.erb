@@ -10,7 +10,9 @@
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
   <div class="locate">Locate</div>
-  <%= f.submit "Set your location" %>
+  <%if current_user %>
+      <%= f.submit "Set your location" %>
+  <%end%>
 <% end %>
 
 <% link_to %>
