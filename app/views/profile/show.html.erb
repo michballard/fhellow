@@ -16,17 +16,17 @@
     </article>
 
 <button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
-
-<% if current_user && current_user.follows?(@user) %>
-	<button class="profile-following">
-		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Following</a>
-	</button>
-<%elsif current_user %>
-	<button class="profile-follow">
-			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
-	</button>
-<% end %>
-
+<%unless @user == current_user %>
+  <% if current_user && current_user.follows?(@user) %>
+  	<button class="profile-following">
+  		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Following</a>
+  	</button>
+  <%elsif current_user %>
+  	<button class="profile-follow">
+  			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
+  	</button>
+  <% end %>
+<%end%>
     <article class="user-bio">
       <p><%= @user.bio %></p>
       <p><%= @user.website %></p>

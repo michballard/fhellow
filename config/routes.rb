@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
 		get '/users/:id/follower' => "profile#follower", as: "user_follower"
 		get '/users/:id/following' => "profile#following", as: "user_following"
+    post '/updatelocation' => "homepage#update_location"
 
     resources :user do
       resources :posts
