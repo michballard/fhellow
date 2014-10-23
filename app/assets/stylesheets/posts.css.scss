@@ -2,13 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.post {
-  background-color: #fff;
-  border: 2px solid #C9C9C9;
-  margin-bottom: 10px;
-  padding: 5%;
-  width: 30%;
+.activity-heading {
+  color: white;
+  background-color: #323a44;
+  margin: 0;
+  padding: 20px 0 20px 10px;
 }
 
+#activity-post-container {
+  margin-top: 10px;
+}
 
+.activity-child-container {
+  max-width: 300px;
+  margin: 0 5px 20px 5px;
+}
+
+#profile-post-container {
+  margin-top: 10px;
+}
+
+.profile-child-container {
+  max-width: 300px;
+  margin: 0 5px 20px 5px;
+}
+
+.post-image {
+  width: 100%;
+  border: 1px solid #C9C9C9;
+}
+
+.post-middle {
+  width: 100%;
+  background-color: #fff;
+  padding: 3%;
+  border-left: 1px solid #C9C9C9;
+  border-right: 1px solid #C9C9C9;
+}
+
+.post-bottom {
+  width: 100%;
+  background-color: #fff;
+  padding: 3%;
+  border: 1px solid #C9C9C9;
+}
+
+.post-author-name {
+  color: black;
+  font-weight: 700;  
+  margin-bottom: 0px;
+}
+
+.post-location {
+  color: #C9C9C9;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.post-time {
+  color: #C9C9C9;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.post-edit-link {
+  margin-bottom: 0px;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+}

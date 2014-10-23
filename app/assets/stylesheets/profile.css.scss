@@ -307,3 +307,23 @@
 	list-style: none;
 }
 
+/*----Follow toggles---- */
+
+
+a.profile-follow-toggle.Following:hover span { display: none;}
+
+a.Following:hover:before {content: "Unfollow?"}
+
+img.avatar-image {
+  max-height: 102px;
+  max-width: 102px;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea#user_bio {
+  border-radius: 50%;
+}
+

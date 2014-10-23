@@ -156,7 +156,7 @@ input#post_image {
   display: none;
 }
 
-p#post-submit {
+p.post-submit {
   display: inline;
   margin-right: 2%
 }
@@ -250,6 +250,7 @@ input[type='submit'] {
   font-family: 'Lato', 'sans-serif'
 }
 
+
 /*-----------Location setter button ------------ */
 input[type='submit'].location-setter {
   margin-top: 10px;
@@ -261,17 +262,6 @@ input[type='submit'].location-setter:hover {
   background-color: red;
 }
 
-
-/*----Follow toggles---- */
-
-a.profile-follow-toggle.Following:hover span { display: none;}
-
-a.Following:hover:before {content: "Unfollow?"}
-
-img.avatar-image {
-  max-height: 102px;
-  max-width: 102px;
-}
 
 /* Sticky footer styles
 -------------------------------------------------- */
