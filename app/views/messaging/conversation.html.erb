@@ -3,28 +3,27 @@
 </h2>
 <div id="chatbox">
   <% @message.each do |m| %>
-    <div class="from">
+    <div class="each-message">
       <% if current_user.id == m.from_id %>
-        <h2 class="you">
+        <h2 class="message-who">
           <%= "#{User.find_by_id(current_user.id).name_first}" + " " + "#{User.find_by_id(current_user.id).name_last}" %>
         </h2>
       <% else %>
-        <h2 class="them">
-          <%= "#{User.find_by_id(current_user.id).name_first}" + " " + "#{User.find_by_id(current_user.id).name_last}" %>
+        <h2 class="message-who">
+          <%= "#{User.find_by_id(m.from_id).name_first}" + " " + "#{User.find_by_id(m.from_id).name_last}" %>
         </h2>
       <% end %>
-    </div>
     <div class="message">
-      <%= m.message  %>
       <% date_time = m.created_at %>
-      <%= m.seen ? "Received at:" + "#{date_time.strftime('%B %d, %Y %l:%M %p')}" : "se"  %>
+      <p class='time-sent'><%= m.seen ? "#{date_time.strftime('%B %d, %Y %l:%M %p')}" : "Replied:"+ "#{date_time.strftime('%B %d, %Y %l:%M %p')}" %>
+    <p class="message"><%= m.message  %></p>
+    </div>
     </div>
   <% end %>
   <section class='message-box'>
 <%= form_tag("/message/#{@to}") do  %>
-  <%= text_area_tag(:message)  %>
+  <%= text_area_tag("message-box")  %>
   <p><%= submit_tag("Send") %></p>
-  <p class='line'></p>
 <% end %>
   </section>
 </div>
