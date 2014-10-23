@@ -38,9 +38,10 @@ class ApiController < ApplicationController
             bio_truncated: user.bio, 
             town: user.town, 
             user_id: user.id, 
-            first_name: user.name_first, 
-            current_user_id: current_or_guest_user.id, 
-            follow_status: current_or_guest_user.follow_status(user) }
+            first_name: user.name_first,
+            current_user_id: current_or_guest_user.id,
+            follow_status: current_or_guest_user.follow_status(user) 
+          }
         end
     end
 
