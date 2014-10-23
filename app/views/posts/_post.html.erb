@@ -11,14 +11,14 @@
 	  </div>
 
 	  <div class="post-bottom">
-		  <p class="post-time">
+		  <span class="post-time">
 		  	<%= time_ago_in_words(post.created_at) %> ago
-		  </p>
-		  <p class="post-edit-link">
+		  </span>
+		  <span class="post-edit-link">
 			  <% if @user.id == post.user_id %>
 			    <%= link_to "Edit post", edit_user_post_path(post.user_id, post), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile-page-posts'} %>
 			  <% end %>
-		  </p>
+		  </span>
 	  </div>
   </div>
 </article>
