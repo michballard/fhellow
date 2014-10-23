@@ -1,9 +1,10 @@
 <div id='map'>
 </div>
-<div class= "lat">
+<div class="lat">
 </div>
-<div class = "lng">
+<div class="lng">
 </div>
+<div class="current_user_id" style="display:none;"><%= @user.id %></div>
 
 <% link_to %>
 
@@ -27,10 +28,7 @@
       <%= form_for [@user], url: homepage_update_path(@user) do |f| %>
         <%= f.hidden_field :latitude %>
         <%= f.hidden_field :longitude %>
-        <button class="locate">Locate</button>
-        <%if current_user %>
           <%= f.submit "Set your location", class: "location-setter" %>
-        <%end%>
     <% end %>
     </div>
     <div class="col-md-1"></div>
