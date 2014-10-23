@@ -37,27 +37,31 @@ input[type=checkbox] {
   z-index: +1;
 }
 
-#profile-summaries-display {
-	padding: 0 15px 0 15px;
+#profile-container {
+  margin-top: 10px;
+  margin-bottom: 100px;
 }
 
 .child-container {
-	width: 33.3333333%;
-}
-
-.profile-summary {
-	padding: 15px;
-  border: solid 1px #C9C9C9;
-  margin: 15px 15px 0 15px;
-  background-color: white;
+	width: 250px;
+  margin: 0 5px 0 5px;
 }
 
 .avatar-image {
+	width: 102px;
   border: solid 1px #C9C9C9;
+}
+.profile-summary {
+	width: 100%;
+	padding: 15px;
+  border: solid 1px #C9C9C9;
+  margin: 5px 5px 0 5px;
+  background-color: white;
 }
 
 .profile-summary-text {
-  padding: 0 5px 0 20px !important;
+	width: 100%;
+  padding-top: 5px !important;
 }
 
 .profile-summary-name {
@@ -76,11 +80,12 @@ input[type=checkbox] {
 }
 
 .bio-summary {
+	width: 100%;
   padding: 5px 15px 5px 15px;
   border-left: solid 1px #C9C9C9;
   border-bottom: solid 1px #C9C9C9;
   border-right: solid 1px #C9C9C9;
-  margin: 0 15px 15px 15px;
+  margin: 0 5px 5px 5px;
   background-color: white;
 }
 
