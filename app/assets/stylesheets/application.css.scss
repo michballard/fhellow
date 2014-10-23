@@ -85,28 +85,90 @@ padding: 0 15px;
   display: block;
   color: white;
   margin-top: 8%;
-  margin-left: 26%;
-  margin-right: 24%;
+  margin-left: 33%;
+  margin-right: 35%;
 }
 
 .modal-body {
   position: relative;
   display: block;
   background-color: white;
-  margin-left: 26%;
-  width: 50%;
+  margin-left: 33%;
+  padding-top: 3%;
+  width: 32%;
 }
 
 .modal-footer {
-  position: relative;
-  display: block;
-  background-color: white;
-  margin: 0px;
-  margin-left: 26%;
-  width: 50%;
+  display: none;
 }
 
-/*TODO styleing for modal new posts and edit posts page*/
+/*TODO styling for modal new posts and edit posts page*/
+
+#content-label {
+  display: none;
+}
+
+textarea#post_content {
+  resize: none;
+  width: 99%;
+	height: 120px;
+	border: 1px solid #C9C9C9;
+	padding: 5px;
+	font-family: 'Lato', sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+/*input[type='file']:before {*/
+  /*font-family: 'FontAwesome';*/
+  /*content: '\f03e';*/
+  /*padding: 6px 10px;*/
+  /*line-height: 21px;*/
+/*}*/
+
+/*a.fontawesome-picture {*/
+  /*font-family: 'FontAwesome';*/
+  /*content: '\f03e';*/
+  /*padding: 6px 10px;*/
+  /*line-height: 21px;*/
+/*}*/
+
+div#latlng {
+  width: 3%;
+  margin-right: 4%;
+  font-size: 2em;
+  display: inline-block;
+}
+
+div.input-append {
+  display: inline;
+}
+
+a.fontawesome-picture {
+  font-size: 2em;
+}
+
+input.input-small {
+  display: none;
+}
+
+input#post_image {
+  display: none;
+}
+
+p#post-submit {
+  display: inline;
+  margin-right: 2%
+}
+
+input#user_avatar {
+  display: none;
+}
+
+/*button[type='submit']:before {*/
+  /*font-family: 'FontAwesome';*/
+  /*content: '\f041'*/
+/*}*/
 
 .chatbox {
   background-color: #323a44;
@@ -149,7 +211,7 @@ input[type='submit'] {
   background-color: #43BEA2;
   border: none;
   float: right;
-  margin-right: 2%;
+  margin-right: 1%;
 }
 
 
@@ -188,6 +250,7 @@ input[type='submit'] {
   font-family: 'Lato', 'sans-serif'
 }
 
+/*-----------Location setter button ------------ */
 input[type='submit'].location-setter {
   margin-top: 10px;
   float: none;
@@ -197,6 +260,19 @@ input[type='submit'].location-setter {
 input[type='submit'].location-setter:hover {
   background-color: red;
 }
+
+
+/*----Follow toggles---- */
+
+a.profile-follow-toggle.Following:hover span { display: none;}
+
+a.Following:hover:before {content: "Unfollow?"}
+
+img.avatar-image {
+  max-height: 102px;
+  max-width: 102px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 

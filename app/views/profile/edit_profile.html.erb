@@ -66,6 +66,20 @@
     </section>
 
 	<div>
+		<%= f.label :"profile picture" %>
+		<%= f.file_field :avatar %>
+    <div class='input-append'>
+           <a class='fontawesome-picture' onclick="$('input[id=user_avatar]').click();"><i class='fa fa-picture-o'></i></a>
+            <input class='input-small' type='text'>
+         </div>
+         <script type='text/javascript'>
+          $('input[id=user_avatar]').change(function() {
+          $('.input-small').val($(this).val());
+          });
+         </script>
+	</div>
+
+	<div>
 	<%= f.submit :"Confirm profile details"%>
 	</div>
   <%if @user.name_first %>
