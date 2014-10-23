@@ -7,7 +7,8 @@
   <% end %>
   <p><%= time_ago_in_words(post.created_at) %> ago</p>
   <% if @user.id == post.user_id %>
-    <%= link_to "Edit post", :controller => "posts", :action => "edit", :user_id => post.user_id, :id => post.id, {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#homepage-posts'} %>
+    <%= link_to "Edit post", edit_user_post_path(post.user_id, post), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile-page-posts'} %>
   <% end %>
 </article>
 
+<%#TODO ask Enrique to fix it%>
