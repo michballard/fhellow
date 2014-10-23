@@ -202,7 +202,29 @@
 	background-color: #fff;
   border: 2px solid #C9C9C9;
   margin-bottom: 10px;
-  padding: 2% 5%;
+  padding: 1% 0;
+}
+
+.status a {
+	color: #000;
+	font-weight: bold;
+}
+
+.status a:hover {
+	color: #43BEA2;
+	text-decoration: none;
+	}
+
+.status p {
+	float: left;
+	color: #9A9A9A;
+	margin-left: 10px;
+}
+
+.status aside {
+	border-top: 1px solid #C9C9C9;
+	height: 20px;
+	margin-top: 40px;
 }
 
 #profile-posts {
@@ -267,3 +289,4 @@
 .user-interests li {
 	list-style-image: url();
 }
+

@@ -78,7 +78,9 @@
 
     <% if @user.statuses.any? %>
       <p><%= @user.statuses.last.current_status %></p>
+      <aside>
       <p><%= time_ago_in_words(@user.statuses.last.created_at) %> ago</p>
+      </aside>
     <% else %>
        <p>No status set</p>
     <% end %>
