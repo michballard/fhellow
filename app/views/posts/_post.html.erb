@@ -1,6 +1,8 @@
 <article class="post">
   <div class="child-container">
-	  <%= image_tag post.image.url(:medium), class: "post-image" %>
+	  <% if post.image? %>
+	  	<%= image_tag post.image.url(:medium), class: "post-image" %>
+	  <% end %>
 
 	  <div class="post-middle">
 		  <p class="post-content"><%= post.content %></p>
@@ -23,4 +25,3 @@
   </div>
 </article>
 
-<%#TODO ask Enrique to fix it%>
