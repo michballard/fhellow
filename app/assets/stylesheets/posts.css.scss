@@ -14,17 +14,26 @@
 }
 
 .activity-child-container {
-  width: 33.3333333%;
-  margin-bottom: 10px;
+  max-width: 300px;
+  margin: 0 5px 20px 5px;
+}
+
+#profile-post-container {
+  margin-top: 10px;
+}
+
+.profile-child-container {
+  max-width: 300px;
+  margin: 0 5px 20px 5px;
 }
 
 .post-image {
-  width: 300px;
+  width: 100%;
   border: 1px solid #C9C9C9;
 }
 
 .post-middle {
-  width: 300px;
+  width: 100%;
   background-color: #fff;
   padding: 3%;
   border-left: 1px solid #C9C9C9;
@@ -32,7 +41,7 @@
 }
 
 .post-bottom {
-  width: 300px;
+  width: 100%;
   background-color: #fff;
   padding: 3%;
   border: 1px solid #C9C9C9;
@@ -59,6 +68,6 @@
 .post-edit-link {
   margin-bottom: 0px;
   font-size: 12px;
-  position: relative;
-  left: 130px;
+  position: absolute;
+  right: 10px;
 }

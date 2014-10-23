@@ -163,7 +163,7 @@
 
 .following-counters {
   width: 70%;
-	margin-left: 35%;
+	margin-left: 30%;
   padding-top: 50px;
   border-bottom: 1px solid #C9C9C9;
 }
@@ -243,6 +243,8 @@
 #intro-post {
 	margin-bottom: 100px;
 	width: 100%;
+	border: 1px solid #C9C9C9;
+	background-color: #fff;
 }
 
 #intro-post h2, h3 {
@@ -305,25 +307,5 @@
 
 .user-interests li {
 	list-style: none;
-}
-
-/*----Follow toggles---- */
-
-
-a.profile-follow-toggle.Following:hover span { display: none;}
-
-a.Following:hover:before {content: "Unfollow?"}
-
-img.avatar-image {
-  max-height: 102px;
-  max-width: 102px;
-}
-
-textarea {
-  resize: none;
-}
-
-textarea#user_bio {
-  border-radius: 50%;
 }
 
