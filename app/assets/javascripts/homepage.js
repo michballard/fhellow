@@ -99,10 +99,10 @@ var promises;
           $('.profile').first().append("No current users in your region with those interests :(");
         }
         else {
-          promises = populateUsers(users);
+          promise = populateUsers(users);
         }
 
-        Q.all(promises).then(function() {
+        Q.all(promise).then(function() {
           performLayout();
         });
       });
@@ -140,20 +140,19 @@ var promises;
 
   function populateUsers(users){
     return users.map(function(user){
-      var deferred = Q.defer();
-      var template = $ ('.profile-template').html();
-      $('.profile-container').append(Mustache.render(template, user));
-      deferred.resolve(true);
-      return deferred.promise;
+      if(user.first_name != "guest"){
+        var deferred = Q.defer();
+        var template = $ ('.profile-template').html();
+        $('.profile-container').append(Mustache.render(template, user));
+        deferred.resolve(true);
+        return deferred.promise;
+    }
     });
   }
 
   function performLayout(){
-    // Using Isotope to format user summaries on homepage 
     var $container = $('#profile-container');
-    // init
     $container.isotope({
-      // options
       itemSelector: '.child-container',
       layoutMode: 'masonry'
     });

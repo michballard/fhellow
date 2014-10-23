@@ -55,12 +55,9 @@ describe 'user profiles' do
     end
 
     it 'can add a user type' do
-      User.create(email: 'bob@test.com', password: '1234567890', name_first: 'Bob')
+      User.create(email: 'bob@test.com', password: '123456789', name_first: 'Bob')
       visit '/'
-      click_link "Log in"
-      fill_in('Email', with: 'bob@test.com')
-      fill_in('Password', with: '1234567890')
-      click_button "Log in"
+      sign_in('bob@test.com')
       click_link("Bob")
       click_link("Edit your profile")
       add_bob_details
