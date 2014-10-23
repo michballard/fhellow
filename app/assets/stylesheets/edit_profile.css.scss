@@ -8,11 +8,11 @@
 }
 
 #edit-profile-details {
-  margin: 5% 0 0 3%;
+  margin: 5% 0 60px 5%;
 }
 
 #edit-profile-details label {
-  width: 20%;
+  width: 100%;
   vertical-align: top;
 }
 
@@ -52,8 +52,13 @@
 }
 
 .job-field {
-  width: 50%;
+  width: 40%;
   float: left;
+}
+
+.fhellow-type {
+  float: left;
+  margin-top: 5%;
 }
 
 .town-field {
@@ -78,31 +83,39 @@
 }
 
 .job-field input {
-    width: 49%;
+    width:60%;
     padding: 3%;
 }
 
-// .job-location-web-field  select {
-//   padding: 3%;
-//   float: right;
-//   margin-top: -40px;
-// }
 .web-field {
   clear: left;
-  width: 49%;
-  padding: 3%;
+  width: 40%;
+  float: left;
 }
 
-// #user_user_type {
-//   margin-left: 8%;
-// }
+.web-field input {
+  padding: 3%;
+  width: 60%;
+}
 
-// .country-label {
-//   margin-left: 8%;
-// }
+.linked-in-field {
+  width: 40%;
+  float: left;
+}
+
+.linked-in-field input {
+  padding: 3%;
+  width: 60%;
+}
+.user-edit-bio {
+  clear: left;
+}
+
+.user-edit-bio {
+  border-radius: none;
+}
 
 #edit-profile-image {
-  padding-top: 5%;
   text-align: center;
 }
 
@@ -111,43 +124,55 @@
   display: block;
 }
 
-.fileinputs {
-  position: relative;
-  background-color: #323a44;
-  width: 40%;
-  padding: 1% 3%;
-  border-radius: 8px;
+// .fileinputs {
+//   position: relative;
+//   background-color: #323a44;
+//   width: 40%;
+//   padding: 1% 3%;
+//   border-radius: 8px;
+//   margin: 0 auto;
+// }
+
+// .fileinputs p {
+//   color: #fff;
+//   margin-bottom: 10%;
+// }
+
+#edit-profile-image input {
+  padding-top: 1%;
   margin: 0 auto;
 }
 
-.fileinputs p {
-  color: #fff;
-  margin-bottom: 10%;
+.interests-checks {
+  padding: 5%;
 }
 
-#edit-profile-image input {
-  position: relative;
-  text-align: right;
-  -moz-opacity:0 ;
-  opacity: 0;
-  z-index: 2;
+.interests-checks label {
+  display: inline;
 }
+
 .interests-checks ul {
-  column-count: 2;
+  padding: 2% 5%;
+  float: left;
 }
 
 .interests-checks li {
   list-style: none;
+  margin-bottom: 10%;
 }
 
 .interests-checks input[type=checkbox] {
   /* All browsers except webkit*/
+  margin-top: 0;
   transform: scale(1.5);
 
   /* Webkit browsers*/
   -webkit-transform: scale(1.5);
 }
 
+.profile-submit {
+  clear: left;
+}
 
 
 
