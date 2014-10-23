@@ -86,11 +86,13 @@
     <% end %>
   </section>
 
+  <div id="profile-post-container">
     <% if @user.posts.any? %>
       <%= render @user.posts.reverse %>
     <% else %>
        <p>No posts yet</p>
     <% end %>
+  </div>
 
   <section class="post" id="intro-post">
    <h2> Congratulations - you are now Fhellow! </h2>
