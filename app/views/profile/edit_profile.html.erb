@@ -1,6 +1,18 @@
 <%= form_for @user do |f| %>
 
-	<div><%=f.label :"first name" %>
+  <h2>Edit your profile</h2>
+
+  <section class="col-md-4" id="edit-profile-image">
+    <img src="/images/thumb/missing.png" height="300" width="300">
+    <%= f.label :"profile picture" %>
+    <div class="fileinputs">
+    <%= f.file_field :avatar %>
+    <p>UPLOAD IMAGE</p>
+    </div>
+  </section>
+
+	<section class="col-md-7" id="edit-profile-details">
+    <%=f.label :"first name" %>
 		<%= f.text_field :name_first, autofocus: true %>
 		<%=f.label :"last name" %>
 		<%=f.text_field :name_last %>
@@ -20,7 +32,7 @@
   <div>
   	<%= f.label :location %>
   	<%= f.text_field :town, placeholder: 'London' %>
-  	<%= f.text_field :country, placeholder: 'United Kingdom' %>
+  	<%= f.text_field :country, placeholder: 'United Kingdom', class: "country-label" %>
   </div>
 
   <div>
@@ -32,28 +44,26 @@
 
 	<div>
 		<%=f.label :bio %>
-		<%= f.text_field :bio%>
+		<%= f.text_area :bio%>
 	</div>
 
-    <div>
-        <%= f.check_box(:discussing_ideas) %>
-        <%= f.label(:discussing_ideas, "Discussing ideas") %>
-        <%= f.check_box(:afterwork_drinks) %>
-        <%= f.label(:afterwork_drinks, "Afterwork drinks") %>
-        <%= f.check_box(:collaborating) %>
-        <%= f.label(:collaborating, "Collaborating") %>
-        <%= f.check_box(:chat_over_a_coffee) %>
-        <%= f.label(:chat_over_a_coffee, "Chat over a coffee") %>
-        <%= f.check_box(:lunch_buddy) %>
-        <%= f.label(:lunch_buddy, "Lunch buddy") %>
-        <%= f.check_box(:advising) %>
-        <%= f.label(:advising, "Advising") %>
-    </div>
-
-	<div>
-		<%= f.label :"profile picture" %>
-		<%= f.file_field :avatar %>
-	</div>
+    <section class="interests-checks">
+    <p>I am interested in</p>
+    <ul>
+        <li><%= f.check_box(:discussing_ideas) %>
+        <%= f.label(:discussing_ideas, "Discussing ideas") %></li>
+        <li><%= f.check_box(:afterwork_drinks) %>
+        <%= f.label(:afterwork_drinks, "Afterwork drinks") %></li>
+        <li><%= f.check_box(:collaborating) %>
+        <%= f.label(:collaborating, "Collaborating") %></li>
+        <li><%= f.check_box(:chat_over_a_coffee) %>
+        <%= f.label(:chat_over_a_coffee, "Chat over a coffee") %></li>
+        <li><%= f.check_box(:lunch_buddy) %>
+        <%= f.label(:lunch_buddy, "Lunch buddy") %></li>
+        <li><%= f.check_box(:advising) %>
+        <%= f.label(:advising, "Advising") %></li>
+    </ul>
+    </section>
 
 	<div>
 	<%= f.submit :"Confirm profile details"%>
@@ -63,3 +73,4 @@
   <%end%>
 
 <%end%>
+</section>
