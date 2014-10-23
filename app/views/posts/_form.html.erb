@@ -17,7 +17,11 @@
          <%= f.file_field :image %>
            <a class='fontawesome-picture' onclick="$('input[id=post_image]').click();"><i class='fa fa-picture-o'></i></a>
             <input class='input-small' type='text'>
-      <p id='post-submit'><%= f.submit :Post %></p>
+            <% if action_name == "edit" %>
+              <P class='post-submit'><%= f.submit 'Edit Post' %></p>
+            <% else %>
+              <p class='post-submit'><%= f.submit :Post %></p>
+            <% end %>
          </div>
 
          <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>

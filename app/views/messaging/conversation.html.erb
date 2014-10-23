@@ -19,11 +19,11 @@
       <%= m.seen ? "seen" : "sent"  %>
     </div>
   <% end %>
-  <p id='line'></p>
   <section id='message-box'>
 <%= form_tag("/message/#{@to}") do  %>
   <%= text_area_tag(:message)  %>
   <p><%= submit_tag("Send")  %></p>
+  <p id='line'></p>
 <% end %>
   </section>
 </div>

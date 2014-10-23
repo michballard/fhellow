@@ -22,32 +22,40 @@ describe 'sending messages' do
   	end
 
   	it 'can receive a message' do
-      sign_in('bob@b.com')
-      visit "/message/#{@john.id}"
-      fill_in('message', :with => 'Hello John')
-      find_button('Send').click
-      click_link 'Sign out'
-      sign_in('john@b.com')
-      visit "/message/#{@bob.id}"
+      message_send
       expect(page).to have_content('Hello John')
   	end
+
+    it 'a person can see the name of who has sent the message' do
+      message_send
+      expect(page).to have_content('John')
+
+    end
 
     before do
       @phil = User.create(email: 'phil@b.com', password: '1234567890', password_confirmation: '1234567890')
     end
   	it 'can view last message from each message thread' do
-      sign_in('john@b.com')
-      visit "/message/#{@bob.id}"
-      fill_in('message', :with => 'Hello Bob')
-      find_button('Send').click
+      message_send
       visit "/message/#{@phil.id}"
       fill_in('message', :with => 'Hello Phil')
       find_button('Send').click
       visit '/messages'
-      expect(page).to have_content('Hello Bob')
+      expect(page).to have_content('Hello John')
       expect(page).to have_content('Hello Phil')
   	end
 
   end
 
+end
+
+def message_send
+      sign_in('bob@b.com')
+      visit "/message/#{@john.id}"
+      fill_in('message', :with => 'Hello John')
+      find_button('Send').click
+      find('.dropdown-toggle').click
+      find('#test-sign-out').click
+      sign_in('john@b.com')
+      visit "/message/#{@bob.id}"
 end
