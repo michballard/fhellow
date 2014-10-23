@@ -59,7 +59,7 @@ describe 'user profiles' do
       visit '/'
       sign_in('bob@test.com')
       click_link("Bob")
-      click_link("Edit your profile")
+      click_link("Edit my profile")
       add_bob_details
       select('Freelancer', :from => 'user[user_type]')
       click_button('Confirm profile details')
