@@ -11,7 +11,9 @@ describe 'relationships' do
       sign_in("Tom@tom.com")
       find(".profile-#{@gemma.id}").click
       find(".profile-follow-toggle").click
+      find("a.dropdown-toggle").click
       click_link 'My profile'
+      find("a.dropdown-toggle").click
       click_link 'Sign out'
     end
 

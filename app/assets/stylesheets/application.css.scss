@@ -247,6 +247,15 @@ input[type='submit'] {
   font-family: 'Lato', 'sans-serif'
 }
 
+input[type='submit'].location-setter {
+  margin-top: 10px;
+  float: none;
+  border-radius: 2%;
+}
+
+input[type='submit'].location-setter:hover {
+  background-color: red;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 

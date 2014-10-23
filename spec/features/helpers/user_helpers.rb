@@ -12,7 +12,7 @@ module SessionHelpers
 		visit '/users/sign_in'
 		fill_in("Email", with: email)
 		fill_in("Password", with: password)
-		click_button 'Log in'
+		find('input.log-in-button').click
 	end
 
 	def add_basic_details

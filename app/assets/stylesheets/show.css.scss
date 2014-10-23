@@ -1,5 +1,4 @@
 .profile-main {
-  padding: 0 5% 25% 5%;
   margin-top: -120px;
 }
 
@@ -13,9 +12,7 @@
 }
 
 .avatar {
-	width:300px;
-	height:300px;
-	margin: -200px 0 0 12%;
+	margin: -200px 0 0 8%;
 	border: 5px solid #fff;
 	position: relative;
 	z-index: 1;
@@ -97,10 +94,15 @@
 #user-info {
 	padding-top: 100px;
 	background-color: #fff;
+	margin-left: 3%;
 }
 
 .user-name {
 	text-align: center;
+}
+
+.user-name p {
+	color: #9A9A9A;
 }
 
 .user-bio {
@@ -112,7 +114,7 @@
 
 .profile-follow {
 	border: 2px solid #43BEA2;
-	width: 150px;
+	width: 28%;
 	background-color: #fff;
 	padding: 10px 0;
 	margin-left: 20px;
@@ -120,6 +122,11 @@
 
 .profile-follow a {
 	margin-left: 10px;
+}
+
+.profile-follow a:hover {
+	text-decoration: none;
+	color: #43BEA2
 }
 
 #toggle-follow {
@@ -131,22 +138,44 @@
 	color: #43BEA2;
 }
 
-
 // To unfollow a user - button called "Following"
 
 .profile-following {
-  border: 1px solid #43BEA2;
-	width: 100px;
-	background-color: #43BEA2;
+	border: 2px solid #43BEA2;
+	width: 28%;
+	background-color: #fff;
+	padding: 10px 0;
+	margin-left: 20px;
+}
+
+.profile-following a {
+	margin-left: 10px;
 }
 
 #toggle-following {
-	color: #fff;
+	color: #43BEA2;
+}
+
+.fa.fa-minus {
+	font-size: 16px;
+	color: #43BEA2;
+}
+
+.following-counters {
+  width: 60%;
+  margin-left: 40%;
+  padding-top: 50px;
+}
+
+.following-counters li {
+	display: inline;
+	list-style: none;
+	margin-right: 10%;
 }
 
 .message-user {
 	background-color: #43BEA2;
-	width: 150px;
+	width: 28%;
 	border: 2px solid #43BEA2;
 	padding: 10px 0;
 	margin: 10px 0 0 20%;
@@ -163,10 +192,52 @@
 	margin-left: 10px;
 }
 
+.message-user a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
 // user posts
 
-#intro-post {
+.status {
+	width: 100%;
+	background-color: #fff;
+  border: 2px solid #C9C9C9;
+  margin-bottom: 10px;
+  padding: 2% 0;
+}
+
+.status a {
+	color: #000;
+	font-weight: bold;
+}
+
+.status a:hover {
+	color: #43BEA2;
+	text-decoration: none;
+	}
+
+.status p {
+	float: left;
+	color: #4C4C4C;
+	margin-left: 10px;
+}
+
+.status aside {
+	border-top: 1px solid #C9C9C9;
+	height: 20px;
 	margin-top: 40px;
+	padding-top: 1%;
+}
+
+
+#profile-posts {
+	margin-left: 2%;
+}
+
+#intro-post {
+	margin-bottom: 100px;
+	width: 100%;
 }
 
 #intro-post h2, h3 {
@@ -181,7 +252,7 @@
 }
 
 #intro-post ul {
-    width:700px;
+    width:100%;
     margin: 0 auto;
 		padding: 40px 0;
 }
@@ -195,12 +266,12 @@
 }
 
 #intro-post ul li {
-    margin: 0 0 0 50px;
-		padding: 0 0 20px 0;
-    float:left;
-    display:block;
-    width:300px;
-    list-style: none;
+	margin: 0 0 0 5%;
+	padding: 0 0 20px 0;
+	float: left;
+	display: block;
+	width: 43%;
+	list-style: none;
 }
 
 #intro-post li:before {
@@ -214,3 +285,12 @@
 	color: #43BEA2;
 	font-size: 1.25em;
 }
+
+.user-bio h4 {
+	margin-top: 40px;
+}
+
+.user-interests li {
+	list-style-image: url();
+}
+

@@ -8,7 +8,16 @@ class HomepageController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	@user.update(params[:user].permit(:latitude, :longitude))
+
   	redirect_to '/'
+  end
+
+  def update_location
+    @user = User.find(params[:id])
+    @user.longitude = params[:longitude]
+    @user.latitude = params[:latitude]
+    @user.save
+    render nothing: true
   end
 
  #  def patch
