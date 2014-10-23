@@ -19,11 +19,11 @@
 
 <% if current_user && current_user.follows?(@user) %>
 	<button class="profile-following">
-		<i class="fa fa-minus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Unfollow</a>
+		<i class="fa fa-minus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following"><span>Following</span></a>
 	</button>
 <%elsif current_user %>
 	<button class="profile-follow">
-			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
+			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow"><span>Follow</span></a>
 	</button>
 <% end %>
 
