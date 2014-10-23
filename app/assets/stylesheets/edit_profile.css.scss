@@ -8,7 +8,7 @@
 }
 
 #edit-profile-details {
-  margin-top: 5%;
+  margin: 5% 0 0 3%;
 }
 
 #edit-profile-details label {
@@ -18,15 +18,88 @@
 
 .edit_user input {
   margin-right: 2%;
+  display: block;
+  // height: 10%;
 }
 
-#user_user_type {
-  margin-left: 8%;
+.first-name-field {
+  float: left;
+  width: 40%;
+}
+.first-name-field input {
+  padding: 5%;
+  width: 60%;
 }
 
-.country-label {
-  margin-left: 8%;
+.last-name-field {
+  float: left;
+  width: 40%;
 }
+
+.last-name-field input {
+  padding: 5%;
+  width: 60%;
+}
+
+.email-field {
+  clear: left;
+  width: 100%;
+}
+
+.email-field input {
+  width: 64%;
+  padding: 3%;
+}
+
+.job-field {
+  width: 50%;
+  float: left;
+}
+
+.town-field {
+  width: 40%;
+  float: left;
+  clear: left;
+}
+
+.town-field input{
+   padding: 3%;
+   width: 60%;
+}
+
+.country-field {
+  width: 40%;
+  float: left;
+}
+
+.country-field input{
+   padding: 3%;
+   width: 60%;
+}
+
+.job-field input {
+    width: 49%;
+    padding: 3%;
+}
+
+// .job-location-web-field  select {
+//   padding: 3%;
+//   float: right;
+//   margin-top: -40px;
+// }
+.web-field {
+  clear: left;
+  width: 49%;
+  padding: 3%;
+}
+
+// #user_user_type {
+//   margin-left: 8%;
+// }
+
+// .country-label {
+//   margin-left: 8%;
+// }
 
 #edit-profile-image {
   padding-top: 5%;
