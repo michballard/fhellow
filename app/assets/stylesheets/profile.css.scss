@@ -173,6 +173,10 @@
 	margin-right: 10%;
 }
 
+.follow-count-text {
+
+}
+
 .message-user {
 	background-color: #43BEA2;
 	width: 28%;
@@ -292,5 +296,34 @@
 
 .user-interests li {
 	list-style-image: url();
+}
+
+#profile-post-container {
+  margin-top: 10px;
+}
+
+.profile-child-container {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+/*----Follow toggles---- */
+
+
+a.profile-follow-toggle.Following:hover span { display: none;}
+
+a.Following:hover:before {content: "Unfollow?"}
+
+img.avatar-image {
+  max-height: 102px;
+  max-width: 102px;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea#user_bio {
+  border-radius: 50%;
 }
 

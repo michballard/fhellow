@@ -51,9 +51,11 @@
                 </div>
               </div>
             </div>
-            <div class="bio-summary">
-              <p class="profile-summary-bio">{{bio_truncated}}</p>
-            </div>
+            {{#bio_truncated}}
+	            <div class="bio-summary">
+	              <p class="profile-summary-bio">{{bio_truncated}}</p>
+	            </div>
+            {{/bio_truncated}}
           </article>
         </div>
       </template>

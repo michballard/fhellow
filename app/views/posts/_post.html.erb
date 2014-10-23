@@ -1,14 +1,26 @@
 <article class="post">
-  <%= image_tag post.image.url(:medium), class: "post_image" %>
-  <p><%= post.content %></p>
-  <p><%= User.find_by(id: post.user_id).name_first %> <%= User.find_by(id: post.user_id).name_last %></p>
-  <% if post.latitude && post.longitude%>
-    <p><%= post.town %></p>
-  <% end %>
-  <p><%= time_ago_in_words(post.created_at) %> ago</p>
-  <% if @user.id == post.user_id %>
-    <%= link_to "Edit post", edit_user_post_path(post.user_id, post), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile-page-posts'} %>
-  <% end %>
+  <div class="child-container">
+	  <%= image_tag post.image.url(:medium), class: "post-image" %>
+
+	  <div class="post-middle">
+		  <p class="post-content"><%= post.content %></p>
+		  <p class="post-author-name"><%= User.find_by(id: post.user_id).name_first %> <%= User.find_by(id: post.user_id).name_last %></p>
+		  <% if post.latitude && post.longitude%>
+		    <p class="post-location"><%= post.town %></p>
+		  <% end %>
+	  </div>
+
+	  <div class="post-bottom">
+		  <span class="post-time">
+		  	<%= time_ago_in_words(post.created_at) %> ago
+		  </span>
+		  <span class="post-edit-link">
+			  <% if @user.id == post.user_id %>
+			    <%= link_to "Edit post", edit_user_post_path(post.user_id, post), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#profile-page-posts'} %>
+			  <% end %>
+		  </span>
+	  </div>
+  </div>
 </article>
 
 <%#TODO ask Enrique to fix it%>

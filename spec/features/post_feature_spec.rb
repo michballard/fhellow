@@ -17,7 +17,7 @@ describe 'posts' do
       fill_in 'Content', with: "I'm so happy!"
       attach_file 'post[image]', ('spec/fixtures/images/post_pics/post_1.jpg')
       click_button 'Post'
-      expect(page).to have_css('.post_image')
+      expect(page).to have_css('.post-image')
     end
 
       it 'a person can post a note when logged in' do
