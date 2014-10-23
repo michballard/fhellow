@@ -1,9 +1,10 @@
 <div id='map'>
 </div>
-<div class= "lat">
+<div class="lat">
 </div>
-<div class = "lng">
+<div class="lng">
 </div>
+<div class="current_user_id" style="display:none;"><%= @user.id %></div>
 
 <% link_to %>
 
@@ -27,19 +28,16 @@
       <%= form_for [@user], url: homepage_update_path(@user) do |f| %>
         <%= f.hidden_field :latitude %>
         <%= f.hidden_field :longitude %>
-        <div class="locate">Locate</div>
-        <%if current_user %>
           <%= f.submit "Set your location", class: "location-setter" %>
-        <%end%>
     <% end %>
     </div>
     <div class="col-md-1"></div>
   </div>
 
-  <div class="row profile-summaries-display">
-   <div class="col-md-4 profile-container-column">
-      <main class="profile-container">
-        <template class="profile-template">
+  <div id="profile-summaries-display">
+    <div class="profile-container" id="profile-container" >
+      <template class="profile-template">
+        <div class="child-container">
           <article class="profile" id="{{full_name}}">
             <div class="profile-summary">
               <div class="row">
@@ -57,54 +55,8 @@
               <p class="profile-summary-bio">{{bio_truncated}}</p>
             </div>
           </article>
-        </template>
-      </main>
-    </div>
-    <div class="col-md-4 profile-container-column">
-      <main class="profile-container">
-        <template class="profile-template">
-          <article class="profile" id="{{full_name}}">
-            <div class="profile-summary">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="{{image_url}}" class="avatar-image">
-                </div>
-                <div class="col-md-8 profile-summary-text">
-                  <a href="/users/{{user_id}}/show" class="profile-summary-name profile-{{user_id}}">{{full_name}}</a>
-                  <p class="profile-summary-job-title"> {{job_title}} </p>
-                  <p class='profile-summary-location'> {{town}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="bio-summary">
-              <p class="profile-summary-bio">{{bio_truncated}}</p>
-            </div>
-          </article>
-        </template>
-      </main>
-    </div>
-    <div class="col-md-4 profile-container-column">
-      <main class="profile-container">
-        <template class="profile-template">
-          <article class="profile" id="{{full_name}}">
-            <div class="profile-summary">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="{{image_url}}" class="avatar-image">
-                </div>
-                <div class="col-md-8 profile-summary-text">
-                  <a href="/users/{{user_id}}/show" class="profile-summary-name profile-{{user_id}}">{{full_name}}</a>
-                  <p class="profile-summary-job-title"> {{job_title}} </p>
-                  <p class='profile-summary-location'> {{town}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="bio-summary">
-              <p class="profile-summary-bio">{{bio_truncated}}</p>
-            </div>
-          </article>
-        </template>
-      </main>
+        </div>
+      </template>
     </div>
   </div>
 

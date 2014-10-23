@@ -37,12 +37,12 @@ input[type=checkbox] {
   z-index: +1;
 }
 
-.profile-summaries-display {
+#profile-summaries-display {
 	padding: 0 15px 0 15px;
 }
 
-.profile-container-column {
-	padding: 0 !important;
+.child-container {
+	width: 33.3333333%;
 }
 
 .profile-summary {
@@ -57,7 +57,7 @@ input[type=checkbox] {
 }
 
 .profile-summary-text {
-  padding: 0 5px 0 30px !important;
+  padding: 0 5px 0 20px !important;
 }
 
 .profile-summary-name {

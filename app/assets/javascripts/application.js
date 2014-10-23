@@ -23,5 +23,6 @@
 //= require transition
 //= require collapse
 //= require dropdown
+//= require isotope
 //= require_tree .
 

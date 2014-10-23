@@ -41,6 +41,10 @@ h1 a:hover {
   color: #000;
 }
 
+h2 {
+  font-size: 18pt;
+}
+
 i {
   color: #7A7A7A;
 }
@@ -75,6 +79,35 @@ padding: 0 15px;
   padding-top: 25px;
 }
 
+.modal-header {
+  position: relative;
+  background: #323A44;
+  display: block;
+  color: white;
+  margin-top: 8%;
+  margin-left: 26%;
+  margin-right: 24%;
+}
+
+.modal-body {
+  position: relative;
+  display: block;
+  background-color: white;
+  margin-left: 26%;
+  width: 50%;
+}
+
+.modal-footer {
+  position: relative;
+  display: block;
+  background-color: white;
+  margin: 0px;
+  margin-left: 26%;
+  width: 50%;
+}
+
+/*TODO styleing for modal new posts and edit posts page*/
+
 .chatbox {
   background-color: #323a44;
   color: white;
@@ -107,10 +140,52 @@ padding: 0 15px;
   padding-left: 2%;
 }
 
+input[type='submit'] {
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+  height: 40px;
+  background: none;
+  background-color: #43BEA2;
+  border: none;
+  float: right;
+  margin-right: 2%;
+}
+
+
 
 #message {
   width: 98%;
-  resize: none;
+  resize: vertical;
+}
+
+.message-container {
+  border: solid 1px #C9C9C9;
+  border-top: solid 4px;
+  border-top-color: #9A9A9A;
+  margin-left: 2%;
+  margin-top: 2%;
+  width: 96%;
+  background-color: white;
+  }
+
+#each-message {
+  padding-left: 2%;
+  padding-top: 2%;
+  border-bottom: solid 1px #C9C9C9;
+  padding-bottom: 2%;
+}
+
+#message-who {
+  font-size: 14pt;
+  font-style: bold;
+  color: #323A44;
+}
+
+#time-sent {
+  color: #9A9A9A;
+  font-size: 12pt;
+  font-family: 'Lato', 'sans-serif'
 }
 
 /* Sticky footer styles

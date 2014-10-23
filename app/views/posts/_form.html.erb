@@ -1,15 +1,22 @@
   <article class="main"><%= form_for [@user, @post] do |f| %>
+<div class="modal-header">
+  <% if action_name == "new" %>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title" id='myModalLabel'><%= render 'posts/new_title' %></h4>
+  <% else %>
+    <h4 class="modal-title" id='myModalLabel'><%= render 'posts/edit_title' %></h4>
+  <% end %>
+</div>
 <div class="modal-body">
-    <h4 ><%= f.label :content %></h4>
       <p><%= f.text_area :content %></p>
-       <button type='button' id='latlng'><%= f.label :add_current_location %></button>
+       <button type='submit' id='latlng'><%= f.label :add_current_location %></button>
          <%= f.hidden_field :latitude %>
          <%= f.hidden_field :longitude %>
      <h4><%= f.label :image %></h4>
+     </i>
       <p><%= f.file_field :image %></p>
 </div>
       <div class="modal-footer">
-                 <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"}%>
       <p><%= f.submit %></p>
       </div>
     <% end %>
@@ -29,3 +36,4 @@
 </div>
 </div>
 
+<%#TODO add fontawesome icons for location and image.%>
