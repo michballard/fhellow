@@ -1,0 +1,19 @@
+Searching 788 files for "find("a.dropdown-toggle").click"
+
+/Users/jeromepratt/Desktop/makers/final_project/fhellow/spec/features/following_users_feature_spec.rb:
+   12        find(".profile-#{@gemma.id}").click
+   13        find(".profile-follow-toggle").click
+   14:       find("a.dropdown-toggle").click
+   15        click_link 'My profile'
+   16:       find("a.dropdown-toggle").click
+   17        click_link 'Sign out'
+   18      end
+
+/Users/jeromepratt/Desktop/makers/final_project/fhellow/spec/features/user_profile_feature_spec.rb:
+   59        visit '/'
+   60        sign_in('bob@test.com')
+   61:       find("a.dropdown-toggle").click
+   62        click_link("Edit my profile")
+   63        add_bob_details
+
+3 matches across 2 files
