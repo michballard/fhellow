@@ -93,7 +93,7 @@ var promises;
 
       $.get(url, function(users){
         if($.isEmptyObject(users)) {
-          $('.profile').first().append("No current users in your region with those interests :(");
+          $('.profile').first().append("<p class='no-users'>Currently no users with selected interests in your region</p>");
         }
         else {
           promise = populateUsers(users);
