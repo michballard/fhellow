@@ -5,10 +5,7 @@
   <section class="col-md-4" id="edit-profile-image">
     <img src="/images/thumb/missing.png" height="300" width="300">
     <%= f.label :"profile picture" %>
-    <div class="fileinputs">
     <%= f.file_field :avatar %>
-    <p>UPLOAD IMAGE</p>
-    </div>
   </section>
 
 	<section class="col-md-7" id="edit-profile-details">
@@ -29,6 +26,8 @@
 	<div class="job-field">
 		<%=f.label :"job title" %>
 		<%=f.text_field :job_title %>
+  </div>
+  <div class="fhellow-type">
     <%=f.select(:user_type, [['Freelancer'],['Entrepreneur']])%>
 	</div>
 
@@ -44,11 +43,13 @@
   <div class="web-field">
     <%= f.label :website %>
     <%= f.text_field :website %>
+  </div>
+  <div class="linked-in-field">
   	<%= f.label :linkedin %>
   	<%= f.text_field :linkedin %>
   </div>
 
-	<div>
+	<div class="user-edit-bio">
 		<%=f.label :bio %>
     <p>Tell us a bit about what you've been up to</p>
 		<%= f.text_area :bio%>
@@ -63,6 +64,8 @@
         <%= f.label(:afterwork_drinks, "Afterwork drinks") %></li>
         <li><%= f.check_box(:collaborating) %>
         <%= f.label(:collaborating, "Collaborating") %></li>
+      </ul>
+      <ul>
         <li><%= f.check_box(:chat_over_a_coffee) %>
         <%= f.label(:chat_over_a_coffee, "Chat over a coffee") %></li>
         <li><%= f.check_box(:lunch_buddy) %>
@@ -74,7 +77,7 @@
 
 
 
-	<div>
+	<div class="profile-submit">
 	<%= f.submit :"Confirm profile details"%>
 	</div>
   <%if @user.name_first %>
