@@ -79,6 +79,35 @@ padding: 0 15px;
   padding-top: 25px;
 }
 
+.modal-header {
+  position: relative;
+  background: #323A44;
+  display: block;
+  color: white;
+  margin-top: 8%;
+  margin-left: 26%;
+  margin-right: 24%;
+}
+
+.modal-body {
+  position: relative;
+  display: block;
+  background-color: white;
+  margin-left: 26%;
+  width: 50%;
+}
+
+.modal-footer {
+  position: relative;
+  display: block;
+  background-color: white;
+  margin: 0px;
+  margin-left: 26%;
+  width: 50%;
+}
+
+/*TODO styleing for modal new posts and edit posts page*/
+
 .chatbox {
   background-color: #323a44;
   color: white;
@@ -122,6 +151,8 @@ input[type='submit'] {
   float: right;
   margin-right: 2%;
 }
+
+
 
 #message {
   width: 98%;
