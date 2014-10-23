@@ -12,7 +12,7 @@ $('a.profile-follow-toggle').on('click', function(event){
   $.post(this.href, function(response){
          // console.log(i.attr("class"))
          i.toggleClass("fa-minus fa-plus")
-         link.removeClass("Following Unfollow")
+         link.removeClass("Following Follow")
          span.text(response.follow);
          link.addClass(response.follow)
          followerCount.text(response.new_follower_count);
