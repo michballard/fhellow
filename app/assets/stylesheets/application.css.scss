@@ -101,7 +101,6 @@ padding: 0 15px;
   display: none;
 }
 
-/*TODO styling for modal new posts and edit posts page*/
 
 #content-label {
   display: none;
@@ -118,19 +117,6 @@ textarea#post_content {
 	background-repeat: no-repeat;
 }
 
-/*input[type='file']:before {*/
-  /*font-family: 'FontAwesome';*/
-  /*content: '\f03e';*/
-  /*padding: 6px 10px;*/
-  /*line-height: 21px;*/
-/*}*/
-
-/*a.fontawesome-picture {*/
-  /*font-family: 'FontAwesome';*/
-  /*content: '\f03e';*/
-  /*padding: 6px 10px;*/
-  /*line-height: 21px;*/
-/*}*/
 
 div#latlng {
   width: 3%;
@@ -164,10 +150,6 @@ input#user_avatar {
   display: none;
 }
 
-/*button[type='submit']:before {*/
-  /*font-family: 'FontAwesome';*/
-  /*content: '\f041'*/
-/*}*/
 
 .chatbox {
   background-color: #323a44;
@@ -201,7 +183,7 @@ background-color: white;
 padding-left: 2%;
 margin-right: 2%;
 padding-right: 2%;
-height: 50%;
+height: 72%;
 padding-bottom: 2%;
 padding-top: 2%;
 }
@@ -246,9 +228,13 @@ input[type='submit'] {
   background-color: #323a44;
 }
 
-#message {
+.message {
   width: 98%;
   resize: vertical;
+}
+
+.message-text {
+  width: 40%;
 }
 
 .message-container {

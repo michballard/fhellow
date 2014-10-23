@@ -13,17 +13,17 @@
           <%= "#{User.find_by_id(m.from_id).name_first}" + " " + "#{User.find_by_id(m.from_id).name_last}" %>
         </h2>
       <% end %>
-    <div class="message">
+    <%#<div class="message">%>
       <% date_time = m.created_at %>
       <p class='time-sent'><%= m.seen ? "#{date_time.strftime('%B %d, %Y %l:%M %p')}" : "Replied:"+ "#{date_time.strftime('%B %d, %Y %l:%M %p')}" %>
-    <p class="message"><%= m.message  %></p>
-    </div>
+    <p class="message-text"><%= m.message  %></p>
+    <%#</div>%>
     </div>
   <% end %>
   <section class='message-box'>
 <%= form_tag("/message/#{@to}") do  %>
   <%= text_area_tag("message-box")  %>
-  <p><%= submit_tag("Send") %></p>
+  <p><%= submit_tag("Send", id: "bt-reload") %></p>
 <% end %>
   </section>
 </div>
