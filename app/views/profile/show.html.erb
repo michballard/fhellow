@@ -35,23 +35,24 @@
       </section>
 
 <ul class="user-interests">
+<p>I am interested in</p>
   <% if @user.discussing_ideas == true %>
-  <li>Discussing ideas</li>
+  <li><i class="fa fa-check"></i> Discussing ideas</li>
   <% end %>
   <% if @user.afterwork_drinks == true %>
-  <li>Afterwork drinks</li>
+  <li><i class="fa fa-check"></i> Afterwork drinks</li>
   <% end %>
   <% if @user.collaborating == true %>
-  <li>Collaborating</li>
+  <li><i class="fa fa-check"></i> Collaborating</li>
   <% end %>
   <% if @user.chat_over_a_coffee == true %>
-  <li>Chat over a coffee</li>
+  <li><i class="fa fa-check"></i> Chat over a coffee</li>
   <% end %>
   <% if @user.lunch_buddy == true %>
-  <li>Lunch buddy</li>
+  <li><i class="fa fa-check"></i> Lunch buddy</li>
   <% end %>
   <% if @user.advising == true %>
-  <li>Advising</li>
+  <li><i class="fa fa-check"></i> Advising</li>
   <% end %>
 </ul>
 
@@ -62,8 +63,8 @@
 
 <section class="following-counters">
   <ul>
-    <li class="follower-count"><%= pluralize(@user.followers(User).count, " Follower") %></li>
-    <li class="following-count"><%= @user.followees(User).count %> Following</li>
+    <li class="follower-count"><img src="/assets/icon_fhellows.png"><%= pluralize(@user.followers(User).count, " Follower") %></li>
+    <li class="following-count"><img src="/assets/icon_fhellows.png"><%= @user.followees(User).count %> Following</li>
   </ul>
 </section>
 

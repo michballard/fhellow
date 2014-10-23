@@ -162,19 +162,20 @@
 }
 
 .following-counters {
-  width: 60%;
-  margin-left: 40%;
+  width: 70%;
+	margin-left: 35%;
   padding-top: 50px;
+  border-bottom: 1px solid #C9C9C9;
 }
 
 .following-counters li {
 	display: inline;
 	list-style: none;
-	margin-right: 10%;
 }
 
-.follow-count-text {
-
+.following-counters img {
+	width: 5%;
+	margin: 0 2% 0 5%;
 }
 
 .message-user {
@@ -236,7 +237,7 @@
 
 
 #profile-posts {
-	margin-left: 2%;
+	margin: 1% 0 5% 2%;
 }
 
 #intro-post {
@@ -294,7 +295,15 @@
 	margin-top: 40px;
 }
 
+.user-bio p:nth-child(n+3) {
+	color: #43BEA2;
+}
+
+.user-interests p {
+	font-weight: bold;
+}
+
 .user-interests li {
-	list-style-image: url();
+	list-style: none;
 }
 

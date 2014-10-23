@@ -12,32 +12,38 @@
   </section>
 
 	<section class="col-md-7" id="edit-profile-details">
+  <div class="first-name-field">
     <%=f.label :"first name" %>
 		<%= f.text_field :name_first, autofocus: true %>
-		<%=f.label :"last name" %>
+  </div>
+	<div class="last-name-field">
+    <%=f.label :"last name" %>
 		<%=f.text_field :name_last %>
-	</div>
+    </div>
 
-	<div>
+	<div class="email-field">
 		<%= f.label :email %>
 		<%=f.email_field :email %>
 	</div>
 
-	<div>
+	<div class="job-field">
 		<%=f.label :"job title" %>
 		<%=f.text_field :job_title %>
     <%=f.select(:user_type, [['Freelancer'],['Entrepreneur']])%>
 	</div>
 
-  <div>
-  	<%= f.label :location %>
-  	<%= f.text_field :town, placeholder: 'London' %>
-  	<%= f.text_field :country, placeholder: 'United Kingdom', class: "country-label" %>
+  <div class="town-field">
+  	<%= f.label :town %>
+    <%= f.text_field :town, placeholder: 'London' %>
+  </div>
+  <div class="country-field">
+  <%= f.label :country %>
+    <%= f.text_field :country, placeholder: 'United Kingdom', class: "country-label" %>
   </div>
 
-  <div>
-  	<%= f.label :website %>
-  	<%= f.text_field :website %>
+  <div class="web-field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
   	<%= f.label :linkedin %>
   	<%= f.text_field :linkedin %>
   </div>
@@ -65,19 +71,7 @@
     </ul>
     </section>
 
-	<div>
-		<%= f.label :"profile picture" %>
-		<%= f.file_field :avatar %>
-    <div class='input-append'>
-           <a class='fontawesome-picture' onclick="$('input[id=user_avatar]').click();"><i class='fa fa-picture-o'></i></a>
-            <input class='input-small' type='text'>
-         </div>
-         <script type='text/javascript'>
-          $('input[id=user_avatar]').change(function() {
-          $('.input-small').val($(this).val());
-          });
-         </script>
-	</div>
+
 
 	<div>
 	<%= f.submit :"Confirm profile details"%>
