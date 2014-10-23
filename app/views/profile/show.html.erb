@@ -1,13 +1,13 @@
 
 <section class="cover-image">
 </section>
-  <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
+  <%= image_tag @user.avatar.url(:medium), height: '300', width: '300', class: "avatar" %>
 <section class="profile-main">
   <section id="user-info" class="col-md-4">
     <section class="user-name">
       <h3><%= @user.name_first%> <%= @user.name_last %></h3>
 
-      <p><%= @user.job_title %></p>
+      <h4><%= @user.job_title %></h4>
       <% if @user.town && @user.country %>
         <p><%= @user.town%>, <%= @user.country %></p>
       <% else %>
