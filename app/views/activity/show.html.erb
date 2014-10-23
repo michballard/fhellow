@@ -1,9 +1,11 @@
+<h2 class="activity-heading">Activity</h2>
+
 <article class="main">
-
-<% if @posts.any? %>
-  <%= render @posts.reverse %>
-<% else %>
-   <p>No posts yet</p>
-<% end %>
-
+	<div id="post-activity-container">
+		<% if @posts.any? %>
+		  <%= render @posts.reverse %>
+		<% else %>
+		   <p>No posts yet</p>
+		<% end %>
+  </div>
 </article>
