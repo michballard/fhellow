@@ -1,7 +1,7 @@
   <article class="main"><%= form_for [@user, @post] do |f| %>
 <div class="modal-header">
-  <% if action_name == "new" %>
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <% if action_name == "new" %>
     <h4 class="modal-title" id='myModalLabel'><%= render 'posts/new_title' %></h4>
   <% else %>
     <h4 class="modal-title" id='myModalLabel'><%= render 'posts/edit_title' %></h4>
@@ -18,7 +18,7 @@
            <a class='fontawesome-picture' onclick="$('input[id=post_image]').click();"><i class='fa fa-picture-o'></i></a>
             <input class='input-small' type='text'>
             <% if action_name == "edit" %>
-              <P class='post-submit'><%= f.submit 'Edit Post' %></p>
+              <p class='post-submit'><%= f.submit 'Edit Post' %></p>
             <% else %>
               <p class='post-submit'><%= f.submit :Post %></p>
             <% end %>
