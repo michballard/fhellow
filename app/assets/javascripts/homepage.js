@@ -27,14 +27,12 @@ var promises;
     var url = "/api/users";
 
     $.get(url, function(users){
-      // populateUsers(users);
       promises = populateUsers(users);
 
       Q.all(promises).then(function() {
         performLayout();
       });
     });
-
 
     // Adding a marker on the map for each user
     $.get(url, function(users){
@@ -167,34 +165,5 @@ var promises;
       layoutMode: 'masonry'
     });
   }
-
-  // function performLayout(){
-  //   var $container = $('#profile-container');
-
-  //   $container.imagesLoaded( function(){
-  //     $container.isotope({
-  //       itemSelector: '.child-container',
-  //       layoutMode: 'masonry'
-  //     });
-  //   });
-  // }
-
-
-  // function performLayout(){
-  //   var $container = $('#profile-container').imagesLoaded( function() {
-  //     $container.isotope({
-  //       itemSelector: '.child-container',
-  //       layoutMode: 'masonry'
-  //     });
-  //   });
-  // }
   
 });
-
-// $(window).load(function(){
-//   var $container = $('#profile-container');
-//   $container.isotope({
-//     itemSelector: '.child-container',
-//     layoutMode: 'masonry'
-//   });
-// });
