@@ -2,13 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.post {
-  background-color: #fff;
-  border: 2px solid #C9C9C9;
-  margin-bottom: 10px;
-  padding: 5%;
-  width: 30%;
+.activity-heading {
+  color: white;
+  background-color: #323a44;
+  margin: 0;
+  padding: 20px 0 20px 10px;
 }
 
+#post-activity-container {
+  margin-top: 10px;
+}
 
+.post {
+/*  background-color: #fff;
+  border: 1px solid #C9C9C9;*/
+  /*margin: 0 5px 10px 5px;*/
+}
+
+.post-child-container {
+  width: 33.3333333%;
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 300px;
+  border: 1px solid #C9C9C9;
+}
+
+.post-middle {
+  width: 300px;
+  background-color: #fff;
+  padding: 3%;
+  border-left: 1px solid #C9C9C9;
+  border-right: 1px solid #C9C9C9;
+}
+
+.post-bottom {
+  width: 300px;
+  background-color: #fff;
+  padding: 3%;
+  border: 1px solid #C9C9C9;
+}
+
+.post-content {
+
+}
+
+.post-author-name {
+  color: black;
+  font-weight: 700;  
+  margin-bottom: 0px;
+}
+
+.post-location {
+  color: #C9C9C9;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.post-time {
+  color: #C9C9C9;
+  margin-bottom: 0px;
+  font-size: 12px;
+}

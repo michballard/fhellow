@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 
-$('.location-setter').hide()
+$('.location-setter').hide();
 
 var promises;
 
@@ -29,7 +29,7 @@ var promises;
     var url = "/api/users";
 
     $.get(url, function(users){
-      populateUsers(users);
+      // populateUsers(users);
       promises = populateUsers(users);
 
       Q.all(promises).then(function() {
