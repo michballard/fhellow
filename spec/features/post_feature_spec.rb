@@ -49,7 +49,7 @@ describe 'posts' do
   	it 'allows a user to edit a post from the activity page' do
       click_link 'Edit post'
       fill_in 'Content', with: "I'm not happy!"
-      click_on 'Update Post'
+      click_on 'Edit Post'
       expect(current_path).to match /activity\/\d+/
       expect(page).to have_content "I'm not happy!"
   	end
