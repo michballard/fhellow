@@ -242,7 +242,9 @@ input[type='submit'] {
   margin-right: 1%;
 }
 
-
+.nav.navbar-nav.navbar-right li input:hover {
+  background-color: #323a44;
+}
 
 #message {
   width: 98%;
@@ -297,17 +299,6 @@ a.convo-link {
 
 #message-avatar {
   display: inline;
-}
-
-/*-----------Location setter button ------------ */
-input[type='submit'].location-setter {
-  margin: 0 auto;
-  float: none;
-  border-radius: 2%;
-}
-
-input[type='submit'].location-setter:hover {
-  background-color: red;
 }
 
 
