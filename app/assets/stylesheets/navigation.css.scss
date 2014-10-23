@@ -33,6 +33,7 @@
   vertical-align: middle;
 }
 
+
 .nav.navbar-nav.navbar-right li {
   list-style: none;
   display: inline-block;
@@ -82,13 +83,21 @@
 }
 
 .nav.navbar-nav.navbar-right li i {
-  color: #7A7A7A;
+  // color: white;
   display: block;
   font-size: 16px;
 }
 
+.nav.navbar-nav.navbar-right li input:hover {
+  background-color: #323a44;
+}
+  
+
+
+
+
 .nav.navbar-nav.navbar-right li input {
-   color: #7A7A7A;
+  color: white;
   display: block;
   font-size: 16px;
   background-color: #43BEA2;

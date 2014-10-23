@@ -94,3 +94,16 @@ input[type=checkbox] {
 	margin-bottom: 0px;
 	font-size: 12px;
 }
+
+/*-----------Location setter button ------------ */
+input[type='submit'].location-setter {
+  margin: 0 auto;
+  float: none;
+  border-radius: 2%;
+}
+
+input[type='submit'].location-setter:hover {
+  background-color: #323a44;
+}
+
+
