@@ -1,0 +1,81 @@
+.edit_user {
+  padding: 2% 5%;
+  // background-color: #ededed;
+}
+
+.edit_user div {
+  margin-bottom: 1%;
+}
+
+#edit-profile-details {
+  margin-top: 5%;
+}
+
+#edit-profile-details label {
+  width: 20%;
+  vertical-align: top;
+}
+
+.edit_user input {
+  margin-right: 2%;
+}
+
+#user_user_type {
+  margin-left: 8%;
+}
+
+.country-label {
+  margin-left: 8%;
+}
+
+#edit-profile-image {
+  padding-top: 5%;
+  text-align: center;
+}
+
+#edit-profile-image label {
+  margin-top: 2%;
+  display: block;
+}
+
+.fileinputs {
+  position: relative;
+  background-color: #323a44;
+  width: 40%;
+  padding: 1% 3%;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.fileinputs p {
+  color: #fff;
+  margin-bottom: 10%;
+}
+
+#edit-profile-image input {
+  position: relative;
+  text-align: right;
+  -moz-opacity:0 ;
+  opacity: 0;
+  z-index: 2;
+}
+.interests-checks ul {
+  column-count: 2;
+}
+
+.interests-checks li {
+  list-style: none;
+}
+
+.interests-checks input[type=checkbox] {
+  /* All browsers except webkit*/
+  transform: scale(1.5);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(1.5);
+}
+
+
+
+
+
