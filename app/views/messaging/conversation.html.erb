@@ -21,10 +21,10 @@
     </div>
   <% end %>
   <section class='message-box'>
-<%= form_tag("/message/#{@to}") do  %>
-  <%= text_area_tag("message-box")  %>
-  <p><%= submit_tag("Send", id: "bt-reload") %></p>
-<% end %>
+    <%= form_tag("/message/#{@to}") do  %>
+      <%= text_area_tag("message-box")  %>
+      <p><%= submit_tag("Send", id: "bt-reload") %></p>
+    <% end %>
   </section>
 </div>
 
