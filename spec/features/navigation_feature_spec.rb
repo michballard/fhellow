@@ -13,13 +13,13 @@ describe "navigation" do
     end
 
     it "the Fhellow logo links to the home page" do
-      bob = User.create(email: 'bob@bob.com', password: 'password', password_confirmation: 'password')
+      bob = User.create(email: 'bob@bob.com', password: 'password')
       visit "/activity/#{bob.id}"
       click_link 'FHELLOW'
       expect(current_path).to eq '/'
     end
 
-    it "should only have a link for the 'About' page if user is signed out" do
+    it "should have a link for the 'About' page if user is signed out" do
       visit '/'
       expect(page).to have_link 'About'
     end
@@ -43,14 +43,14 @@ describe "navigation" do
       expect(page).to have_link 'Post'
     end
 
-    it "should have a link to join as a user" do
+    it "should have a button to join as a user" do
       visit '/'
-      expect(page).to have_link 'Join'
+      expect(page).to have_button 'Join'
     end
 
-    it "should have a link for 'Log in' page" do
+    it "should have a button for 'Log in' page" do
       visit '/'
-      expect(page).to have_link 'Log in'
+      expect(page).to have_button 'Log in'
     end
   end
 end

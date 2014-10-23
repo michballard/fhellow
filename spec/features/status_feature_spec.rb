@@ -7,7 +7,7 @@ include SessionHelpers
 describe 'statuses' do 
 
     before(:each) do
-      @bob = User.create(email: 'bob@test.com', password: '1234567890', password_confirmation: '1234567890') 
+      @bob = User.create(email: 'bob@test.com', password: '123456789') 
     end
 
 	context 'a guest user' do 
@@ -38,14 +38,14 @@ describe 'statuses' do
     end
 
     it 'will initially have no status' do  	
-    	sign_in_bob
+    	sign_in('bob@test.com')
       visit "/users/#{@bob.id}/show"
       expect(page).to have_content "No status set"
       expect(page).to have_content "Current status"
     end 
 
     it 'can have a status added' do 
-    	sign_in_bob
+    	sign_in('bob@test.com')
       add_status
       expect(current_path).to match "/users/#{@bob.id}/show"
       expect(page).not_to have_content "No status set"
@@ -53,13 +53,13 @@ describe 'statuses' do
     end
 
     it 'has a time posted' do 
-    	sign_in_bob
+    	sign_in('bob@test.com')
       add_status
       expect(page).to have_content 'less than a minute ago'
     end 
     
     it 'can have a status changed' do 
-    	sign_in_bob
+    	sign_in('bob@test.com')
       add_status
       click_link "Current status"
       fill_in('status[current_status]', with: 'Here is my updated status')

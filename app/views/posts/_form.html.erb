@@ -8,29 +8,39 @@
   <% end %>
 </div>
 <div class="modal-body">
-      <p><%= f.text_area :content %></p>
-       <button type='submit' id='latlng'><%= f.label :add_current_location %></button>
+  <%= f.label :content, id: 'content-label'%>
+  <p><%= f.text_area :content, placeholder: "Max 255 characters" %></p>
+         <div class='input-append'>
+      <div id='latlng'><i class='fa fa-map-marker'></i></div>
          <%= f.hidden_field :latitude %>
          <%= f.hidden_field :longitude %>
-     <h4><%= f.label :image %></h4>
-     </i>
-      <p><%= f.file_field :image %></p>
+         <%= f.file_field :image %>
+           <a class='fontawesome-picture' onclick="$('input[id=post_image]').click();"><i class='fa fa-picture-o'></i></a>
+            <input class='input-small' type='text'>
+      <p id='post-submit'><%= f.submit :Post %></p>
+         </div>
+
+         <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>
+          $('input[id=post_image]').change(function() {
+          $('.input-small').val($(this).val());
+          });
+         </script>
 </div>
       <div class="modal-footer">
-      <p><%= f.submit %></p>
       </div>
     <% end %>
     <script>
     $('#latlng').on('click', function() {
        if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-              console.log(position.coords.latitude)
+              console.log(position.coords.latitude);
+              console.log(position.coords.longitude);
               $('#post_latitude').val(position.coords.latitude);
               $('#post_longitude').val(position.coords.longitude);
             });
         }
 
-      })
+        })
     </script>
 </article>
 </div>
