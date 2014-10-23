@@ -262,17 +262,6 @@ input[type='submit'].location-setter:hover {
 }
 
 
-/*----Follow toggles---- */
-
-a.profile-follow-toggle.Following:hover span { display: none;}
-
-a.Following:hover:before {content: "Unfollow?"}
-
-img.avatar-image {
-  max-height: 102px;
-  max-width: 102px;
-}
-
 /* Sticky footer styles
 -------------------------------------------------- */
 

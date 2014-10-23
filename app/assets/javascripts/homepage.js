@@ -4,8 +4,6 @@
 
 $(document).ready(function() {
 
-$('.location-setter').hide();
-
 var promises;
 
   if($('#map').length > 0) {
@@ -46,7 +44,6 @@ var promises;
     // Adding a marker for the current user (not sure if works)
     $('.locate').on('click', function(event){
         // event.preventDefault();
-        $('.location-setter').show();
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           $('#user_latitude').val(position.coords.latitude);
