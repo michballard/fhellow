@@ -2,9 +2,9 @@
 <section class="cover-image">
 </section>
   <%= image_tag @user.avatar.url(:medium), class: "avatar" %>
-<article class="profile-main">
+<section class="profile-main">
   <section id="user-info" class="col-md-4">
-    <article class="user-name">
+    <section class="user-name">
       <h3><%= @user.name_first%> <%= @user.name_last %></h3>
 
       <p><%= @user.job_title %></p>
@@ -13,27 +13,28 @@
       <% else %>
         <p><%= @user.town %></p>
       <%end%>
-    </article>
+    </section>
 
 <button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
-<%unless @user == current_user %>
-  <% if current_user && current_user.follows?(@user) %>
-  	<button class="profile-following">
-  		<a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Following</a>
-  	</button>
-  <%elsif current_user %>
-  	<button class="profile-follow">
-  			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
-  	</button>
-  <% end %>
-<%end%>
-    <article class="user-bio">
+
+<% if current_user && current_user.follows?(@user) %>
+	<button class="profile-following">
+		<i class="fa fa-minus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-following">Unfollow</a>
+	</button>
+<%elsif current_user %>
+	<button class="profile-follow">
+			<i class="fa fa-plus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle" id="toggle-follow">Follow</a>
+	</button>
+<% end %>
+
+    <section class="user-bio">
+      <h4>About me</h4>
       <p><%= @user.bio %></p>
       <p><%= @user.website %></p>
       <p><%= @user.linkedin %></p>
-      </article>
+      </section>
 
-<ul>
+<ul class="user-interests">
   <% if @user.discussing_ideas == true %>
   <li>Discussing ideas</li>
   <% end %>
@@ -54,32 +55,44 @@
   <% end %>
 </ul>
 
-<p><span class="follower-count"><%= pluralize(@user.followers(User).count, "Follower") %></span></p>
-<p><span class="following-count"><%= @user.followees(User).count %></span> Following</p>
+</section>
+<!-- end of user info section -->
 
-<% if current_user && current_user.id == @user.id %>
-  <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
-<% else %>
-  <p>Current status</p>
-<% end %>
+<!-- main content -->
 
-<% if @user.statuses.any? %>
-  <p><%= @user.statuses.last.current_status %></p>
-  <p><%= time_ago_in_words(@user.statuses.last.created_at) %> ago</p>
-<% else %>
-   <p>No status set</p>
-<% end %>
-
-<% if @user.posts.any? %>
-  <%= render @user.posts.reverse %>
-<% else %>
-   <p>No posts yet</p>
-<% end %>
+<section class="following-counters">
+  <ul>
+    <li class="follower-count"><%= pluralize(@user.followers(User).count, " Follower") %></li>
+    <li class="following-count"><%= @user.followees(User).count %> Following</li>
+  </ul>
 </section>
 
-<section class="col-md-8" id="profile-posts">
-  <article class="post" id="intro-post">
-   <h2> Congratulations - you are now a Fhellow! </h2>
+<section class="col-md-7" id="profile-posts">
+
+  <section class="status">
+    <% if current_user && current_user.id == @user.id %>
+      <p><%= link_to "Current status", new_user_status_path(@user.id) %></p>
+    <% else %>
+      <p>Current status</p>
+    <% end %>
+
+    <% if @user.statuses.any? %>
+      <p><%= @user.statuses.last.current_status %></p>
+      <p><%= time_ago_in_words(@user.statuses.last.created_at) %> ago</p>
+    <% else %>
+       <p>No status set</p>
+    <% end %>
+  </section>
+
+    <% if @user.posts.any? %>
+      <%= render @user.posts.reverse %>
+    <% else %>
+       <p>No posts yet</p>
+    <% end %>
+
+  <section class="post" id="intro-post">
+   <h2> Congratulations - you are now Fhellow! </h2>
+
    <h3> Where would you like to go now? </h3>
   <ul>
    <li><%= link_to "See what's going on in the community", activity_user_path(@user.id) %></li>
@@ -87,6 +100,7 @@
    <li><%= link_to "Create a post or status", new_user_post_path(@user.id), {:remote => true, 'data-keyboard' => true, 'data-toggle' =>  "modal", 'data-target' => '#homepage-posts'}  %></li>
    <li><%= link_to "Edit your profile", edit_profile_path(@user.id) %></li>
   </ul>
-  </article>
+  </section>
+
 </section>
-</article>
+
