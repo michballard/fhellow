@@ -31,6 +31,7 @@ describe 'relationships' do
 
     it 'should be able to follow a fhellow' do
       sign_in("barnany@barnany.com")
+      save_and_open_page
       find(".profile-#{@gemma.id}").click
       find(".profile-follow-toggle").click
       expect(page).to have_content("Following")
