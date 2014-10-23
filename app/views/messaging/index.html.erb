@@ -2,13 +2,14 @@
 <h2 class="message-list">Messages</h2>
 <section class="message-container">
 <% @messages.each do |message| %>
-  <div id='each-message'
+  <div id='each-message'>
   <p id="message-who"><% if current_user.id == message.from_id %>
-    <%= "#{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
+    <%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
   <% else %>
-    <p id="message-who"><%= link_to "#{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
+    <p id="message-who"><%= "Conversation with: #{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
   <% end %>
-  <%= link_to "View Conversation", conversation_path(message.to_id), id: 'convo-link' %>
+  <p id='industry'><%= "#{User.find_by_id(message.from_id).job_title}" + ", " + "#{User.find_by_id(message.from_id).user_type}" %></p>
+  <p id='convo-link'><%= link_to "View Conversation", conversation_path(message.to_id) %>
   <% date_time = message.created_at %>
     <p id="time-sent"><%= date_time.strftime("%B %d, %Y %l:%M %p") %></p>
     <p id="message"><%= "#{message.message}" %></p>
@@ -16,5 +17,6 @@
 <% end %>
 </section>
 
- <%#TODO Name being wrapped in <p></p> is controlling the whole block. find a way%>
+<%#TODO Name being wrapped in <p></p> is controlling the whole block. find a way%>
 <%#to stop that from happening.%>
+<%#TODO Remove 'else conversation' statement once we input logic that a person cannot message themselves%>

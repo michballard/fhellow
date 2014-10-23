@@ -19,3 +19,20 @@ $('a.profile-follow-toggle').on('click', function(event){
          followingCount.text(response.new_following_count);
   });
 });
+
+$(document).ready(function() {
+  var url = window.location.href;
+  if(url.endsWith('/show')) {
+    $('.child-container').addClass('profile-child-container').removeClass('activity-child-container');
+  }
+
+  var $container = $('#profile-post-container');
+  $container.isotope({
+    itemSelector: '.profile-child-container',
+    layoutMode: 'masonry'
+  });
+});
+
+String.prototype.endsWith = function(suffix) {
+  return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
