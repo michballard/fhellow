@@ -8,8 +8,8 @@ describe 'sending messages' do
   context 'a signed in user', js: true do
 
   before(:each) do
-    @bob = User.create(email: 'bob@b.com', password: '123456789')
-    @john = User.create(email: 'john@b.com', password: '123456789')
+    @bob = User.create(email: 'bob@b.com', password: '123456789', job_title: 'Journalist', user_type: 'Freelancer')
+    @john = User.create(email: 'john@b.com', password: '123456789', job_title: 'Designer', user_type: 'Freelancer')
   end
 
   	it 'can send a message' do
@@ -26,10 +26,15 @@ describe 'sending messages' do
       expect(page).to have_content('Hello John')
   	end
 
-    it 'a person can see the name of who has sent the message' do
+    it 'a person can see the name of the person who sent the message' do
       message_send
       expect(page).to have_content('John')
+    end
 
+    it 'a person can see the job title of the person who sent the message' do
+      message_send
+      save_and_open_page
+      expect(page).to have_css('#industry')
     end
 
     before do
