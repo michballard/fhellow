@@ -188,6 +188,7 @@ input[type='submit'] {
   font-family: 'Lato', 'sans-serif'
 }
 
+/*-----------Location setter button ------------ */
 input[type='submit'].location-setter {
   margin-top: 10px;
   float: none;
@@ -197,6 +198,14 @@ input[type='submit'].location-setter {
 input[type='submit'].location-setter:hover {
   background-color: red;
 }
+
+
+/*----Follow toggles---- */
+
+a.profile-follow-toggle.Following:hover span { display: none;}
+
+a.Following:hover:before {content: "Unfollow?"}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
