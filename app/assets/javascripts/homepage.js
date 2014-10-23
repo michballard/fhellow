@@ -100,7 +100,7 @@ var promises;
         }
 
         Q.all(promise).then(function() {
-          performLayout();
+          performReloadLayout();
         });
       });
     });
@@ -154,5 +154,15 @@ var promises;
       layoutMode: 'masonry'
     });
   }
+
+  function performReloadLayout(){
+    var $container = $('#profile-container');
+    $container.isotope('reloadItems').isotope({
+      itemSelector: '.child-container',
+      layoutMode: 'masonry'
+    });
+  }  
   
 });
+
+

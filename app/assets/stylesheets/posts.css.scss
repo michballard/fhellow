@@ -29,22 +29,25 @@
 
 .post-image {
   width: 100%;
-  border: 1px solid #C9C9C9;
+  border-left: 1px solid #C9C9C9;
+  border-top: 1px solid #C9C9C9;
+  border-right: 1px solid #C9C9C9;
 }
 
 .post-middle {
   width: 100%;
   background-color: #fff;
   padding: 3%;
-  border-left: 1px solid #C9C9C9;
-  border-right: 1px solid #C9C9C9;
+  border: 1px solid #C9C9C9;
 }
 
 .post-bottom {
   width: 100%;
   background-color: #fff;
   padding: 3%;
-  border: 1px solid #C9C9C9;
+  border-left: 1px solid #C9C9C9;
+  border-bottom: 1px solid #C9C9C9;
+  border-right: 1px solid #C9C9C9;
 }
 
 .post-author-name {
