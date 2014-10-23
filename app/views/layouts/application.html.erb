@@ -73,7 +73,7 @@
       </li>
     <% end %>
   <%else%>
-  <li class="account-manage"><%= button_to "Join", new_user_registration_path %></li>
+  <li class="account-manage"><%= button_to "Join", new_user_registration_path, method: "get" %></li>
   <li class="account-manage"><%= button_to "Log in", new_user_session_path %></li>
 
 <% end %>

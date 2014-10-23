@@ -27,7 +27,6 @@ var promises;
     var url = "/api/users";
 
     $.get(url, function(users){
-      // populateUsers(users);
       promises = populateUsers(users);
 
       Q.all(promises).then(function() {
@@ -35,15 +34,14 @@ var promises;
       });
     });
 
-
     // Adding a marker on the map for each user
     $.get(url, function(users){
       populateMap(users);
     });
 
     // Adding a marker for the current user (not sure if works)
-    $('.locate').on('click', function(event){
-        // event.preventDefault();
+    $('.location-setter').on('click', function(event){
+        event.preventDefault();
         if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           $('#user_latitude').val(position.coords.latitude);
@@ -58,22 +56,11 @@ var promises;
               content: "This is you!"
               }
            });
+            if ($(".current_user_id").text()){
+           $.post("/updatelocation?id=" + $(".current_user_id").text() + "&longitude=" +  $('#user_longitude').val() + "&latitude=" +  $('#user_latitude').val())
+          }
         });
       }
-    });
-
-    // Ajax request for submitting user location
-    $('.edit_user').submit(function(){
-      var valuesToSubmit = $(this).serialize();
-      $.ajax({
-        type: "POST",
-        url: $(this).attr('action'),
-        data: valuesToSubmit,
-        dataType: "JSON"
-      }).success(function(json){
-        //nada
-      });
-      return false;
     });
 
     //Gmap Set-up
@@ -82,7 +69,7 @@ var promises;
         map.setCenter(position.coords.latitude, position.coords.longitude);
       },
       error: function(error) {
-        alert('Geolocation failed: '+error.message);
+        alert('Geolocation failed: '+ error.message);
       },
       not_supported: function() {
         alert("Your browser does not support geolocation");
@@ -167,34 +154,5 @@ var promises;
       layoutMode: 'masonry'
     });
   }
-
-  // function performLayout(){
-  //   var $container = $('#profile-container');
-
-  //   $container.imagesLoaded( function(){
-  //     $container.isotope({
-  //       itemSelector: '.child-container',
-  //       layoutMode: 'masonry'
-  //     });
-  //   });
-  // }
-
-
-  // function performLayout(){
-  //   var $container = $('#profile-container').imagesLoaded( function() {
-  //     $container.isotope({
-  //       itemSelector: '.child-container',
-  //       layoutMode: 'masonry'
-  //     });
-  //   });
-  // }
   
 });
-
-// $(window).load(function(){
-//   var $container = $('#profile-container');
-//   $container.isotope({
-//     itemSelector: '.child-container',
-//     layoutMode: 'masonry'
-//   });
-// });
