@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {class:"edit_user registerForm form-horizontal"} do |f| %>
 
   <h2>Edit your profile</h2>
 
@@ -11,21 +11,21 @@
 	<section class="col-md-7" id="edit-profile-details">
   <div class="first-name-field">
     <%=f.label :"first name" %>
-		<%= f.text_field :name_first, autofocus: true %>
+		<%= f.text_field :name_first, autofocus: true, class:"form-control" %>
   </div>
 	<div class="last-name-field">
     <%=f.label :"last name" %>
-		<%=f.text_field :name_last %>
+		<%=f.text_field :name_last, class:"form-control" %>
     </div>
 
 	<div class="email-field">
 		<%= f.label :email %>
-		<%=f.email_field :email %>
+		<%=f.email_field :email, class:"form-control" %>
 	</div>
 
 	<div class="job-field">
 		<%=f.label :"job title" %>
-		<%=f.text_field :job_title %>
+		<%=f.text_field :job_title, class:"form-control" %>
   </div>
   <div class="fhellow-type">
     <%=f.select(:user_type, [['Freelancer'],['Entrepreneur']])%>
@@ -33,26 +33,26 @@
 
   <div class="town-field">
   	<%= f.label :town %>
-    <%= f.text_field :town, placeholder: 'London' %>
+    <%= f.text_field :town, placeholder: 'London', class:"form-control" %>
   </div>
   <div class="country-field">
   <%= f.label :country %>
-    <%= f.text_field :country, placeholder: 'United Kingdom', class: "country-label" %>
+    <%= f.text_field :country, placeholder: 'United Kingdom', class: "country-label form-control" %>
   </div>
 
   <div class="web-field">
     <%= f.label :website %>
-    <%= f.text_field :website %>
+    <%= f.text_field :website, class:"form-control" %>
   </div>
   <div class="linked-in-field">
   	<%= f.label :linkedin %>
-  	<%= f.text_field :linkedin %>
+  	<%= f.text_field :linkedin, class:"form-control" %>
   </div>
 
 	<div class="user-edit-bio">
 		<%=f.label :bio %>
     <p>Tell us a bit about what you've been up to</p>
-		<%= f.text_area :bio%>
+		<%= f.text_area :bio, class:"form-control"%>
 	</div>
 
     <section class="interests-checks">
@@ -78,7 +78,7 @@
 
 
 	<div class="profile-submit">
-	<%= f.submit :"Confirm profile details"%>
+	<%= f.submit :"Confirm profile details", class:"btn btn-default"%>
 	</div>
   <%if @user.name_first %>
   <%= link_to "Account settings", edit_user_registration_path %>
