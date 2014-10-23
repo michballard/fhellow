@@ -1,4 +1,4 @@
 $(document).ready(function() {
-  $(".profile-page-posts").html("<%= escape_javascript(render :partial => 'posts/form') %>");
-  $(".profile-page-posts").modal("show");
+  $("#profile-page-posts").html("<%= escape_javascript(render :partial => 'posts/form') %>");
+  $("#profile-page-posts").modal("show");
 });
