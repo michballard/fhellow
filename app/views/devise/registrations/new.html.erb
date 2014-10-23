@@ -1,15 +1,15 @@
-<article class="main">
-			<h2>Sign up</h2>
+<article class="signin-up">
+			<h2 class="signin-up-heading">Sign up</h2>
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   	<%= devise_error_messages! %>
 
-  	<div><%= f.label :email %><br />
+  	<div class="email-signin-up "><%= f.label :email %><br />
   	<%= f.email_field :email, autofocus: true %></div>
 
-  	<div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+  	<div class="password-signin-up"><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  	<div><%= f.label :password_confirmation %><br />
+  	<div class="password-confirm-signin"<%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.submit "Sign up" %></div>
