@@ -4,7 +4,6 @@
 }
 
 .edit_user div {
-  margin-top: -2%;
   margin-bottom: 1%;
 }
 
@@ -12,21 +11,11 @@
   margin: 5% 0 60px 5%;
 }
 
-
 #edit-profile-details label {
   width: 100%;
   vertical-align: top;
 }
 
-.edit-profile-heading {
-  background-color: #323a44;
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 15px;
-  margin-top: 0px;
-
-}
 .edit_user input {
   margin-right: 2%;
   display: block;
@@ -185,7 +174,6 @@
   clear: left;
 }
 
-
 .edit-profile-heading {
   background-color: #323a44;
   color: white;
@@ -197,6 +185,9 @@
 }
 
 form.registerForm {
-  width: 100%;
   padding: 0;
+}
+
+input#user_email {
+  width: 235px;
 }
