@@ -109,7 +109,6 @@ var promises;
   function populateMap(users){
     users.forEach(function(user){
       if (user.current_user_id == user.user_id) {
-        console.log(user)
         map.addMarker({
         lat: parseFloat(user.latitude),
         lng: parseFloat(user.longitude),
@@ -122,7 +121,6 @@ var promises;
         });
       }
       else {
-        console.log(user);
       map.addMarker({
       lat: parseFloat(user.latitude),
       lng: parseFloat(user.longitude),
