@@ -14,7 +14,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation" %></div>
 
   <div><%= f.submit "Join" %></div>
+  <%= render "devise/shared/links" %>
+
 	<% end %>
 
-<%= render "devise/shared/links" %>
-<%#</article>%>
+</article>
