@@ -1,11 +1,12 @@
 <article class="signin-up">
-<h2 class="signin-up-heading">Log in</h2>
+<h2 class="signin-up-heading">Welcome back! Please log in.</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="email-signin-up"><%= f.label :email %><br />
+<div class="signin-up-divider-left">-</div>Or<div class="signin-up-divider-right">-</div>
+  <div class="email-signin-up"><%#= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
-  <div class="password-signin-up"><%= f.label :password %><br />
+  <div class="password-signin-up"><%#= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <% if devise_mapping.rememberable? -%>
@@ -13,7 +14,8 @@
   <% end -%>
 
   <div><%= f.submit "Log in", class:"log-in-button" %></div>
+<%= render "devise/shared/links" %>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
 </article>
