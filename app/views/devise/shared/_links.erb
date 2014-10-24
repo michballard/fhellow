@@ -3,12 +3,11 @@
     <%= link_to "Join with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "facebook-signin-up"%><br />
   <% end -%>
 <%- else %>
-  
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "facebook-signin-up"%><br />
 	<% end -%>
-
 <% end -%>
+
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'profile' %>
   <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-signin-up" %><br />
 <% end -%>
