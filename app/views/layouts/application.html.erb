@@ -27,7 +27,8 @@
 
           <ul class="nav navbar-nav navbar-right">
     <% unless current_user %>
-      <li><a href="#"><i class="fa fa-lightbulb-o"></i>About</a></li>
+      <!-- <li><i class="fa fa-lightbulb-o"></i><%= link_to "About", about_index_path %></li> -->
+      <li><a href="/about"><i class="fa fa-lightbulb-o"></i>About</a></li>
     <% end %>
   <li><%= link_to activity_path(current_or_guest_user) do %>
     <i class="fa fa-newspaper-o"></i>

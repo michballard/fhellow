@@ -51,6 +51,8 @@ gem 'devise'
 # gem for adding images
 gem 'paperclip'
 
+gem "aws-sdk"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

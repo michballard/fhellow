@@ -31,6 +31,11 @@ GEM
     arel (5.0.1.20140414130214)
     autoprefixer-rails (3.1.2.20141016)
       execjs
+    aws-sdk (1.57.0)
+      aws-sdk-v1 (= 1.57.0)
+    aws-sdk-v1 (1.57.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
@@ -215,6 +220,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  aws-sdk
   bootstrap-sass
   byebug
   capybara
