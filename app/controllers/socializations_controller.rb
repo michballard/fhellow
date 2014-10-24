@@ -8,11 +8,13 @@ class SocializationsController < ApplicationController
     if @current_user.follows?(@other_user) 
       render json: { follow: "Following", 
 							      	new_follower_count: "#{pluralize(@other_user.followers(User).count, "Follower")}", 
-							      	new_following_count: @other_user.followees(User).count }
+							      	new_following_count: "#{@other_user.followees(User).count} Following"
+                    }
     else
       render json: {follow: "Follow", 
 							      	new_follower_count: "#{pluralize(@other_user.followers(User).count, "Follower")}", 
-							      	new_following_count: @other_user.followees(User).count }
+							      	new_following_count: "#{@other_user.followees(User).count} Following"
+                    }
     end
   end
 

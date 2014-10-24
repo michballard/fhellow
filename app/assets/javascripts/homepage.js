@@ -128,7 +128,7 @@ var promises;
       icon: "/assets/fhellow_marker.png",
       class: "all-user-marker",
       infoWindow: {
-          content: '<img src="' + user.image_url + '"><h2>' + user.full_name + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+          content: '<div class="row"><div class="col-md-5"><img src="' + user.image_url + ' " class="avatar-image"></div><div class="col-md-7 profile-summary-text-map"><a href="/users/' + user.user_id + '/show" class="profile-summary-name">' + user.full_name + '</a><p class="profile-summary-job-title">'+ user.job_title+'</p><p class="profile-summary-location">'+ user.town+'</p></div></div>'
           }
        });
       }
