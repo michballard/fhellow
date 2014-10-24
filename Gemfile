@@ -33,6 +33,7 @@ gem 'socialization'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
+gem 'byebug'
 
 group :test do
 	gem 'rspec-rails'
