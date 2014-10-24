@@ -14,8 +14,8 @@ class HomepageController < ApplicationController
 
   def update_location
     @user = User.find(params[:id])
-    @user.longitude = params[:longitude]
-    @user.latitude = params[:latitude]
+    @user.longitude = params[:longitude].to_f
+    @user.latitude = params[:latitude].to_f
     @user.save
     render nothing: true
   end
