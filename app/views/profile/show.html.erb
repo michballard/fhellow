@@ -64,8 +64,10 @@
 
 <section class="following-counters">
   <ul>
-    <li class="follower-count"><img src="/assets/icon_fhellows.png"><%= pluralize(@user.followers(User).count, " Follower") %></li>
-    <li class="following-count"><img src="/assets/icon_fhellows.png"><%= @user.followees(User).count %> Following</li>
+    <img src="/assets/icon_fhellows.png">
+    <li class="follower-count"><%= pluralize(@user.followers(User).count, " Follower") %></li>
+    <img src="/assets/icon_fhellows.png">
+    <li class="following-count"><%= @user.followees(User).count %> Following</li>
   </ul>
 </section>
 
