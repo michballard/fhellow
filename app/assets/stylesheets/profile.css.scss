@@ -3,7 +3,7 @@
 }
 
 .cover-image {
-	background-image: url('/assets/cover-image.jpg');
+	background-image: url('/assets/cover.jpg');
 	background-size: cover;
 	height: 450px;
 	width: 100%;
@@ -420,7 +420,7 @@ a.facebook-signin-up:hover {
 }
 .signin-up-divider span {
   display: inline-block;
-  position: relative;  
+  position: relative;
 }
 .signin-up-divider span:before,
 .signin-up-divider span:after {
@@ -449,5 +449,5 @@ p.join-signin-up, p.login-signin-up {
 a.join-signin-up-button, a.login-signin-up-button {
   color: #43BEA2;
   padding-left: 2%;
-  
+
 }
