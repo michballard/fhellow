@@ -1,7 +1,13 @@
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "facebook-signin-up" %><br />
+<%- if devise_mapping.omniauthable? && controller_name != 'sessions' %>
+<%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Join with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "facebook-signin-up"%><br />
   <% end -%>
+<%- else %>
+  
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "facebook-signin-up"%><br />
+	<% end -%>
+
 <% end -%>
 
 <%- if controller_name != 'sessions' %>
