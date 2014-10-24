@@ -4,15 +4,9 @@
 <div id="chatbox">
   <% @message.each do |m| %>
     <div class="each-message">
-      <% if current_user.id == m.from_id %>
         <h2 class="message-who">
-          <%= "#{User.find_by_id(m.to_id).name_first}" + " " + "#{User.find_by_id(m.to_id).name_last}" %>
+          <%= "#{User.find_by_id(m.from_id).name_first}" + " " + "#{User.find_by_id(m.from_id).name_last}" %>
         </h2>
-      <% else %>
-        <h2 class="message-who">
-          <%= "#{User.find_by_id(current_user.id).name_first}" + " " + "#{User.find_by_id(current_user.id).name_last}" %>
-        </h2>
-      <% end %>
     <%#<div class="message">%>
       <% date_time = m.created_at %>
       <p class='time-sent'><%= m.seen ? "#{date_time.strftime('%B %d, %Y %l:%M %p')}" : "#{date_time.strftime('%B %d, %Y %l:%M %p')}" %>
@@ -27,4 +21,6 @@
 <% end %>
   </section>
 </div>
+
+
 
