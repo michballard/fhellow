@@ -79,6 +79,32 @@ padding: 0 15px;
   padding-top: 15px;
 }
 
+/*Join/Login settings  - BEGIN*/
+
+article.signin-up {
+  margin-left: 36%;
+  margin-top: 6%;
+  border: solid 1px #C9C9C9;
+  margin-right: 36%;
+  padding-bottom: 2%;
+}
+
+h2.signin-up-heading {
+  background: #323A44;
+  display: block;
+  color: white;
+  margin-top: 0%;
+  padding: 4%;
+  padding-left: 40%;
+}
+
+form.new_user {
+  padding-left: 5%;
+  padding-right: 21%;
+  padding-top: 2%;
+}
+/*Modal settings - BEGIN */
+
 .modal-header {
   position: relative;
   background: #323A44;
@@ -146,6 +172,11 @@ p.post-submit {
   display: inline;
   margin-right: 2%
 }
+/*Modal settings - END*/
+
+
+/*Conversation page settings - BEGIN*/
+
 
 // input#user_avatar {
 //   display: none;
@@ -225,9 +256,14 @@ input[type='submit'] {
   margin-right: 1%;
 }
 
+/*Conversation page settings - END*/
+
+
 .nav.navbar-nav.navbar-right li input:hover {
   background-color: #323a44;
 }
+
+/*Message page settings - BEGIN*/
 
 .message {
   width: 98%;
@@ -288,6 +324,7 @@ a.convo-link {
   display: inline;
 }
 
+/*Message page settings - END*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
