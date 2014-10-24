@@ -17,6 +17,6 @@ class Post < ActiveRecord::Base
     after_validation :reverse_geocode
 
     def s3_credentials
-      {:bucket => "fhellow-photos", :access_key_id => Rails.application.secrets.aws_access_key_id, :secret_access_key => Rails.application.secrets.aws_secret_access_key }
+      {:bucket => "fhellow", :access_key_id => Rails.application.secrets.aws_access_key_id, :secret_access_key => Rails.application.secrets.aws_secret_access_key }
     end
 end
