@@ -2,7 +2,7 @@
   <h2 class="signin-up-heading">Join the Fhellow community</h2>
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   	<%= devise_error_messages! %>
-    <div class="signin-up-divider-left">-</div>Or<div class="signin-up-divider-right">-</div>
+    <p class="signin-up-divider"><span>Or</span></p>
 
   	<div class="email-signin-up "><%#= f.label :email %><br />
   	<%= f.email_field :email, autofocus: true, placeholder: "Email" %></div>
@@ -14,7 +14,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation" %></div>
 
   <div><%= f.submit "Join" %></div>
+  <%= render "devise/shared/links" %>
+
 	<% end %>
 
-<%= render "devise/shared/links" %>
-<%#</article>%>
+
+</article>

@@ -4,9 +4,9 @@
 <% @messages.each do |message| %>
   <div class='each-message'>
    <% if current_user.id == message.from_id %>
-   <p class="message-who"><%= "Conversation with: #{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
+   <p class="message-who"><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
   <% else %>
-    <p class="message-who"><%= "Conversation with: #{User.find_by_id(message.to_id).name_first}" + " " + "#{User.find_by_id(message.to_id).name_last}" %></p>
+    <p class="message-who"><%= "Conversation with: #{User.find_by_id(message.from_id).name_first}" + " " + "#{User.find_by_id(message.from_id).name_last}" %></p>
   <% end %>
   <p class='industry'><%= "#{User.find_by_id(message.from_id).job_title}" + ", " + "#{User.find_by_id(message.from_id).user_type}" %></p>
   <p class='convo-link'><%= link_to "View Conversation", conversation_path(message.from_id), class: 'convo-link' %></p>

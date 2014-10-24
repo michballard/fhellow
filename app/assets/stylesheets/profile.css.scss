@@ -318,7 +318,137 @@ img.avatar-image {
   max-width: 102px;
 }
 
+
 textarea {
   resize: none;
 }
 
+/*Join/Login settings  - BEGIN*/
+
+article.signin-up {
+  margin-left: 34%;
+  margin-top: 6%;
+  border: solid 1px #C9C9C9;
+  margin-right: 36%;
+  padding-bottom: 2%;
+}
+
+h2.signin-up-heading {
+  background: white;
+  display: block;
+  color: #323A44;
+  margin-top: 0%;
+  padding-top: 5%;
+  font-weight: bold;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+form.new_user {
+  padding-left: 5%;
+  padding-right: 21%;
+  padding-top: 2%;
+  position: relative;
+}
+
+.log-in-button {
+}
+.email-signin-up, .password-signin-up, .password-confirm-signin {
+  margin-bottom: 6%;
+  padding-left: 6%;
+  font-size: 12pt;
+}
+
+#user_email, #user_password, #user_password_confirmation {
+  width: 99%;
+  height: 47px;
+  border: 1px solid #C9C9C9;
+  padding: 9px;
+  font-family: 'Lato', sans-serif;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  margin-left: 6%;
+  margin-top: -13%;
+  margin-bottom: -5%;
+}
+
+div.signin-up-divider-left, div.signin-up-divider-left {
+  display: inline;
+  font-style: italic;
+}
+
+.forgot-signin-up {
+  margin: 2;
+  color: #43BEA2;
+}
+
+.facebook-signin-up {
+  position: absolute;
+  top: 0;
+  background-image: url('/assets/fb_login.jpg');
+  display: inline;
+  width: 48%;
+  height: 13%;
+  margin-top: 1%;
+  margin-left: 21%;
+  color: white;
+  padding-left: 20%;
+  padding-top: 2%;
+  font-size: 12pt;
+}
+
+a.facebook-signin-up:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.forgot-signin-up {
+  display: inline;
+  margin-left: 12%;
+}
+
+.remember-me {
+  display: none;
+}
+
+/*The OR divider*/
+.signin-up-divider {
+  line-height: 0.5;
+  text-align: center;
+  margin-left: 20%;
+  font-family: "Lato" sans-serif;
+  margin-top: 12%;
+}
+.signin-up-divider span {
+  display: inline-block;
+  position: relative;  
+}
+.signin-up-divider span:before,
+.signin-up-divider span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #C9C9C9;
+  top: 0;
+  width: 235px;
+}
+.signin-up-divider span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.signin-up-divider span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+p.join-signin-up, p.login-signin-up {
+  display: inline;
+  color: #323A44;
+  margin-left: 12%;
+}
+
+a.join-signin-up-button, a.login-signin-up-button {
+  color: #43BEA2;
+  padding-left: 2%;
+  
+}
