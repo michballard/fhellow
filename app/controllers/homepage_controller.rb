@@ -17,6 +17,7 @@ class HomepageController < ApplicationController
     @user.longitude = params[:longitude].to_f
     @user.latitude = params[:latitude].to_f
     @user.save
+    p @user.inspect
     render nothing: true
   end
 
