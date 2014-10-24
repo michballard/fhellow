@@ -117,7 +117,7 @@ var promises;
         icon: "/assets/user_marker.png",
         class: "user-marker",
         infoWindow: {
-          content: '<img src="' + user.image_url + '"><h2>' + "You!" + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+          content: '<div class="row"><div class="col-md-5"><img src="' + user.image_url + '" class="avatar-image"></div><div class="col-md-7 profile-summary-text-map"><h2 class="profile-summary-name">' + "You!" + '</h2><p class="profile-summary-job-title">'+ user.job_title+'</p><p class="profile-summary-location">'+ user.town+'</p></div></div>'
                   }
         });
       }
