@@ -109,21 +109,23 @@ var promises;
   function populateMap(users){
     users.forEach(function(user){
       if (user.current_user_id == user.user_id) {
+        console.log(user)
         map.addMarker({
-        lat: user.latitude,
-        lng: user.longitude,
+        lat: parseFloat(user.latitude),
+        lng: parseFloat(user.longitude),
         title: user.full_name,
         icon: "/assets/user_marker.png",
         class: "user-marker",
         infoWindow: {
-          content: '<img src="' + user.image_url + '"><h2>' + "You!" + '</h2><p>'+ user.job_title+'</p><p>'+ user.town+'</p></p>'+ user.bio_truncated + '</p>'
+          content: '<div class="row"><div class="col-md-5"><img src="' + user.image_url + '" class="avatar-image"></div><div class="col-md-7 profile-summary-text-map"><h2 class="profile-summary-name">' + "You!" + '</h2><p class="profile-summary-job-title">'+ user.job_title+'</p><p class="profile-summary-location">'+ user.town+'</p></div></div>'
                   }
         });
       }
       else {
+        console.log(user);
       map.addMarker({
-      lat: user.latitude,
-      lng: user.longitude,
+      lat: parseFloat(user.latitude),
+      lng: parseFloat(user.longitude),
       title: user.full_name,
       icon: "/assets/fhellow_marker.png",
       class: "all-user-marker",
