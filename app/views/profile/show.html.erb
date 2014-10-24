@@ -15,8 +15,8 @@
       <%end%>
     </section>
 
-<button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
 <%unless @user == current_user %> 
+  <button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
   <% if current_user && current_user.follows?(@user) %>
   	<button class="profile-following">
   		<i class="fa fa-minus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle Following" id="toggle-following"><span>Following</span></a>

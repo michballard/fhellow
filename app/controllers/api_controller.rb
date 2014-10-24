@@ -8,7 +8,8 @@ class ApiController < ApplicationController
         users = []
 
         interests.each do |interest|
-             users << User.all.select { |user| user.send(interest.gsub('-', '_')) }
+            users << User.all.select { |user| user.send(interest.gsub('-', '_')) }
+            users << current_or_guest_user
         end
 
 
@@ -19,7 +20,7 @@ class ApiController < ApplicationController
               latitude: user.latitude,
               image_url: user.avatar.url(:thumb),
               job_title: user.job_title,
-              bio_truncated: (user.bio.slice(0, 50) + "..."),
+              bio_truncated: (user.bio.slice(0, 50) + "..." if user.bio),
               town: user.town,
               user_id: user.id,
               first_name: user.name_first,
