@@ -6,14 +6,18 @@ The Idea
 
 The Team
 ----
-Development:
+#####Development:
+
+[Ruth Earle](https://github.com/ruthearle)
 
 [Michelle Ballard](https://github.com/michelleballard)
-[Ruth Earle](https://github.com/ruthearle)
+
 [Maya Driver](https://github.com/mayadriver)
+
 [Jerome Pratt](https://github.com/jjromeo)
 
-Design:
+#####Design:
+
 Alisa Afkami
 
 
