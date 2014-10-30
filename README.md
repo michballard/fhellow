@@ -23,16 +23,13 @@ Alisa Afkami
 
 What we learned
 -----
+> *Ruth...*
+
 >I think one of the most valuable learning experiences we will all take
 >away is working with a client with real expectations. Alisa had a very
 >clear idea of the apps purpose which made the process of planning and
 >execution fairly straight forward. We followed mock-ups of the website
 >and they were great for the frontend development of the web app.
-
-**Ruth**
-
-
-
 
 
 Technologies used
