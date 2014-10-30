@@ -2,7 +2,7 @@
 
 The Idea
 ----
-[Fhellow](fhellow.heroku.com) is the brain child of Alisa Afkhami, a freelance designer. Alisa found, like many freelancers eventually do, that whilst being a freelancer has many benefits it can also be a lonely profession. Freelancers are unable to tap into a professional network for contacts, benefits and social discourse, until now. Alisa ASoa social networking site for freelance professionals. A place to connect and chat with Fhellow freelancers and build a professional network without an office. 
+[Fhellow](fhellow.heroku.com) is the brain child of Alisa Afkhami, a freelance designer. Alisa found, like many freelancers eventually do, that whilst being a freelancer has many benefits it can also be a lonely profession. Freelancers are unable to tap into a professional network for contacts, benefits and social discourse, until now. Fhellow is a social networking site for freelance professionals. A place to connect and chat with Fhellow freelancers and build a professional network without an office. 
 
 The Team
 ----
@@ -10,7 +10,7 @@ The Team
 
 [Ruth Earle](https://github.com/ruthearle)
 
-[Michelle Ballard](https://github.com/michelleballard)
+[Michelle Ballard](https://github.com/michballard)
 
 [Maya Driver](https://github.com/mayadriver)
 
@@ -30,6 +30,20 @@ What we learned
 >clear idea of the apps purpose which made the process of planning and
 >execution fairly straight forward. We followed mock-ups of the website
 >and they were great for the frontend development of the web app.
+ 
+ 
+> *Michelle...*
+
+>It was a great experience creating the Fhellow website for our final Makers Academy project.  In particular I learned a lot about practising agile techniques and the benefits gained from working in an agile environment.  
+
+>The techniques we used during the two week project sprint were: 
+
+> - Stand up meetings every morning
+> - Product demo’s every evening
+> - Listing tasks on a kanban board (using Trello) and tracking the progress of each task
+> - Pair programming with regular rotations so that every team members understood all parts of the project
+
+>From early in the project it became evident how much agile principles were contributing to the project’s success.  We were able to quickly pick up new tasks once current tasks were completed, understand what team members were working on and we could easily be responsive to project changes. Working in an agile manner is something I will definitely continue practising in the future.  
 
 
 Technologies used
