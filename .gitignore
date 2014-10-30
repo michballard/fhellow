@@ -16,5 +16,3 @@
 /tmp
 .DS_store
 public/system
-
-/config/secrets.yml

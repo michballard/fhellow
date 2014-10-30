@@ -15,8 +15,8 @@
       <%end%>
     </section>
 
-<button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
 <%unless @user == current_user %> 
+  <button class="message-user"><i class="fa fa-envelope"></i><%= link_to "Message", send_message_path(@user.id) %></button>
   <% if current_user && current_user.follows?(@user) %>
   	<button class="profile-following">
   		<i class="fa fa-minus"></i><a href=<%="/user/#{@user.id}/follow/#{current_user.id}"%> class="profile-follow-toggle Following" id="toggle-following"><span>Following</span></a>
@@ -64,8 +64,10 @@
 
 <section class="following-counters">
   <ul>
-    <li class="follower-count"><img src="/assets/icon_fhellows.png"><%= pluralize(@user.followers(User).count, " Follower") %></li>
-    <li class="following-count"><img src="/assets/icon_fhellows.png"><%= @user.followees(User).count %> Following</li>
+    <img src="/assets/icon_fhellows.png">
+    <li class="follower-count"><%= pluralize(@user.followers(User).count, " Follower") %></li>
+    <img src="/assets/icon_fhellows.png">
+    <li class="following-count"><%= @user.followees(User).count %> Following</li>
   </ul>
 </section>
 
@@ -92,7 +94,7 @@
     <% if @user.posts.any? %>
       <%= render @user.posts.reverse %>
     <% else %>
-       <p>No posts yet</p>
+       <p></p>
     <% end %>
   </div>
 
