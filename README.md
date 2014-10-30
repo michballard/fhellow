@@ -34,20 +34,29 @@ What we learned
 
 Technologies used
 ----
-Test-driven with:
+
+#####Built with:
+
+- Ruby on Rails 4
+- PostgreSQL
+- HTML
+- CSS3
+- JavaScript
+- JQuery
+- Mustache.js
+- Devise
+- Paperclip
+- Omniauth
+- GMaps.js
+- Geocoder
+- (Bootstrap)
+
+######Test-driven with:
 
 - RSpec-Rails 
 - Capybara
 - Jasmine 
 
-Built with:
-
-- Ruby on Rails 4
-* Devise
-* Paperclip
-* Omniauth
-* GMaps.JS
-* Geocoder
-* Bootstrap
-
-
+######Deployed with:
+- Heroku
+- Heroku secrets
