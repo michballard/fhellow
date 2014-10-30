@@ -50,6 +50,7 @@ Technologies used
 - GMaps.js
 - Geocoder
 - (Bootstrap)
+- Amazon AWS S3
 
 ######Test-driven with:
 
@@ -60,3 +61,19 @@ Technologies used
 ######Deployed with:
 - Heroku
 - Heroku secrets
+
+
+How to run the app
+----
+
+Before running the app you will need to set your own secret keys in
+`config/secrets.yml`, as follows:
+
+```
+secret_key_base: *****
+facebook_secret: *****
+AWSAccessKeyId: *****
+AWSSecretKey: *****
+```
+
+After cloning the repository `cd` into the freshly cloned directory and run `bin/rails s`, then open your browser of choice and in the address bar, type `localhost:3000`.
