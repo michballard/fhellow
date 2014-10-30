@@ -16,20 +16,35 @@ The Team
 
 [Jerome Pratt](https://github.com/jjromeo)
 
+
 #####Design:
 
 Alisa Afkami
+
+What we learned
+-----
+I think one of the most valuable learning experiences we will all take
+away is working with a client with real expectations. Alisa had a very
+clear idea of the apps purpose which made the process of planning and
+execution fairly straight forward. We followed mock-ups of the website
+and they were great for the frontend development of the web app.
+**Ruth**
+
+
+
 
 
 Technologies used
 ----
 Test-driven with:
-* RSpec-Rails 
-* Capybara
-* Jasmine 
+
+- RSpec-Rails 
+- Capybara
+- Jasmine 
 
 Built with:
-* Ruby on Rails 4
+
+- Ruby on Rails 4
 * Devise
 * Paperclip
 * Omniauth
@@ -37,6 +52,4 @@ Built with:
 * Geocoder
 * Bootstrap
 
-Makers Academy final project made by 
 
-Michelle, Ruth, Maya and Jerome.
