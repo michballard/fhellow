@@ -45,6 +45,13 @@ What we learned
 
 >From early in the project it became evident how much agile principles were contributing to the project’s success.  We were able to quickly pick up new tasks once current tasks were completed, understand what team members were working on and we could easily be responsive to project changes. Working in an agile manner is something I will definitely continue practising in the future.  
 
+> *Jerome...*
+
+>One interesting thing I learned a lot about was communicating with a non-developer who also had a lot of input, this required us to simplify technical subjects to a suitable level, and helped to deepen our own understanding. 
+
+>During development I gained a new appreciation for what jquery and other front-end technologies can do, previously I had been much more drawn towards the back-end, but I am now aiming to become a full-stack developer.
+
+>Some key lessons I learned during the first week of the project were: keeping a very close eye on our tests, and to commit regularly. Towards the second week of the project it was easy to notice how our improvement in those areas made us much more efficient.
 
 Technologies used
 ----
