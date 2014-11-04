@@ -53,6 +53,12 @@ What we learned
 
 >Some key lessons I learned during the first week of the project were: keeping a very close eye on our tests, and to commit regularly. Towards the second week of the project it was easy to notice how our improvement in those areas made us much more efficient.
 
+> *Maya...*
+
+>Working on Fhellow was a really valuable experience for me because it was so challenging and drew on all the skills I have learned at Makers. I enjoyed working on all aspects of the project - both front end and back end - and would also be keen to become a full-stack developer.
+
+>I learned that teamwork is all about communication. As a team, we were constantly discussing ideas and offering each other help and advice through pair programming, our morning standups and evening demos, and consequently we were able to build a functioning app in less than two weeks. 
+
 Technologies used
 ----
 
