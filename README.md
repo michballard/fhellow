@@ -19,7 +19,7 @@ The Team
 
 #####Design:
 
-Alisa Afkami
+[Alisa Afkami](http://www.alisaafkhami.com/)
 
 What we learned
 -----
