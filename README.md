@@ -30,6 +30,8 @@ What we learned
 >clear idea of the apps purpose which made the process of planning and
 >execution fairly straight forward. We followed mock-ups of the website
 >and they were great for the frontend development of the web app.
+
+>I also enjoyed pair-praogramming on this project as it meant we could collaborate and work as a team whilst >building the MVP. I feel I learned more because of pairing as I was able to quickly clarify thinking, build on >ideas and maintain workflow more effectively than when coding alone. 
  
  
 > *Michelle...*
