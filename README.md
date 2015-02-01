@@ -102,3 +102,5 @@ AWSSecretKey: *****
 ```
 
 After cloning the repository `cd` into the freshly cloned directory and run `bin/rails s`, then open your browser of choice and in the address bar, type `localhost:3000`.
+
+The app has been deployed to Heroku: http://fhellow.herokuapp.com
